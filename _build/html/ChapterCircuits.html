@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Microwave Circuits &#8212; Spectral Analysis for Applied Electromagnetism</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ChapterCircuits';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="spectralBook.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LeaLogo.png" class="logo__image only-light" alt="Spectral Analysis for Applied Electromagnetism - Home"/>
+    <script>document.write(`<img src="_static/LeaLogo.png" class="logo__image only-dark" alt="Spectral Analysis for Applied Electromagnetism - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="spectralBook.html">
+                    Spectral Analysis for Applied Electromagnetism
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spectral Analysis for Applied Electromagnetism</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ChapterSpectral.html">1. Spectral Analysis of Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterEMMethod.html">2. Electromagnetic Spectral Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMW.html">3. Microwave  Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWDevices1.html">4. Application to Microwave Devices I: Filters and Phase Shifters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWDevices2.html">5. Application to Microwave Devices II: Amplifiers and Oscilators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterAntenna.html">6. Application to Antenna Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMetasurfaces.html">7. Application to Lens and Metasurfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterRIS.html">8. Phased Arrays and RIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">9. References</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applied Design of RF/PCB Integrated Circuits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC1.html">10. Application to PCB Integrated Circuits I: Filters and Phase Shifters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC2.html">11. Application to PCB Integrated Circuits I: Filters and Phase Shifters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC3.html">12. Application to PCB Integrated Circuits III: Antennas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC4.html">13. Application to PCB Integrated Circuits IV: Metasurface, RIS and Phased Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference2.html">14. References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FChapterCircuits.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ChapterCircuits.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Microwave  Circuits</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Microwave  Circuits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-overview">1 General Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-classification">1.1 Components Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justification">1.2 Justification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-dc-voltage-currents">3 AC &amp; DC Voltage/Currents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-simulated-in-the-future-power-cables-i-will-do-only-rf-case-for-electrical-components">To be simulated in the future Power Cables ( I will do only RF case for Electrical Components)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-as-forcas-eletricas-ao-longo-do-cabo-tem-sentido-quantico-qual-relacao-com-os-campos-das-ondas-eletromagneticas-nao-existe-irradiacao-a-partir-de-corrente-dc-pura-so-se-ha-variacao-da-corrente-no-espaco-tempo-ou-por-meio-de-corrente-alternada-porque">Calcular as Forças elétricas ao longo do cabo, tem sentido quantico? Qual relação com os campos das ondas eletromagnéticas? Nao existe irradiação a partir de corrente DC pura, só se há variação da corrente no espaço-tempo, ou por meio de corrente alternada? Porque?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-voltage-currents">Wave Voltage/Currents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1 Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microstrip-lines">4  Microstrip Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-or-coax-cable">5  Fiber (or Coax Cable)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-trasmission-lines">6  Resistive Trasmission Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7  Resistive Trasmission Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductors">5 Inductors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor">2.4 Capacitor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplifiers">2.5 Amplifiers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-domain-response-you-have-to-make-the-cross-information-among-different-ref-easy-bucket">3. Frequency Domain Response (You have to  make the cross information among different REF, EASY BUCKET)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foster-circuits">3.1 Foster Circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-foster-circuits">3.2 Non-Foster Circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-domain-reponse-i-don-t-find-it-in-any-book">4. Time Domain Reponse ( I don’t find it in any book)</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="microwave-circuits">
+<h1>Microwave  Circuits<a class="headerlink" href="#microwave-circuits" title="Permalink to this heading">#</a></h1>
+<p>Collab: <a class="reference external" href="https://drive.google.com/file/d/186cQ-leDyDpDGfLVsOqFmRGBX7PyZWrB/view?usp=sharing">https://drive.google.com/file/d/186cQ-leDyDpDGfLVsOqFmRGBX7PyZWrB/view?usp=sharing</a></p>
+<p>I will try to use MoM/CST FDTD and Matlab tool boxes for RF/Electrical circuits/Control Systems</p>
+<section id="general-overview">
+<h2>1 General Overview<a class="headerlink" href="#general-overview" title="Permalink to this heading">#</a></h2>
+<p><strong>Electrical circuits are topological networks, topology in mathematical concept, which studies the space properties invariance under continous deformation. We have an arrangement of nodes, and edges, where the disposition does not matter, but the interaction. Will it matter in the electromagnetic circuits? (Or still topological). The electromagnetic propeties will change? The voltages, currents remain unchangeable if you stretch the transmission lines, what does justifies the topological idea of the electromagnetism.The symmetry operations?</strong></p>
+<p>Electric circuits are the basic representation of the electromagnetic circuits, being both the same, which the concerned metrics are Voltages and Currents. In Electromagnetic countepart we add the beauties of the electromagnetic fields as main metrics.</p>
+<p>Graph theory helps to visualize and decribe the interconexions, as well as, to optimize this circuits, the telecommunication and computer science steal the ideas (Circuitos Elétricos 2).</p>
+<section id="components-classification">
+<h3>1.1 Components Classification<a class="headerlink" href="#components-classification" title="Permalink to this heading">#</a></h3>
+<p>Electrical circuits components can be classified as active and passive components. The active ones provide energy to the network and the passive ones, absorb energy from the network.</p>
+<ul class="simple">
+<li><p>Active: Amplifiers, Sources</p></li>
+</ul>
+<p>The active circuits can have negative resistance (my case, i have oscilations of motivation ahahhahaha)</p>
+<ul class="simple">
+<li><p>Passive : Resistors, Inductors, Capacitors</p></li>
+</ul>
+</section>
+<section id="justification">
+<h3>1.2 Justification<a class="headerlink" href="#justification" title="Permalink to this heading">#</a></h3>
+<p>In the literature we will commonly find the time analysis using narrow band signals. However wide band signals can provide a richer resolution from the time motion of the current. Using FDTD simulations transmission lines and waveguides, we will try to analyse pratical application o time domain analysis.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ac-dc-voltage-currents">
+<h1>3 AC &amp; DC Voltage/Currents<a class="headerlink" href="#ac-dc-voltage-currents" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="to-be-simulated-in-the-future-power-cables-i-will-do-only-rf-case-for-electrical-components">
+<h1>To be simulated in the future Power Cables ( I will do only RF case for Electrical Components)<a class="headerlink" href="#to-be-simulated-in-the-future-power-cables-i-will-do-only-rf-case-for-electrical-components" title="Permalink to this heading">#</a></h1>
+<p>Correntes positivas: Fluxo de cargas positivas para uma determinada direção.</p>
+<p>Correntes negativas: Fluxo de cargas negativas para uma determinada direção.</p>
+<p>Mas geralmente negamos a corrente para indicar que ela flui em sentido oposto em circuitos elétricos básicos (sem convenção fasoriais), certo?  Como podemos explicar tudo isso?
+Também em circuitos elétricos afirmamos pela convenção da seta, se a seta estiver apontada para a direita, cargas negativas fluirão para a esquerda.</p>
+<p><img alt="image info" src="_images/currentconvention.png" /></p>
+<p>Agora analisando a corrente na origem por exemplo, injetando uma corrente alternada, na minha cabeça penso logo como é possível, se a carga positiva uma hora flui para direita, depois para esquerda, as cargas nao saem do lugar ?</p>
+<p><img alt="image info" src="_images/pulsetimespacev2.png" /></p>
+<p>Olhando o diagrama acima, uma corrente alternada de pulsos, considerando que a cada posição x muda o sentido das cargas, as cargas retornam a posição inicial
+( sera que ta certo o diagrama)</p>
+<p><span class="math notranslate nohighlight">\(x_2-x_1=\)</span> meio periodo espacial do pulso</p>
+<p><span class="math notranslate nohighlight">\(t_2-t_1=\)</span> meio periodo temporal do pulso</p>
+<p><img alt="image info" src="_images/FlowTLN.png" /></p>
+<p><img alt="image info" src="_images/TLACFlow2.png" /></p>
+<p><img alt="image info" src="_images/TLACFlow3.png" /></p>
+<p><img alt="image info" src="_images/TLACFlow4.png" /></p>
+<p><img alt="image info" src="_images/TLACFlow5.png" /></p>
+<section id="calcular-as-forcas-eletricas-ao-longo-do-cabo-tem-sentido-quantico-qual-relacao-com-os-campos-das-ondas-eletromagneticas-nao-existe-irradiacao-a-partir-de-corrente-dc-pura-so-se-ha-variacao-da-corrente-no-espaco-tempo-ou-por-meio-de-corrente-alternada-porque">
+<h2>Calcular as Forças elétricas ao longo do cabo, tem sentido quantico? Qual relação com os campos das ondas eletromagnéticas? Nao existe irradiação a partir de corrente DC pura, só se há variação da corrente no espaço-tempo, ou por meio de corrente alternada? Porque?<a class="headerlink" href="#calcular-as-forcas-eletricas-ao-longo-do-cabo-tem-sentido-quantico-qual-relacao-com-os-campos-das-ondas-eletromagneticas-nao-existe-irradiacao-a-partir-de-corrente-dc-pura-so-se-ha-variacao-da-corrente-no-espaco-tempo-ou-por-meio-de-corrente-alternada-porque" title="Permalink to this heading">#</a></h2>
+<p>Muitas dúvidas, não sei explicar, com argumentos bem físicos, o que acontece, só formulação de hipóteses, que precisam ser confirmadas se for o caso, ou refutadas com as referencias, experimentos físicos, etc</p>
+<p><em><strong>Minha opinião raciocínio:</strong></em> Pela referência de fase (ou referência de tempo, translação no tempo infere translação de fase), como vimos nas equações de meio ciclo. Nos cicuitos elétricos básicos não fasoriais e circuito CC, as correntes tem a mesma fase sempre, se negada, a oposição de corrente ocorre sempre.</p>
+<p>Mas o que significa diferença de fase em termos de fluxo de cargas elétricas no tempo e no espaço? Pela referência de fase (ou referência de tempo, translação no tempo infere translação de fase), como vimos nas equações de meio ciclo.</p>
+<p>Mas o que significa diferença de fase em termos de fluxo de cargas elétricas no tempo e no espaço?</p>
+<p>Resistors</li></h1>
+If we have a current time signal passing through a resistor or a resistive transmission line. In this case a Gaussian Pulse,
+<span class="math notranslate nohighlight">\(i(t)=\frac{e^{}}{}\)</span></p>
+<p><span class="math notranslate nohighlight">\(V=R I\)</span></p>
+  </div>
+</html></section>
+<section id="wave-voltage-currents">
+<h2>Wave Voltage/Currents<a class="headerlink" href="#wave-voltage-currents" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="definition">
+<h2>3.1 Definition<a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="microstrip-lines">
+<h2>4  Microstrip Lines<a class="headerlink" href="#microstrip-lines" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="fiber-or-coax-cable">
+<h2>5  Fiber (or Coax Cable)<a class="headerlink" href="#fiber-or-coax-cable" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="resistive-trasmission-lines">
+<h2>6  Resistive Trasmission Lines<a class="headerlink" href="#resistive-trasmission-lines" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id1">
+<h2>7  Resistive Trasmission Lines<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Negative Resistance? What is the effect of the negative resistance (souce of alternating current)</p>
+<p><span class="math notranslate nohighlight">\(V=RI\)</span></p>
+</section>
+<section id="inductors">
+<h2>5 Inductors<a class="headerlink" href="#inductors" title="Permalink to this heading">#</a></h2>
+<p>In microwave, the transmission lines are generally mainly inductive in nature, unless we found some discontinuity or proximity effects which cause parasitic impedances. In electrical circuits you can choose work with Voltages or Currents, due to its duality. As diferentiation operations are less complex than integration, it is suitable work with currents while dealing with inductors. Then, if we have a current time signal passing through an inductor following the</p>
+<div class="math notranslate nohighlight">
+\[V=L\frac{dI}{dt}\]</div>
+<p>As we studied in spectral analysis chapter. If a signal is differentiated, we insert a zero at the zero frquency, and we force the signal to have a phase inversion, as also explained by control systems, DSP and network synthesis (digital filters ). We add 90 degrees of phase for the halfs/one cycle sin case,  it’s possible to see the phase diferrence of 90 Degrees.</p>
+<p>Let’s dive into RF Lines Simulations</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="n">elm</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">STYLE_IEC</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">schemdraw</span><span class="o">.</span><span class="n">Drawing</span><span class="p">():</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Resistor</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Z0&#39;</span><span class="p">)</span>
+    <span class="c1"># elm.Capacitor().down().label(&#39;0.1μF&#39;, loc=&#39;bottom&#39;)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">down</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Gaussian&#39;</span><span class="p">)</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Line</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">Ground</span><span class="p">()</span>
+    <span class="n">elm</span><span class="o">.</span><span class="n">SourceV</span><span class="p">()</span><span class="o">.</span><span class="n">up</span><span class="p">()</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s1">&#39;Gaussian&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">schemdraw</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">schemdraw.elements</span> <span class="k">as</span> <span class="nn">elm</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">elm</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">elm</span><span class="o">.</span><span class="n">STYLE_IEC</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;schemdraw&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="capacitor">
+<h3>2.4 Capacitor<a class="headerlink" href="#capacitor" title="Permalink to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(i=C \frac{dV}{dt}\)</span></p>
+</section>
+<section id="amplifiers">
+<h3>2.5 Amplifiers<a class="headerlink" href="#amplifiers" title="Permalink to this heading">#</a></h3>
+<p>{}</p>
+</section>
+</section>
+<section id="frequency-domain-response-you-have-to-make-the-cross-information-among-different-ref-easy-bucket">
+<h2>3. Frequency Domain Response (You have to  make the cross information among different REF, EASY BUCKET)<a class="headerlink" href="#frequency-domain-response-you-have-to-make-the-cross-information-among-different-ref-easy-bucket" title="Permalink to this heading">#</a></h2>
+<p><strong>I will try to analyze the poles/zeros in terms of Inductance/capacitance aided by the foster theorem, predict the behaviour of Filters(TL,Antennas) and circuits, only analyzing the frequency response, the enginneers will get easy bucket, to fine tune/optimize their electronic circuits, in my LOVE case, and because it’s unavoidable the Love Power, but responsibly (it is the work of the electronic engineers), Love would do amazing things with AI</strong>
+**</p>
+</section>
+<section id="foster-circuits">
+<h2>3.1 Foster Circuits<a class="headerlink" href="#foster-circuits" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="non-foster-circuits">
+<h2>3.2 Non-Foster Circuits<a class="headerlink" href="#non-foster-circuits" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="time-domain-reponse-i-don-t-find-it-in-any-book">
+<h2>4. Time Domain Reponse ( I don’t find it in any book)<a class="headerlink" href="#time-domain-reponse-i-don-t-find-it-in-any-book" title="Permalink to this heading">#</a></h2>
+<p>Only analyzing the time signals, you can have an insight about the frequency response of the signals, losses, resistance/capacitance/inductance regions/shapes in electronics/electromagnetic circuits (Time signals Analysis first). But it is best in frequency domain, but your capacitance can be seen as inductance depending of the analysis point, phase reference is very important.</p>
+<p>Pode ser utilizado talvez em linhas de transmissao longas de alta tensão, transformadores, hidrogeradores, sistemas de controle (diria mais que o controle ta inserido como materia base como o electromagnetismo, controle é a base de Machine learning, a algebra, tecnicas de otimização que usam na computação, qe por sinal sao un nightmare hahahahha bixo os algoritmos sao muito escrotos hahahahhah na minha opinião), ja deve ser utilizado, nao conheço, em fibra otica bastante pelos tecnicos de instalação.
+O pessoal da energia vai falar de banco de indutores, por isso eu nao sei nada em energia, sei que tem banco de capacitores para reativo, do resto não sei nada, li, mas nao aprendi que é escroto, uns negocios de sequencia positiva e negativa de curto circuito</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from importlib.metadata import version</span>
+<span class="c1"># version(&#39;nbformat&#39;)</span>
+<span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--output-dir<span class="o">=</span><span class="s1">&#39;.\assets&#39;</span><span class="w">   </span>--to<span class="w"> </span>html<span class="w"> </span>electricalCircuits.ipynb<span class="w">  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NbConvertApp] Converting notebook electricalCircuits.ipynb to html
+[NbConvertApp] Writing 281224 bytes to .\assets\electricalCircuits.html
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Microwave  Circuits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-overview">1 General Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-classification">1.1 Components Classification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justification">1.2 Justification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ac-dc-voltage-currents">3 AC &amp; DC Voltage/Currents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-be-simulated-in-the-future-power-cables-i-will-do-only-rf-case-for-electrical-components">To be simulated in the future Power Cables ( I will do only RF case for Electrical Components)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular-as-forcas-eletricas-ao-longo-do-cabo-tem-sentido-quantico-qual-relacao-com-os-campos-das-ondas-eletromagneticas-nao-existe-irradiacao-a-partir-de-corrente-dc-pura-so-se-ha-variacao-da-corrente-no-espaco-tempo-ou-por-meio-de-corrente-alternada-porque">Calcular as Forças elétricas ao longo do cabo, tem sentido quantico? Qual relação com os campos das ondas eletromagnéticas? Nao existe irradiação a partir de corrente DC pura, só se há variação da corrente no espaço-tempo, ou por meio de corrente alternada? Porque?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-voltage-currents">Wave Voltage/Currents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">3.1 Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#microstrip-lines">4  Microstrip Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fiber-or-coax-cable">5  Fiber (or Coax Cable)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resistive-trasmission-lines">6  Resistive Trasmission Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">7  Resistive Trasmission Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inductors">5 Inductors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capacitor">2.4 Capacitor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#amplifiers">2.5 Amplifiers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-domain-response-you-have-to-make-the-cross-information-among-different-ref-easy-bucket">3. Frequency Domain Response (You have to  make the cross information among different REF, EASY BUCKET)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foster-circuits">3.1 Foster Circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-foster-circuits">3.2 Non-Foster Circuits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-domain-reponse-i-don-t-find-it-in-any-book">4. Time Domain Reponse ( I don’t find it in any book)</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LEA UFPA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

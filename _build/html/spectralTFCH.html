@@ -1,0 +1,1230 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Spectral Analysis of Signals &#8212; Spectral Analysis for Applied Electromagnetism</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spectralTFCH';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Spectral Analysis for Applied Electromagnetism" href="spectralBook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="spectralBook.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LeaLogo.png" class="logo__image only-light" alt="Spectral Analysis for Applied Electromagnetism - Home"/>
+    <script>document.write(`<img src="_static/LeaLogo.png" class="logo__image only-dark" alt="Spectral Analysis for Applied Electromagnetism - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="spectralBook.html">
+                    Spectral Analysis for Applied Electromagnetism
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Spectral Analysis of Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">2. Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">3. Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FspectralTFCH.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/spectralTFCH.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spectral Analysis of Signals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">1.1.1. <strong>Definition</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-time-convention-2d">1.1.2. <strong>Space-Time Convention 2D</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-time-convention-3d">1.1.3. <strong>Space-Time Convention 3D</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-time-convention-4d">1.1.4. <strong>Space-Time Convention 4D</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.5. 1.3 Space-Time Convention 3D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-signals">1.2. Windows Signals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">1.3. Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangular-windows">1.4. Rectangular Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triangular-windows">1.5. Triangular  Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusoidal-signals">1.6. Sinusoidal Signals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-cycle-sin">1.6.1. Half Cycle Sin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-cycle-sin">1.6.2. 3.2 One Cycle Sin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-cycle-sin">1.6.3. 3.3 Infinite Cycle Sin</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-signals">1.7. Gaussian Signals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-derivative">1.7.1. - First Order Derivative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-derivative">1.7.2. - Second Order Derivative</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spectral-analysis-of-signals">
+<h1><span class="section-number">1. </span>Spectral Analysis of Signals<a class="headerlink" href="#spectral-analysis-of-signals" title="Permalink to this heading">#</a></h1>
+<p>[Colab:] <a class="reference external" href="https://drive.google.com/file/d/13Pjf31NMQFpUVPqsjrrzElLlv7HdKxH9/view?usp=drive_link">https://drive.google.com/file/d/13Pjf31NMQFpUVPqsjrrzElLlv7HdKxH9/view?usp=drive_link</a></p>
+<p><a class="reference external" href="https://drive.google.com/drive/folders/18vcEtTFuxsFom8V9ZgnRfmgFxi18YsHQ?usp=sharing">Book func</a></p>
+<p><a class="reference external" href="https://drive.google.com/drive/folders/1FFwVutA-jbbRQQW1k7NyjFVcLFjJOw2c?usp=sharing">Book Folder</a></p>
+<section id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p><strong>In this chapter we will analyze the spetral behavior of the signals in space, frequency and time, in order to acquire physical and mathematical insights for applied electromagnetics.</strong>
+<strong>The signal’s time variation is intrinsically linked to  time-frequency as well known. Usually, the Fourier analysis is the widely used spectral transformation to evaluate the signal’s characteristics. Discrete-Time Fourier Series (DFS) are intended for periodic signals and the Discrete-Time Fourier Transform for non-periodic signals, commonly implemented by fast fourier transform (FFT) algorithms. We will analyze canonical periodic and non-periodic time signals using FFT to extract useful information for electromagnetic signal processing.</strong></p>
+<p><strong>However for the electronmagnetism, the time transformation are not enough, as the signal propagates throughout the space. Spectral transformation are useful tools to solve microwave and optical problems, besides to gather informations about the physics. For example the physical optics employed in 3D games, propagation models of telecomunications signals,…</strong></p>
+<section id="definition">
+<h3><span class="section-number">1.1.1. </span><strong>Definition</strong><a class="headerlink" href="#definition" title="Permalink to this heading">#</a></h3>
+<p><strong>The time signals, or even from mathematics, a time series, describes the variation in time of a given property. For electromagnetism, we focus in the variation of voltages, currents, electromagnetic field’s intensities in space-time, for example. We can apply spectral transformation of a space over all dimensions of the space-time.</strong></p>
+<p><strong>The space-time signal will be defined by lower case letter, we will consider as current signal propagating only in z-dimension, at first, for example,</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,z)=\sin{(\omega t-kz)}\]</div>
+<p><strong>where <span class="math notranslate nohighlight">\(\omega=2\pi f\)</span>, being <span class="math notranslate nohighlight">\(f\)</span> the angular frequency.</strong></p>
+<p><strong>The space-frequency or time-frequency domain signals will be represented by upper case Letter, for example, we will have,</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,z)=\sin{(\omega_0 t-kz)}\]</div>
+<p><strong>Applying frequency spectral transformation</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,z) \xrightarrow{\mathscr{F_t}} X(f,z)\]</div>
+<p><strong>Applying space spectral transformation</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,x) \xrightarrow{\mathscr{F_k}} X(t,k)\]</div>
+<p>if applied simultaneously</p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,x) \xrightarrow{\mathscr{F_{t,k}}} X(f,k)\]</div>
+</section>
+<section id="space-time-convention-2d">
+<h3><span class="section-number">1.1.2. </span><strong>Space-Time Convention 2D</strong><a class="headerlink" href="#space-time-convention-2d" title="Permalink to this heading">#</a></h3>
+<p>[Ref] Iizuka K. “Elements of Photonics, Volume I: In Free Space and Special Media,” John Wiley &amp; Sons, Inc.,June 2022.
+[Ref] Iizuka K. “Elements of Photonics, Volume II: For Fiber and Integrated Optics.,” John Wiley &amp; Sons, Inc.,June 2022.
+(Cap. 1 e o de Polarização gostei mais da explicação)
+[REF]</p>
+<p><a class="reference external" href="https://www.ele.uva.es/~ivasan/DO/%5BBook%20-%20Opto%5D%20Elements%20of%20photonics%20(Vol%20I%20-%20Free%20space%20and%20special%20media)%20-%20Iizuka%20(Willey,%202002).pdf">https://www.ele.uva.es/~ivasan/DO/[Book - Opto] Elements of photonics (Vol I - Free space and special media) - Iizuka (Willey, 2002).pdf</a></p>
+<p><strong>A signal propagating direction  convetion will depend on the sign of the time and space counterpart</strong></p>
+<p><strong>- Propagation Foward, toward the positve x-direction will be represented by ( the rate of frequency variation must have the opposite sign of the rate of space-frequency variation</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,x)=\sin{(\omega_0 t-kz)}\]</div>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,x)=\sin{(-\omega_0 t+kz)}\]</div>
+<p><strong>- Propagation Backward, Toward the negative x-direction will be represented by ( the rate of frequency variation must have the same sign of the rate of space-frequency variation)</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,x)=\sin{(-\omega_0 t-kz)}\]</div>
+<div class="math notranslate nohighlight">
+\[x_{t}(t,x)=\sin{(\omega_0 t+kz)}\]</div>
+</section>
+<section id="space-time-convention-3d">
+<h3><span class="section-number">1.1.3. </span><strong>Space-Time Convention 3D</strong><a class="headerlink" href="#space-time-convention-3d" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="space-time-convention-4d">
+<h3><span class="section-number">1.1.4. </span><strong>Space-Time Convention 4D</strong><a class="headerlink" href="#space-time-convention-4d" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Convention</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span><span class="n">sqrt</span><span class="p">,</span><span class="n">log</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">bookfuncs.plotfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot2DTparametric</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">par</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;t0&#39;</span><span class="p">],</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;tf&#39;</span><span class="p">],</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;x0&#39;</span><span class="p">],</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;xf&#39;</span><span class="p">],</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;dx&#39;</span><span class="p">])</span>
+<span class="p">[</span><span class="n">X</span><span class="p">,</span><span class="n">T</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="c1"># meshgrid 2D cria uma matrix 2D com todas as possibilidade de tempo e spaço (depois criarei uma matrix 2D para o espectro frequencial)</span>
+<span class="c1"># as linhas das matrizes representam a variaçao no tempo e as colunas variação no espaço, a referencia do tempo espaço é t0=0, x0=-5 lambda (comprimento de onda)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x0: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x0: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;xf: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t0: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t0: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span> <span class="c1">#</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tf: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> 
+
+<span class="n">xt_pm</span><span class="o">=</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">T</span><span class="o">-</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;kx&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">xt_mp</span><span class="o">=-</span><span class="n">sin</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">T</span><span class="o">+</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;kx&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">xt_mm</span><span class="o">=-</span><span class="n">sin</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">T</span><span class="o">-</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;kx&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">xt_pp</span><span class="o">=-</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">T</span><span class="o">+</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;kx&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">X</span><span class="p">)</span>
+
+
+<span class="c1">#Plot Half cycle Sin Signal</span>
+<span class="n">fig1</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39; Wave Propagation Convention &#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>   
+<span class="c1"># Estou incrementando a posição espacial, se amplitude do sinal for maior que a da posição anterior quando o sinal está crescendo e o tempo aumentando ou</span>
+<span class="c1"># amplitunde menor que a da posição anterior quando o sinal está descrecendo  e o tempo aumentando (Foward propagation direção positiva) e vice versa</span>
+<span class="c1"># fazer animação no futuro (escrevi merda hahahahahah é isso mesmo eu achom da um no na cabeça hahahaa)</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_pm</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;Convention positive negative&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_pm</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span><span class="s2">&quot;Convention positive negative&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_pm</span><span class="p">[:,</span><span class="mi">6</span><span class="p">],</span><span class="s2">&quot;Convention positive negative&quot;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_mp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;Convention negative positive&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_mp</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span><span class="s2">&quot;Convention negative positive&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_mp</span><span class="p">[:,</span><span class="mi">6</span><span class="p">],</span><span class="s2">&quot;Convention negative positive&quot;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_mm</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;Convention negative negative&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_mm</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span><span class="s2">&quot;Convention negative negative&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_mm</span><span class="p">[:,</span><span class="mi">6</span><span class="p">],</span><span class="s2">&quot;Convention negative negative&quot;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_pp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="s2">&quot;Convention positive positive&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_pp</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span><span class="s2">&quot;Convention positive positive&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+                        <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_pp</span><span class="p">[:,</span><span class="mi">6</span><span class="p">],</span><span class="s2">&quot;Convention positive positive&quot;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">),</span>
+                        <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot; Foward&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">60</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,(</span><span class="n">x</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Nx&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Nx&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="p">),</span>
+                <span class="c1">#  xycoords=(t[10], x[int(par.par.loc[&#39;HSinP&#39;,&#39;Nx&#39;]/2)] ),</span>
+                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>     
+<span class="n">axt</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot; Foward&quot;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">60</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,(</span><span class="n">x</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Nx&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Nx&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="p">),</span>
+                <span class="c1">#  xycoords=(t[10], x[int(par.par.loc[&#39;HSinP&#39;,&#39;Nx&#39;]/2)] ),</span>
+                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>       
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x0: -0.8993745355900732
+x0: -0.8993745355900732
+xf: 0.8843849599969112
+t0: 0.0
+t0: 0.0
+tf: 4.975e-09
+</pre></div>
+</div>
+<img alt="_images/9214f2ef76197470a78f3f339b854c0ad5306f0bd7fbc415e098fe3d3af3c294.png" src="_images/9214f2ef76197470a78f3f339b854c0ad5306f0bd7fbc415e098fe3d3af3c294.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(120,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+
+<span class="n">fig1</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">14</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1"># fig1.suptitle(&#39; Wave Propagation Convention &#39;, fontsize=30)   </span>
+<span class="c1"># 100 time 120 space</span>
+<span class="n">diff_xt_mp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xt_mp</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Diff&#39;</span><span class="p">)</span>
+<span class="c1"># pos=ax[0].imshow((xt_mp), origin=&#39;upper&#39;, interpolation=&#39;bilinear&#39;,extent =[ x.min()*10, x.max()*10,t.min()/1e-9, t.max()/1e-9])</span>
+<span class="c1"># pos2=ax[0].imshow((xt_mp), origin=&#39;upper&#39;, interpolation=&#39;bilinear&#39;,extent =[ x.min()*10, x.max()*10,t.min()/1e-9, t.max()/1e-9])</span>
+
+<span class="n">cmap_name</span> <span class="o">=</span> <span class="s1">&#39;my_list&#39;</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>  <span class="c1"># R -&gt; G -&gt; B</span>
+<span class="c1"># fig, axs = plt.subplots(2, 2, figsize=(8, 9))</span>
+<span class="c1"># fig1.subplots_adjust(left=0.02, bottom=0.06, right=0.95, top=0.94, wspace=0.05)</span>
+
+<span class="c1"># Create the colormap</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="n">cmap_name</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Fewer bins will result in &quot;coarser&quot; colomap interpolation</span>
+<span class="n">im</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">((</span><span class="n">xt_mp</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span><span class="p">,</span><span class="n">extent</span> <span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+
+<span class="n">im2</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">((</span><span class="n">diff_xt_mp</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;bilinear&#39;</span><span class="p">,</span><span class="n">extent</span> <span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],</span><span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+<span class="n">extent</span> <span class="o">=</span><span class="p">[</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">]</span>
+
+    
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Space &#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;time &#39;</span><span class="p">)</span>
+
+
+<span class="c1"># extent =[ x.min()*1000, x.max()*1000,t.min()/1e-9, t.max()/1e-9]</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">extent</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a38ddde570d27e2798952e5b51e71b5f43e24538544e3e856335de5a50e4f1d1.png" src="_images/a38ddde570d27e2798952e5b51e71b5f43e24538544e3e856335de5a50e4f1d1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-8.993745355900732, 8.843849599969113, 0.0, 4.975]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">1.1.5. </span>1.3 Space-Time Convention 3D<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="windows-signals">
+<h2><span class="section-number">1.2. </span>Windows Signals<a class="headerlink" href="#windows-signals" title="Permalink to this heading">#</a></h2>
+<p>Before go deep into the standard signals used for microwave applications. After passing throughout the spectral transformation theory, we’ve seen that the fourier transfom truncate the periodic signals, as well as the finite time signals, we’ve already been introduced to the first one, the rectangular pulse or rectangular window. The windows are very important due to the gold characteristics of the spetrum, the bandwidth, power profile, and time resolution, the complexity for the adc/dac to dectect or generate the signals.</p>
+</section>
+<section id="definitions">
+<h2><span class="section-number">1.3. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Bandwidth</p></li>
+</ul>
+<p>It is the most desired characteristic nowdays, being all of us hungry for data throughput and capacity. It is the size of a frequency interval in a continous range of frequencies, i.e. the difference between the upper and lower frequency of the interval where the signal comply with some defined charcateristics.</p>
+<ul class="simple">
+<li><p>roll-off</p></li>
+</ul>
+<p>It is the steppeness of the signal amplitude against frequency, it is used to tune bandwidth and powe distribution of signals against frequency. It’s very importang because the experienced researchers and engineers can infer the spectrum from the time dynamics, or vice versa. Hence from fourier transformation properties, fast time variation infers a wider bandwidth, because only the high frequency components could well construct the signals characteristics. While slow variations, a narrow bandwdith, high frequency components wil introduce noise for the signal characteristics. The spectral transformation use orthogonal basis, in the case of fourier, complex exponetials, which are narrowband, but different orthogonal basis could be used for the intended application.</p>
+</section>
+<section id="rectangular-windows">
+<h2><span class="section-number">1.4. </span>Rectangular Windows<a class="headerlink" href="#rectangular-windows" title="Permalink to this heading">#</a></h2>
+<p>Rectangular windows are very important, because any finite signal fater being parsed by the fourier transformation is equivalent to be multiplied by the rectangular windows. For example, sinusoidal signals are usially analysed with fourier transformas, not fourier series, because in the real world, the signal are not infinite. So, we have a truncated version of the signusoidal signal.</p>
+<div class="math notranslate nohighlight">
+\[ x(t) \xrightarrow{} x(t) \times rect(t) \xrightarrow{\mathscr{F}} X(f) \circledast sinc(f)\]</div>
+<div class="math notranslate nohighlight">
+\[ x(t-t_0) \xrightarrow{\mathscr{F}} X(f) e^{-j\pi f t_0} \]</div>
+<p>for a Guassian Signal
+$<span class="math notranslate nohighlight">\(g_{t}(t) \xrightarrow{\mathscr{F}}  G(f)=-K\frac{1}{2} \tau \sqrt{\pi } e^{-\pi^2 \tau^2 f^2}[erf(\frac{t_0}{\tau}+i \pi \tau f)-erf(\frac{t_f}{\tau}+i \pi \tau f)]\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ g(t-t_0) \xrightarrow{\mathscr{F}} -K\frac{1}{2} \tau \sqrt{\pi } e^{-\pi^2 \tau^2 f^2}[erf(\frac{t_0}{\tau}+i \pi \tau f)-erf(\frac{t_f}{\tau}+i \pi \tau f)] e^{-j\pi f t_0} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Windowing </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span> <span class="n">cos</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.plotfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.signalFunc</span> <span class="kn">import</span>  <span class="n">gaussinaSignal</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">par</span>
+<span class="c1"># Time sinals</span>
+<span class="c1"># print(t.shape)</span>
+
+<span class="n">t0</span><span class="o">=-</span><span class="mf">4e-9</span> <span class="c1">#ar.par.loc[&#39;Gau&#39;,&#39;t0&#39;]</span>
+<span class="n">tf</span><span class="o">=</span><span class="mf">4e-9</span>
+<span class="n">t02</span><span class="o">=-</span><span class="mf">10e-9</span> <span class="c1">#ar.par.loc[&#39;Gau&#39;,&#39;t0&#39;]</span>
+<span class="n">tf2</span><span class="o">=</span><span class="mf">10e-9</span>
+<span class="n">tau</span><span class="o">=</span><span class="mf">1e-9</span>
+
+<span class="n">td</span><span class="o">=-</span><span class="mf">2e-9</span>
+<span class="n">td</span><span class="o">=-</span><span class="mf">2e-9</span>
+<span class="n">td3</span><span class="o">=</span><span class="mf">1e-9</span>
+<span class="n">td4</span><span class="o">=</span><span class="mf">2e-9</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Gau&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+<span class="n">t2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t02</span><span class="p">,</span><span class="n">tf2</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Gau&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+
+<span class="n">gt</span><span class="o">=</span><span class="n">gaussinaSignal</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">td</span><span class="p">)</span>
+<span class="n">gt2</span><span class="o">=</span><span class="n">gaussinaSignal</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">td</span><span class="p">)</span>
+<span class="n">gt3</span><span class="o">=</span><span class="n">gaussinaSignal</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">td3</span><span class="p">)</span>
+<span class="n">gt4</span><span class="o">=</span><span class="n">gaussinaSignal</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">td4</span><span class="p">)</span>
+
+
+<span class="n">fig1</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt</span><span class="p">,</span><span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">axt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Window=6ns, td=0&#39;</span><span class="p">])</span>
+
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t2</span><span class="p">,(</span><span class="mi">1</span><span class="p">,[</span><span class="n">t2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt2</span><span class="p">,</span><span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t2</span><span class="p">,(</span><span class="mi">1</span><span class="p">,[</span><span class="n">t2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt3</span><span class="p">,</span><span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t2</span><span class="p">,(</span><span class="mi">1</span><span class="p">,[</span><span class="n">t2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt4</span><span class="p">,</span><span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">axt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Window=8ns, td=0&#39;</span><span class="p">,</span><span class="s1">&#39;Window=8ns, td=1ns&#39;</span><span class="p">,</span><span class="s1">&#39;Window=8ns, td=2ns&#39;</span><span class="p">])</span>
+
+<span class="n">Nfft</span><span class="o">=</span><span class="mi">1025</span> <span class="c1"># FFT points</span>
+<span class="n">Fs</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">Fs2</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">t2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">Gs</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">Fs</span><span class="p">)</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">Gs2</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt2</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">Fs2</span><span class="p">)</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">Gs3</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt3</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">Fs2</span><span class="p">)</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">Gs4</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt4</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">Fs2</span><span class="p">)</span> <span class="c1"># Frequency Domain Signal</span>
+
+<span class="n">fig2</span><span class="p">,</span><span class="n">axf</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DSparametric</span><span class="p">(</span><span class="n">axf</span><span class="p">,</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="mf">0.8</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">Gs2</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;m&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">Gs3</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">Gs4</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Window=6ns, td=0&#39;</span><span class="p">,</span> <span class="s1">&#39;Window=8ns, td=0&#39;</span><span class="p">,</span><span class="s1">&#39;Window=8ns, td=1ns&#39;</span><span class="p">,</span><span class="s1">&#39;Window=8ns, td=2ns&#39;</span><span class="p">])</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Window=6ns, td=0&#39;</span><span class="p">,</span> <span class="s1">&#39;Window=8ns, td=0&#39;</span><span class="p">,</span><span class="s1">&#39;Window=8ns, td=1ns&#39;</span><span class="p">,</span><span class="s1">&#39;Window=8ns, td=2ns&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gaussian
+Gaussian
+Gaussian
+Gaussian
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x208dd12bbb0&gt;
+</pre></div>
+</div>
+<img alt="_images/13bf3862a6fa66164d6bf9050df52379f2eda42aeeaa2f7b427a3c28974b6734.png" src="_images/13bf3862a6fa66164d6bf9050df52379f2eda42aeeaa2f7b427a3c28974b6734.png" />
+<img alt="_images/cc44238503f9eb4f98fb4c24459ad8b556591dd7d6f15149365f89838131b0cc.png" src="_images/cc44238503f9eb4f98fb4c24459ad8b556591dd7d6f15149365f89838131b0cc.png" />
+</div>
+</div>
+<p><strong>Comments</strong>
+If the time window or FFT window is larger, larger will be the
+It means that if we have a lot of phase variations, between -180 Degrees and 180 Degrees, and/or resonances in magnitude, it means that the signal is at the end of a wide time window</p>
+</section>
+<section id="triangular-windows">
+<h2><span class="section-number">1.5. </span>Triangular  Windows<a class="headerlink" href="#triangular-windows" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Windowing </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span> <span class="n">cos</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.spectralfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">par</span>
+<span class="c1"># Time sinals</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;t0&#39;</span><span class="p">],</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">]),</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+<span class="n">xt_rect</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">xt_tri</span><span class="o">=</span><span class="n">signal</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">triang</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">xt_sin</span><span class="o">=</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="c1">#np.diff(xt_0Deg)</span>
+<span class="c1"># xt_gau=exp(-np.power((t-td)/tau,2))#np.diff(xt_0Deg)</span>
+
+
+<span class="c1"># Fourier</span>
+<span class="n">Nfft</span><span class="o">=</span><span class="mi">1025</span> <span class="c1"># FFT points</span>
+<span class="n">YsRect</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_rect</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">YsTri</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_tri</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinN&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">YsSin</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_sin</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinN&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+
+<span class="c1"># Plot Half cycle Sin Signal</span>
+<span class="n">fig1</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_rect</span><span class="p">,</span><span class="s2">&quot;Half Sin - Positive cycle&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_tri</span><span class="p">,</span><span class="s2">&quot;Half Sin - Negative cycle&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.2</span><span class="p">],</span><span class="n">xt_sin</span><span class="p">,</span><span class="s2">&quot;Half Sin - Positive cycle&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+
+
+<span class="c1"># Frequency Domain of </span>
+<span class="n">fig2</span><span class="p">,</span><span class="n">axf</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DSparametric</span><span class="p">(</span><span class="n">axf</span><span class="p">,</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="mi">3</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">YsSin</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Rect&#39;</span><span class="p">,</span> <span class="s1">&#39;Tri&#39;</span><span class="p">,</span><span class="s1">&#39;Sin&#39;</span><span class="p">])</span>
+<span class="c1"># angleDiff=180/pi*(np.angle(YsDiff[&#39;S&#39;])-np.angle(YsRect[&#39;S&#39;]))</span>
+<span class="c1"># axf[1].plot(YsRect[&#39;f&#39;]/1e9,angleDiff)</span>
+<span class="n">ix</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1"># print(ix)</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;  Freq:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))</span><span class="o">+</span><span class="s2">&quot; Ph:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsRect</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])</span><span class="o">+</span><span class="mi">30</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;  Freq:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))</span><span class="o">+</span><span class="s2">&quot; Ph:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsTri</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])</span><span class="o">+</span><span class="mi">30</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">bookfuncs.spectralfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;plot1DTparametric&#39; from &#39;bookfuncs.spectralfunc&#39; (H:\Meu Drive\SocieForParaOPlay\SpectralBook\bookfuncs\spectralfunc.py)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sinusoidal-signals">
+<h2><span class="section-number">1.6. </span>Sinusoidal Signals<a class="headerlink" href="#sinusoidal-signals" title="Permalink to this heading">#</a></h2>
+<section id="half-cycle-sin">
+<h3><span class="section-number">1.6.1. </span>Half Cycle Sin<a class="headerlink" href="#half-cycle-sin" title="Permalink to this heading">#</a></h3>
+<p><strong>The Half Cycle sinosoidal will be the base signal to analyse the Time/Freq spectrum, as the sinusoidal are commonly employed to analyse the frequency response of the microwave circuits, due to the narrow bandwidth, it easier to assess the characteristics for a single frequency.</strong></p>
+<p><strong>If we have two half cycle sinusoidal signals with opposite phase as found below,</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}^{+}(t,x)=\sin{(\omega_0 t-k_0x)}\]</div>
+<div class="math notranslate nohighlight">
+\[x_{t}^{-}(t,x)=-\sin{(\omega_0 t-k_0x)}\]</div>
+<p><strong>Applying fourier Transform</strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}^{+}(t) \xrightarrow{\mathscr{F}}  X_{s}^{+}(f)=X_{s}(f)\]</div>
+<div class="math notranslate nohighlight">
+\[x_{t}^{-}(t) \xrightarrow{\mathscr{F}}  X_{s}^{-}(f)=X_{s}(f)e^{i\pi}\]</div>
+<div class="math notranslate nohighlight">
+\[x_{t}^{+}(t) \xrightarrow{\mathscr{F}}  X_{s}^{+}(f)= \int_{0}^{t_0/2}\sin{(2\pi f_0 t)} e^{-i 2\pi f t} dt\]</div>
+<div class="math notranslate nohighlight">
+\[X_{s}^{+}(f)=\int_{0}^{t_0/2} \frac{e^{i 2\pi f_0 t}+e^{-i 2\pi f_0 t}}{2i} e^{-i 2\pi f t} dt\]</div>
+<div class="math notranslate nohighlight">
+\[X_{s}^{+}(f)= \int_{0}^{t_0/2} \frac{e^{i 2\pi t(f_0-f)}}{2i}  dt+
+                \int_{0}^{t_0/2} \frac{e^{-i 2\pi t(f_0+f)}}{2i}dt\]</div>
+<div class="math notranslate nohighlight">
+\[X_{s}^{+}(f)= \frac{e^{i 2\pi t (f_0-f)}}{(i 2\pi (f_0-f))2i}  \biggl|_{0}^{t_0/2}
+                + \frac{e^{-i 2\pi t(f_0+f)}}{(-i 2\pi (f_0+f))2i} \biggl|_{0}^{t_0/2}\]</div>
+<p>being <span class="math notranslate nohighlight">\(t_0=1/f_0\)</span></p>
+<div class="math notranslate nohighlight">
+\[X_{s}^{+}(f)= \frac{e^{i 2\pi \frac{1}{2f_0} (f_0-f)}}{(i 2\pi (f_0-f))2i}  -\frac{1}{(i 2\pi (f_0-f))2i}
+                + \frac{e^{-i 2\pi t(f_0+f)}}{(-i 2\pi (f_0+f))2i} \biggl|_{0}^{t_0/2}\]</div>
+<p><strong>The shape of the half cycle signals resemble a gaussian pulse (?) in frequency domain, we se that the amplitude is centered in zero frequency, even if the carrier frequency is 1 GHz. Insofar as two identical signals with opposite signals are summed, it nulls each other. In frequency domain, it is explained by the phase inversion (phase difference of 180 Degrees) for all frequency components as shown by the deduction above and the phase plots below.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HALF SIN CODE</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="n">angle</span><span class="p">,</span> <span class="n">cos</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.plotfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">par</span>
+<span class="c1"># Time sinals</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;t0&#39;</span><span class="p">],</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">]),</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+<span class="n">xt_0Deg</span><span class="o">=</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">xt_180Deg</span><span class="o">=-</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">xt_Diff</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="c1">#np.diff(xt_0Deg)</span>
+
+
+<span class="c1"># Fourier</span>
+<span class="n">Nfft</span><span class="o">=</span><span class="mi">1025</span> <span class="c1"># FFT points</span>
+<span class="n">Ys0Deg</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_0Deg</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">Ys180Deg</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_180Deg</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinN&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">YsDiff</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_Diff</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinN&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+
+<span class="c1"># Plot Half cycle Sin Signal</span>
+<span class="n">fig1</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_0Deg</span><span class="p">,</span><span class="s2">&quot;Half Sin - Positive cycle&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="mi">1</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_180Deg</span><span class="p">,</span><span class="s2">&quot;Half Sin - Negative cycle&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_Diff</span><span class="p">,</span><span class="s2">&quot;Half Sin - Positive cycle&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+
+
+<span class="c1"># Frequency Domain of </span>
+<span class="n">fig2</span><span class="p">,</span><span class="n">axf</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DSparametric</span><span class="p">(</span><span class="n">axf</span><span class="p">,</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="mi">3</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">YsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">angleDiff</span><span class="o">=</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">YsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">])</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]))</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e9</span><span class="p">,</span><span class="n">angleDiff</span><span class="p">)</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;HalfSinP&#39;</span><span class="p">,</span> <span class="s1">&#39;HalfSinN&#39;</span><span class="p">,</span><span class="s1">&#39;DiffHalfSinP&#39;</span><span class="p">])</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;HalfSinP&#39;</span><span class="p">,</span> <span class="s1">&#39;HalfSinN&#39;</span><span class="p">,</span><span class="s1">&#39;DiffHalfSinP&#39;</span><span class="p">,</span><span class="s1">&#39;HalfSinP-DiffHalfSinP&#39;</span><span class="p">])</span>
+
+<span class="n">ix</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1"># print(ix)</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;  Freq:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))</span><span class="o">+</span><span class="s2">&quot; Ph:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys0Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])</span><span class="o">+</span><span class="mi">30</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;  Freq:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))</span><span class="o">+</span><span class="s2">&quot; Ph:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Ys180Deg</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])</span><span class="o">+</span><span class="mi">30</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+<span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+<img alt="_images/4ffded8a3139232153f63916942c86dbf58fe1b335d2e4b18428165a40323ada.png" src="_images/4ffded8a3139232153f63916942c86dbf58fe1b335d2e4b18428165a40323ada.png" />
+<img alt="_images/bff4889fcdb02a49641eac9ef15930d3ac7f72ff05666437e668f35beb2214ef.png" src="_images/bff4889fcdb02a49641eac9ef15930d3ac7f72ff05666437e668f35beb2214ef.png" />
+</div>
+</div>
+</section>
+<section id="one-cycle-sin">
+<h3><span class="section-number">1.6.2. </span>3.2 One Cycle Sin<a class="headerlink" href="#one-cycle-sin" title="Permalink to this heading">#</a></h3>
+<p><strong>Now we want to create the one cycle sin using the half signals. In order to achieve it, we gonna translate (delay) the negative half cycle by half period <span class="math notranslate nohighlight">\(t_0/2\)</span></strong></p>
+<div class="math notranslate nohighlight">
+\[x_{t}^{+}(t)=\sin{(2\pi f_0  t)}\]</div>
+<div class="math notranslate nohighlight">
+\[x_{t}^{-}(t-t_0/2)=-\sin{(2\pi f_0 (t-t_0/2))}\]</div>
+<p><strong>Adding both</strong></p>
+<div class="math notranslate nohighlight">
+\[y_{t}=x_{t}^{+}(t)+x_{t}^{-}(t-t_0/2)=\sin{(2\pi f_0  t)}-\sin{(\omega_0 (t-t_0/2))}\]</div>
+<p><strong>Applying fourier Transform and fourier transform properties of time shifting</strong></p>
+<div class="math notranslate nohighlight">
+\[y_{t}(t) \xrightarrow{\mathscr{F}}  Y_{s}(f)=X_{s}(f)+X_{s}(f)e^{i\pi}e^{i\pi f t_0/2}\]</div>
+<div class="math notranslate nohighlight">
+\[y_{t}(t) \xrightarrow{\mathscr{F}}  Y_{s}(f)=X_{s}(f)(1+e^{i\pi (1+f t_0/2)})\]</div>
+<p><strong>So we can note now, that independently of the signal shape, in this case a half sin, but for any arbitrary signal, if we add the arbitrary signal with its version out of phase and  time shifted one period, for the half sin, half period of one cycle, we add a null to the amplitude at the zero frequency. It’s the fundamentals of the generation of the alternating current/voltages signals. A direct current signal usually has no alternation of positive and negative amplitude.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One Cycle</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="n">angle</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.plotfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot2DTparametric</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">par</span>
+<span class="c1"># Time sinals</span>
+<span class="n">tf</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">])</span>
+<span class="n">tf2</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;f&#39;</span><span class="p">])</span> <span class="c1"># 2 ou N Periodos</span>
+
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;t0&#39;</span><span class="p">],</span><span class="n">tf</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+<span class="n">t2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;t0&#39;</span><span class="p">],</span><span class="n">tf2</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+
+<span class="n">xt_1P</span><span class="o">=</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">xt_NP</span><span class="o">=</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="mf">1e9</span><span class="o">*</span><span class="n">t2</span><span class="p">)</span>
+
+<span class="c1"># Fourier</span>
+<span class="n">Nfft</span><span class="o">=</span><span class="mi">1025</span> <span class="c1"># FFT points</span>
+<span class="n">Ys1P</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_1P</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">YsNP</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">xt_NP</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinN&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+
+<span class="c1"># Plot Half cycle Sin Signal</span>
+<span class="n">fig1</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_1P</span><span class="p">,</span><span class="s2">&quot;One Sin cycle&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t2</span><span class="p">,(</span><span class="mi">1</span><span class="p">,[</span><span class="n">t2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">xt_NP</span><span class="p">,</span><span class="s2">&quot;Two Sin cycle&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+
+<span class="c1"># Frequency Domain of </span>
+<span class="n">fig2</span><span class="p">,</span><span class="n">axf</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DSparametric</span><span class="p">(</span><span class="n">axf</span><span class="p">,</span><span class="n">Ys1P</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="mi">3</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="n">Ys1P</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">YsNP</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">ix</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Ys1P</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+<span class="c1"># axf[1].annotate(&quot;  Freq:&quot;+str(int(Ys1P[&#39;f&#39;][ix]))+&quot; Ph:&quot;+str(int(180/pi*np.angle(Ys1P[&#39;S&#39;][ix]))), xy=(Ys1P[&#39;f&#39;][ix], 180/pi*np.angle(Ys1P[&#39;S&#39;][ix])),</span>
+<span class="c1">#                  xytext=(Ys1P[&#39;f&#39;][ix], 180/pi*np.angle(Ys1P[&#39;S&#39;][ix])+30),arrowprops=dict(arrowstyle=&#39;-&gt;&#39;, color=&#39;red&#39;))</span>
+
+<span class="c1"># axf[1].annotate(&quot;  Freq:&quot;+str(int(YsNP[&#39;f&#39;][ix]))+&quot; Ph:&quot;+str(int(180/pi*np.angle(YsNP[&#39;S&#39;][ix]))), xy=(YsNP[&#39;f&#39;][ix], 180/pi*np.angle(YsNP[&#39;S&#39;][ix])),</span>
+<span class="c1">#                  xytext=(YsNP[&#39;f&#39;][ix], 180/pi*np.angle(YsNP[&#39;S&#39;][ix])+30),arrowprops=dict(arrowstyle=&#39;-&gt;&#39;, color=&#39;red&#39;))</span>
+
+
+
+<span class="c1"># fig2,axf=plt.subplots(1,3)</span>
+<span class="c1"># fig2.set_size_inches((10,5))</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>512
+</pre></div>
+</div>
+<img alt="_images/e24363fd977cebd687735d19a5a5d500cc8d751297f255a86189be0f18e52c79.png" src="_images/e24363fd977cebd687735d19a5a5d500cc8d751297f255a86189be0f18e52c79.png" />
+<img alt="_images/4ad1889da702f728e76c09adb827e54e5e518163d08688de39e9ef5427661399.png" src="_images/4ad1889da702f728e76c09adb827e54e5e518163d08688de39e9ef5427661399.png" />
+</div>
+</div>
+</section>
+<section id="infinite-cycle-sin">
+<h3><span class="section-number">1.6.3. </span>3.3 Infinite Cycle Sin<a class="headerlink" href="#infinite-cycle-sin" title="Permalink to this heading">#</a></h3>
+<p>**Now we want to create the infinite cycle of a sin using the positive half signal<span class="math notranslate nohighlight">\(**
+\)</span><span class="math notranslate nohighlight">\(x_{t}^{+}(t)=\sin{(2\pi f_0  t)}\)</span>$</p>
+<p>In order to create the infinite sinusoidal function, infinite copies of <span class="math notranslate nohighlight">\(x_t\)</span>  are added at the left/right side lagged  <span class="math notranslate nohighlight">\(\frac{nt_0}{2}\)</span>  for <span class="math notranslate nohighlight">\(n=±1,2,3…\)</span>, presenting alternating phase inversion, as in the following,</p>
+<!-- $$ (-1)^n x_{t}^{+}(t \pm nt_0/2)= (-1)^n\sin{(2\pi f_0 (t\pm nt_0/2))}$$ -->
+<div class="math notranslate nohighlight">
+\[y_{t}=\sum_{n=-1}^{-\infty}(-1)^{-n} x_{t}^{+}(t-n t_0/2)+  x_{t}^{+}(t)   +\sum_{n=1}^{\infty}(-1)^n x_{t}^{+}(t-nt_0/2)\]</div>
+<div class="math notranslate nohighlight">
+\[y_{t}=\sum_{n=1}^{\infty}(-1)^{-n} x_{t}^{+}(t+n t_0/2) +  x_{t}^{+}(t) + \sum_{n=1}^{\infty}(-1)^n x_{t}^{+}(t-nt_0/2)\]</div>
+<p>Applying fourier Transform</p>
+<div class="math notranslate nohighlight">
+\[y_{t}=\sum_{n=1}^{\infty}(-1)^{-n} X_{f}e^{i\omega t_0/2}+  x_{t}^{+}(t) + \sum_{n=1}^{\infty}(-1)^n x_{t}^{+}(t-nt_0/2)\]</div>
+</section>
+</section>
+<section id="gaussian-signals">
+<h2><span class="section-number">1.7. </span>Gaussian Signals<a class="headerlink" href="#gaussian-signals" title="Permalink to this heading">#</a></h2>
+<p><strong>The Gaussian Signals are usually used in microwave engineering due to its well defined spectrum and wide bandwidth, providing thus a better time-frequency resolution to resolve electromagnetic problems.</strong></p>
+<div class="math notranslate nohighlight">
+\[g_{t}(t)=K e^{-(t/\tau)^2}\]</div>
+<p><strong>Applying Fourier Transform</strong></p>
+<div class="math notranslate nohighlight">
+\[g_{t}(t) \xrightarrow{\mathscr{F}} G(f)\]</div>
+<div class="math notranslate nohighlight">
+\[ G(f)=\int_{t_0}^{t_f} K e^{-(t/\tau)^2} e^{-i 2 \pi f t}dt\]</div>
+<div class="math notranslate nohighlight">
+\[ G(f)=\int_{t_0}^{t_f} K e^{-(t/\tau)^2} (\cos{ (i 2 \pi f t)}+i\sin{ (i2 \pi f t)})dt\]</div>
+<div class="math notranslate nohighlight">
+\[ G(f)=K\int_{t_0}^{t_f}  e^{-(t/\tau)^2} \cos{ (i 2 \pi f t)}+iK\int_{t_0}^{t_f}  e^{-(t/\tau)^2} \sin{ (i2 \pi f t)}dt\]</div>
+<p><strong>The second integrand is odd, so integration over a symmetrical range gives 0. The first is solved by integral table</strong></p>
+<div class="math notranslate nohighlight">
+\[ G(f)=-K\frac{1}{2} \tau \sqrt{\pi } e^{-\pi^2 \tau^2 f^2}[erf(\frac{t_0}{\tau}+i \pi \tau f)-erf(\frac{t_f}{\tau}+i \pi \tau f)]\]</div>
+<section id="first-order-derivative">
+<h3><span class="section-number">1.7.1. </span>- First Order Derivative<a class="headerlink" href="#first-order-derivative" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{dg_{t}(t)}{dt}= K(\frac{-2t}{\tau^2}) e^{-(t/\tau)^2} \xrightarrow{\mathscr{F}} i\omega G(f)\]</div>
+<p>Thus, we add a zero at the origin, thus zero frequency signal will be null, hence by nature a zero act as high-pass filter, typically of self-inductors. For the second order derivative we add two zeros at the origin. But differentiation does not increase null/peaks, only at 0 frequency as depicted in Fig A2.</p>
+</section>
+<section id="second-order-derivative">
+<h3><span class="section-number">1.7.2. </span>- Second Order Derivative<a class="headerlink" href="#second-order-derivative" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\frac{dg_{t}(t)}{dt} =K(\frac{-2}{\tau^2}) (1-\frac{2t^2}{\tau^2}) e^{-(t/\tau)^2} \xrightarrow{\mathscr{F}} (i\omega)^2 G(f)\]</div>
+<p>N</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HALF SIN CODE</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="n">angle</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span>  <span class="n">SimuParam</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.spectralfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot2DTparametric</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">par</span>
+<span class="c1"># Time sinals</span>
+<span class="n">tf</span><span class="o">=</span><span class="mf">3e-9</span>
+<span class="n">t0</span><span class="o">=-</span><span class="mf">3e-9</span> <span class="c1">#ar.par.loc[&#39;Gau&#39;,&#39;t0&#39;]</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Gau&#39;</span><span class="p">,</span><span class="s1">&#39;dt&#39;</span><span class="p">])</span>
+<span class="n">tau</span><span class="o">=</span><span class="mf">1e-9</span>
+<span class="n">td</span><span class="o">=</span><span class="mi">0</span><span class="c1">#3e-9</span>
+
+<span class="n">gt</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">td</span><span class="p">)</span><span class="o">/</span><span class="n">tau</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">gt_1Diff</span><span class="o">=</span>  <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">td</span><span class="p">)</span><span class="o">/</span><span class="n">tau</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#np.diff(gt) </span>
+<span class="n">gt_1Diff</span><span class="o">=</span> <span class="n">gt_1Diff</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">gt_1Diff</span><span class="p">)</span> 
+<span class="n">gt_2Diff</span><span class="o">=</span>  <span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">td</span><span class="p">)</span><span class="o">/</span><span class="n">tau</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>     
+<span class="n">gt_2Diff</span><span class="o">=</span> <span class="n">gt_2Diff</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">gt_2Diff</span><span class="p">)</span>  
+
+
+<span class="n">fig1</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig1</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt</span><span class="p">,</span><span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt_1Diff</span><span class="p">,</span><span class="s2">&quot;First Order Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">plot1DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">t</span><span class="p">,(</span><span class="mi">0</span><span class="p">,[</span><span class="n">t</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">,</span><span class="n">t</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">gt_2Diff</span><span class="p">,</span><span class="s2">&quot;2nd Order Gaussian&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+
+<span class="n">Nfft</span><span class="o">=</span><span class="mi">1025</span> <span class="c1"># FFT points</span>
+<span class="n">Gs</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">GsDiff</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt_1Diff</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+<span class="n">Gs2Diff</span><span class="o">=</span><span class="n">S1d</span><span class="p">(</span><span class="n">gt_2Diff</span><span class="p">,</span><span class="n">Nfft</span><span class="p">,</span><span class="n">par</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;HSinP&#39;</span><span class="p">,</span><span class="s1">&#39;Fs&#39;</span><span class="p">])</span> <span class="c1"># Frequency Domain Signal</span>
+
+<span class="n">fig2</span><span class="p">,</span><span class="n">axf</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plot1DSparametric</span><span class="p">(</span><span class="n">axf</span><span class="p">,</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="mf">0.5</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="n">Gs2Diff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+<span class="n">angleDiff</span><span class="o">=</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">])</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]))</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e9</span><span class="p">,</span><span class="n">angleDiff</span><span class="p">)</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Gaussian&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaussian1st&#39;</span><span class="p">,</span><span class="s1">&#39;Gaussina2nd&#39;</span><span class="p">])</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Gaussian&#39;</span><span class="p">,</span> <span class="s1">&#39;Gaussian1st&#39;</span><span class="p">,</span><span class="s1">&#39;Gaussina2nd&#39;</span><span class="p">,</span><span class="s1">&#39;Gaussian-Gaussian1st&#39;</span><span class="p">])</span>
+
+<span class="n">ix</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ix</span><span class="p">)</span>
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;  Freq:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))</span><span class="o">+</span><span class="s2">&quot; Ph:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Gs</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])</span><span class="o">+</span><span class="mi">30</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+<span class="n">axf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;  Freq:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))</span><span class="o">+</span><span class="s2">&quot; Ph:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]))),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])),</span>
+                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">],</span> <span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])</span><span class="o">+</span><span class="mi">30</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+
+
+<span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">180</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">GsDiff</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>512
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0&#39;
+</pre></div>
+</div>
+<img alt="_images/47b9cb428bbad20a5f240abcde6acf71f8de770aad03fb33a2d6411c5e2e365a.png" src="_images/47b9cb428bbad20a5f240abcde6acf71f8de770aad03fb33a2d6411c5e2e365a.png" />
+<img alt="_images/e607bf645b609e86552c376245ffcb6784487092d55dee72b33381e20bef8159.png" src="_images/e607bf645b609e86552c376245ffcb6784487092d55dee72b33381e20bef8159.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from importlib.metadata import version</span>
+<span class="c1"># version(&#39;nbformat&#39;)</span>
+<span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--output-dir<span class="o">=</span><span class="s1">&#39;.\assets&#39;</span><span class="w">   </span>--to<span class="w"> </span>html<span class="w"> </span>spectralAnalysis.ipynb<span class="w">  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NbConvertApp] Converting notebook spectralAnalysis.ipynb to html
+[NbConvertApp] Writing 2449700 bytes to .\assets\spectralAnalysis.html
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="spectralBook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spectral Analysis for Applied Electromagnetism</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Content with notebooks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">1.1.1. <strong>Definition</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-time-convention-2d">1.1.2. <strong>Space-Time Convention 2D</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-time-convention-3d">1.1.3. <strong>Space-Time Convention 3D</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#space-time-convention-4d">1.1.4. <strong>Space-Time Convention 4D</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.1.5. 1.3 Space-Time Convention 3D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows-signals">1.2. Windows Signals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">1.3. Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangular-windows">1.4. Rectangular Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#triangular-windows">1.5. Triangular  Windows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sinusoidal-signals">1.6. Sinusoidal Signals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-cycle-sin">1.6.1. Half Cycle Sin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-cycle-sin">1.6.2. 3.2 One Cycle Sin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-cycle-sin">1.6.3. 3.3 Infinite Cycle Sin</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-signals">1.7. Gaussian Signals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-order-derivative">1.7.1. - First Order Derivative</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-derivative">1.7.2. - Second Order Derivative</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LEA UFPA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,769 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to your Applied Electromgnetism Book &#8212; Spectral Analysis for Applied Electromagnetism</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'spectralBook';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Spectral Analysis of Signals" href="ChapterSpectral.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LeaLogo.png" class="logo__image only-light" alt="Spectral Analysis for Applied Electromagnetism - Home"/>
+    <script>document.write(`<img src="_static/LeaLogo.png" class="logo__image only-dark" alt="Spectral Analysis for Applied Electromagnetism - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Welcome to your Applied Electromgnetism Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Spectral Analysis for Applied Electromagnetism</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ChapterSpectral.html">1. Spectral Analysis of Signals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterEMMethod.html">2. Electromagnetic Spectral Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMW.html">3. Microwave  Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWDevices1.html">4. Application to PCB Microwave Devices I: Filters and Phase Shifters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWDevices2.html">5. Application to PCB Microwave Devices II: Amplifiers and Oscilators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterAntenna.html">6. Application to Antenna Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMetasurfaces.html">7. Application to Lens and Metasurfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterRIS.html">8. Phased Arrays and RIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference.html">9. References</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applied Design of RF/PCB Integrated Circuits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pcbRFMWBook.html">10. Welcome to your PCB RF/Photonic Integrated Circuits Book</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC1.html">14. Application to Integrated Circuits I: Filters and Phase Shifters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC2.html">15. Application to Integrated Circuits II: Amplifiers and Oscillators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC3.html">16. Application to Integrated Circuits III: Antennas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChapterMWIC4.html">17. Application to Integrated Circuits IV: Metasurface, RIS and Phased Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reference2.html">18. References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FspectralBook.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/spectralBook.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Welcome to your Applied Electromgnetism Book</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-spectral-transformations"><r> <strong>Spectral Transformations</strong></r></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-spectral-transformation"><span class="xref myst"><g> <strong>Spectral Transformation</strong></g></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-window-signals"><g> <strong>Window Signals</strong></g></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-narrow-band-signals"><g> <strong>Narrow Band Signals</strong></g></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-wideband-signals"><g> <strong>Wideband Signals</strong></g></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-space-time-angle-signals"><g> <strong>Space-time-Angle Signals</strong></g></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-electromagnetic-spectral-methods"><span class="xref myst"><r> <strong>Electromagnetic Spectral Methods</strong></r></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-microwave-circuits"><r> <strong>Microwave Circuits</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-microwave-circuits"><r> <strong>Application to Microwave Circuits</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-microwave-devices-i-filters-and-phase-shifters"><r> <strong>Application to Microwave Devices I: Filters and Phase Shifters</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-microwave-devices-ii-amplifiers-and-oscilators"><r> <strong>Application to Microwave Devices II: Amplifiers and Oscilators</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-pcb-integrated-circuits-i-filters-and-phase-shifters"><r> <strong>Application to PCB Integrated Circuits I: Filters and Phase Shifters</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-pcb-integrated-circuits-ii-ampllifiers-and-oscillators"><r> <strong>Application to PCB Integrated Circuits II: Ampllifiers and Oscillators</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-digital-filters"><r> <strong>Application to Digital Filters</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-power-systems"><r> <strong>Application to Power Systems</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-antennas"><r> <strong>Application to Antennas</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-phased-arrays-and-ris"><r> <strong>Application to Phased Arrays and RIS</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-lens-and-metasurfaces"><r> <strong>Application to Lens and Metasurfaces</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-rf-propagation"><r> <strong>Application to RF Propagation</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-wireless-channels-and-space-time-access"><r> <strong>Application to Wireless Channels and Space-Time Access</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-digital-control-systems"><r> <strong>Application to Digital/Control Systems</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-optical-systems-and-photonic-i"><r> <strong>Application to Optical Systems and Photonic I</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-optical-systems-and-photonic-ii"><r> <strong>Application to Optical Systems and Photonic II</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-optical-systems-and-photonic-iii"><r> <strong>Application to Optical Systems and Photonic III</strong></r></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-applied-electromgnetism-book">
+<h1>Welcome to your Applied Electromgnetism Book<a class="headerlink" href="#welcome-to-your-applied-electromgnetism-book" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://drive.google.com/file/d/12y1tnL-uvKFW1sLm86MujLTRaO2aWDPZ/view?usp=drive_link">Colab_Link</a>
+<a class="reference external" href="https://drive.google.com/drive/folders/1FF4UwWtQBWntV10WilrbH_P49nZtNjX-?usp=sharing">Jupyter_Book_Version</a>
+<a class="reference external" href="https://drive.google.com/drive/folders/18vcEtTFuxsFom8V9ZgnRfmgFxi18YsHQ?usp=sharing">Book_func</a>
+<a class="reference external" href="https://drive.google.com/drive/folders/1FFwVutA-jbbRQQW1k7NyjFVcLFjJOw2c?usp=sharing">Book_Folder</a></p>
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+o { color: Orange }
+</style>
+<section id="r-spectral-transformations">
+<h2><r> <strong>Spectral Transformations</strong><a class="headerlink" href="#r-spectral-transformations" title="Permalink to this heading">#</a></h2>
+<section id="g-spectral-transformation">
+<h3><a class="reference internal" href="ChapterSpectral.html"><span class="doc std std-doc"><g> <strong>Spectral Transformation</strong></span></a><a class="headerlink" href="#g-spectral-transformation" title="Permalink to this heading">#</a></h3>
+<p>Google Colab: <a class="reference external" href="https://drive.google.com/file/d/13Pjf31NMQFpUVPqsjrrzElLlv7HdKxH9/view?usp=drive_link">https://drive.google.com/file/d/13Pjf31NMQFpUVPqsjrrzElLlv7HdKxH9/view?usp=drive_link</a></p>
+<ul class="simple">
+<li><p>General Formulation</p></li>
+<li><p>Sine/Cosine Transforms</p></li>
+<li><p>Circular Transforrms</p></li>
+<li><p>Fourier Transform</p></li>
+<li><p>Fourier-Bessel Transform</p></li>
+</ul>
+</section>
+<section id="g-window-signals">
+<h3><g> <strong>Window Signals</strong><a class="headerlink" href="#g-window-signals" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Rectangular Pulse Signal</p></li>
+<li><p>Raised Cosine Signal</p></li>
+<li><p>Window Effect</p></li>
+</ul>
+</section>
+<section id="g-narrow-band-signals">
+<h3><g> <strong>Narrow Band Signals</strong><a class="headerlink" href="#g-narrow-band-signals" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Sinusoidal Signal half cycle,one cycle</p></li>
+<li><p>Sinusoidal Signal Infinity cycles</p></li>
+<li><p>Phase analysis</p></li>
+</ul>
+</section>
+<section id="g-wideband-signals">
+<h3><g> <strong>Wideband Signals</strong><a class="headerlink" href="#g-wideband-signals" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Gaussian Signal</p></li>
+<li><p>1st and 2nd order derivatives of Gaussian Signal</p></li>
+</ul>
+</section>
+<section id="g-space-time-angle-signals">
+<h3><g> <strong>Space-time-Angle Signals</strong><a class="headerlink" href="#g-space-time-angle-signals" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Space-time-Angle Fields/Voltages</p></li>
+</ul>
+</section>
+</section>
+<section id="r-electromagnetic-spectral-methods">
+<h2><a class="reference internal" href="ChapterEMMethod.html"><span class="doc std std-doc"><r> <strong>Electromagnetic Spectral Methods</strong></span></a><a class="headerlink" href="#r-electromagnetic-spectral-methods" title="Permalink to this heading">#</a></h2>
+<p>Google Colab: <a class="reference external" href="https://drive.google.com/file/d/1NoK-qxDeQQHBQMwHkCy_m95f2T_u8bRL/view?usp=sharing">https://drive.google.com/file/d/1NoK-qxDeQQHBQMwHkCy_m95f2T_u8bRL/view?usp=sharing</a></p>
+<p>Exercises Colab: <a class="reference external" href="https://drive.google.com/file/d/1NpGi4MVJNy1QFUepqLDjuzFzkhfvMUPW/view?usp=sharing">https://drive.google.com/file/d/1NpGi4MVJNy1QFUepqLDjuzFzkhfvMUPW/view?usp=sharing</a></p>
+<ul class="simple">
+<li><p>Plane Wave Spectrum</p></li>
+<li><p>Green Functions</p></li>
+<li><p>Sturm Liouville Problems</p></li>
+<li><p>Spectral Solution of Green Dyadic’s equations</p></li>
+<li><p>Method of Momentss</p></li>
+<li><p>FDTD</p></li>
+</ul>
+</section>
+<section id="r-microwave-circuits">
+<h2><r> <strong>Microwave Circuits</strong><a class="headerlink" href="#r-microwave-circuits" title="Permalink to this heading">#</a></h2>
+<p>Google Colab: <a class="reference external" href="https://drive.google.com/file/d/186cQ-leDyDpDGfLVsOqFmRGBX7PyZWrB/view?usp=sharing">https://drive.google.com/file/d/186cQ-leDyDpDGfLVsOqFmRGBX7PyZWrB/view?usp=sharing</a></p>
+<ul class="simple">
+<li><p>Foward/backward Waves</p></li>
+<li><p>Transmision Line</p>
+<ul>
+<li><p>Parralell Wire</p></li>
+<li><p>Microstrip</p></li>
+</ul>
+</li>
+<li><p>Waveguides</p>
+<ul>
+<li><p>Fiber</p></li>
+<li><p>SIW</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="r-application-to-microwave-circuits">
+<h2><r> <strong>Application to Microwave Circuits</strong><a class="headerlink" href="#r-application-to-microwave-circuits" title="Permalink to this heading">#</a></h2>
+<p>Google Colab: <a class="reference external" href="https://drive.google.com/file/d/186cQ-leDyDpDGfLVsOqFmRGBX7PyZWrB/view?usp=sharing">https://drive.google.com/file/d/186cQ-leDyDpDGfLVsOqFmRGBX7PyZWrB/view?usp=sharing</a></p>
+<ul class="simple">
+<li><p>Shorted/Open Transmission Lines</p></li>
+<li><p>Resistive Transmission Lines</p></li>
+<li><p>Inductive Transmission Lines</p></li>
+<li><p>Capacitive Transmission Lines</p></li>
+</ul>
+</section>
+<section id="r-application-to-microwave-devices-i-filters-and-phase-shifters">
+<h2><r> <strong>Application to Microwave Devices I: Filters and Phase Shifters</strong><a class="headerlink" href="#r-application-to-microwave-devices-i-filters-and-phase-shifters" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Passband RLC shunt/series  (Narrow/Wideband response)</p></li>
+<li><p>Band Stop (Narrow/Wideband response)</p></li>
+<li><p>High Pass  (Narrow/Wideband response)</p></li>
+<li><p>Low Pass  (Narrow/Wideband response)</p></li>
+<li><p>Frequency Responce and Foster Theorem</p></li>
+</ul>
+</section>
+<section id="r-application-to-microwave-devices-ii-amplifiers-and-oscilators">
+<h2><r> <strong>Application to Microwave Devices II: Amplifiers and Oscilators</strong><a class="headerlink" href="#r-application-to-microwave-devices-ii-amplifiers-and-oscilators" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="r-application-to-pcb-integrated-circuits-i-filters-and-phase-shifters">
+<h2><r> <strong>Application to PCB Integrated Circuits I: Filters and Phase Shifters</strong><a class="headerlink" href="#r-application-to-pcb-integrated-circuits-i-filters-and-phase-shifters" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Design with CST/ADS/Altium/Kikad</p></li>
+</ul>
+</section>
+<section id="r-application-to-pcb-integrated-circuits-ii-ampllifiers-and-oscillators">
+<h2><r> <strong>Application to PCB Integrated Circuits II: Ampllifiers and Oscillators</strong><a class="headerlink" href="#r-application-to-pcb-integrated-circuits-ii-ampllifiers-and-oscillators" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Design with CST/ADS/Altium/Kikad</p></li>
+</ul>
+</section>
+<section id="r-application-to-digital-filters">
+<h2><r> <strong>Application to Digital Filters</strong><a class="headerlink" href="#r-application-to-digital-filters" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Digital</p></li>
+<li><p>Analog/Digital Filters</p></li>
+</ul>
+</section>
+<section id="r-application-to-power-systems">
+<h2><r> <strong>Application to Power Systems</strong><a class="headerlink" href="#r-application-to-power-systems" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>T/PI Circuits high power</p></li>
+<li><p>Temporal Symmetric/Asymmetric Components Short Circuits</p></li>
+<li><p>Partial discharges in Hydrogenerators/Transformers</p></li>
+<li><p>Lightning Signals</p></li>
+</ul>
+</section>
+<section id="r-application-to-antennas">
+<h2><r> <strong>Application to Antennas</strong><a class="headerlink" href="#r-application-to-antennas" title="Permalink to this heading">#</a></h2>
+<p>Colab: <a class="reference external" href="https://drive.google.com/file/d/1NkFJRtvAhLxQXU83n7l5Q3QMF3Y872lA/view?usp=sharing">https://drive.google.com/file/d/1NkFJRtvAhLxQXU83n7l5Q3QMF3Y872lA/view?usp=sharing</a></p>
+<ul class="simple">
+<li><p>Antenna Dipole</p></li>
+<li><p>Antenna Loop</p></li>
+<li><p>Analytical Expression for Equivalent Circuits</p></li>
+<li><p>Radiation Conditions and Angle/Phase-frequency Bandwidth</p></li>
+</ul>
+</section>
+<section id="r-application-to-phased-arrays-and-ris">
+<h2><r> <strong>Application to Phased Arrays and RIS</strong><a class="headerlink" href="#r-application-to-phased-arrays-and-ris" title="Permalink to this heading">#</a></h2>
+<p>colab: <a class="reference external" href="https://drive.google.com/file/d/1G6YjHTOyPRJN96AuBGXPXflwjRYUNFtg/view?usp=sharing">https://drive.google.com/file/d/1G6YjHTOyPRJN96AuBGXPXflwjRYUNFtg/view?usp=sharing</a></p>
+<ul class="simple">
+<li><p>Far-Field Approximations by spectral-angular transforms</p></li>
+<li><p>Near-Field Approximations by spectral-angular transforms</p></li>
+</ul>
+</section>
+<section id="r-application-to-lens-and-metasurfaces">
+<h2><r> <strong>Application to Lens and Metasurfaces</strong><a class="headerlink" href="#r-application-to-lens-and-metasurfaces" title="Permalink to this heading">#</a></h2>
+<p>Colab: <a class="reference external" href="https://drive.google.com/file/d/1NnvwSLS7opD5P9Q81igoVQPa7w-lBF7P/view?usp=sharing">https://drive.google.com/file/d/1NnvwSLS7opD5P9Q81igoVQPa7w-lBF7P/view?usp=sharing</a></p>
+<ul class="simple">
+<li><p>Arrays weights</p></li>
+<li><p>Plane Wave Specturm</p></li>
+<li><p>Fresnel Zone Plates</p></li>
+<li><p>Transformation Optics</p></li>
+</ul>
+</section>
+<section id="r-application-to-rf-propagation">
+<h2><r> <strong>Application to RF Propagation</strong><a class="headerlink" href="#r-application-to-rf-propagation" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Propagations Models using Spectral techniques</p></li>
+<li><p>Others things that I don’t know</p></li>
+</ul>
+</section>
+<section id="r-application-to-wireless-channels-and-space-time-access">
+<h2><r> <strong>Application to Wireless Channels and Space-Time Access</strong><a class="headerlink" href="#r-application-to-wireless-channels-and-space-time-access" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Radiation and Space-Time Degrees of Freedom</p></li>
+<li><p>Channels Parameters</p></li>
+<li><p>Other things that I don’t know</p></li>
+</ul>
+</section>
+<section id="r-application-to-digital-control-systems">
+<h2><r> <strong>Application to Digital/Control Systems</strong><a class="headerlink" href="#r-application-to-digital-control-systems" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Data Processing Architectures</p></li>
+<li><p>Analog Computers</p></li>
+</ul>
+</section>
+<section id="r-application-to-optical-systems-and-photonic-i">
+<h2><r> <strong>Application to Optical Systems and Photonic I</strong><a class="headerlink" href="#r-application-to-optical-systems-and-photonic-i" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Metamaterials RH/LH Materials</p></li>
+<li><p>CRLH - Phase/Group Velocity -  Dispersion</p></li>
+</ul>
+</section>
+<section id="r-application-to-optical-systems-and-photonic-ii">
+<h2><r> <strong>Application to Optical Systems and Photonic II</strong><a class="headerlink" href="#r-application-to-optical-systems-and-photonic-ii" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="r-application-to-optical-systems-and-photonic-iii">
+<h2><r> <strong>Application to Optical Systems and Photonic III</strong><a class="headerlink" href="#r-application-to-optical-systems-and-photonic-iii" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Time-Space Group Symmetry</p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="ChapterSpectral.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Spectral Analysis of Signals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-spectral-transformations"><r> <strong>Spectral Transformations</strong></r></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-spectral-transformation"><span class="xref myst"><g> <strong>Spectral Transformation</strong></g></span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-window-signals"><g> <strong>Window Signals</strong></g></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-narrow-band-signals"><g> <strong>Narrow Band Signals</strong></g></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-wideband-signals"><g> <strong>Wideband Signals</strong></g></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#g-space-time-angle-signals"><g> <strong>Space-time-Angle Signals</strong></g></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-electromagnetic-spectral-methods"><span class="xref myst"><r> <strong>Electromagnetic Spectral Methods</strong></r></span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-microwave-circuits"><r> <strong>Microwave Circuits</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-microwave-circuits"><r> <strong>Application to Microwave Circuits</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-microwave-devices-i-filters-and-phase-shifters"><r> <strong>Application to Microwave Devices I: Filters and Phase Shifters</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-microwave-devices-ii-amplifiers-and-oscilators"><r> <strong>Application to Microwave Devices II: Amplifiers and Oscilators</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-pcb-integrated-circuits-i-filters-and-phase-shifters"><r> <strong>Application to PCB Integrated Circuits I: Filters and Phase Shifters</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-pcb-integrated-circuits-ii-ampllifiers-and-oscillators"><r> <strong>Application to PCB Integrated Circuits II: Ampllifiers and Oscillators</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-digital-filters"><r> <strong>Application to Digital Filters</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-power-systems"><r> <strong>Application to Power Systems</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-antennas"><r> <strong>Application to Antennas</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-phased-arrays-and-ris"><r> <strong>Application to Phased Arrays and RIS</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-lens-and-metasurfaces"><r> <strong>Application to Lens and Metasurfaces</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-rf-propagation"><r> <strong>Application to RF Propagation</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-wireless-channels-and-space-time-access"><r> <strong>Application to Wireless Channels and Space-Time Access</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-digital-control-systems"><r> <strong>Application to Digital/Control Systems</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-optical-systems-and-photonic-i"><r> <strong>Application to Optical Systems and Photonic I</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-optical-systems-and-photonic-ii"><r> <strong>Application to Optical Systems and Photonic II</strong></r></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#r-application-to-optical-systems-and-photonic-iii"><r> <strong>Application to Optical Systems and Photonic III</strong></r></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LEA UFPA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

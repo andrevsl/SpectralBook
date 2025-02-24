@@ -1,0 +1,735 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Application to Antenna Systems &#8212; Spectral Analysis for Applied Electromagnetism</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'antennaCH';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="spectralBook.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/LeaLogo.png" class="logo__image only-light" alt="Spectral Analysis for Applied Electromagnetism - Home"/>
+    <script>document.write(`<img src="_static/LeaLogo.png" class="logo__image only-dark" alt="Spectral Analysis for Applied Electromagnetism - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="spectralBook.html">
+                    Spectral Analysis for Applied Electromagnetism
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FantennaCH.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/antennaCH.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Application to Antenna Systems</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1 Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antenna-perspectives">2 Antenna Perspectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuit-element">2.1	Electric Circuit Element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-radiator">2.2 Electromagnetic Radiator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transducer">2.3 Transducer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-antennas">3 Canonical Antennas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-dipole">3.1 Electric Dipole</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-frequency-domain-analysis">Time-Frequency Domain Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-domain-different-line-lengths-resistive-port-impedance-resistitive-load-impedance">Time Domain different Line Lengths, Resistive Port Impedance, Resistitive Load Impedance</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="application-to-antenna-systems">
+<h1>Application to Antenna Systems<a class="headerlink" href="#application-to-antenna-systems" title="Permalink to this heading">#</a></h1>
+<p>Colab: <a class="reference external" href="https://drive.google.com/file/d/1NkFJRtvAhLxQXU83n7l5Q3QMF3Y872lA/view?usp=sharing">https://drive.google.com/file/d/1NkFJRtvAhLxQXU83n7l5Q3QMF3Y872lA/view?usp=sharing</a></p>
+<p>I will try to use MoM/CST FDTD and Matlab tool boxes for RF/Electrical circuits/Control Systems</p>
+<section id="introduction">
+<h2>1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Antenna design is an important part of the development of  many electronic devices and for new generations of mobiles telecommunications systems. Mobility and comfort are some advantages that wireless communications provide to society. Different techniques for antenna optimization are used in literature, however, sometimes without translate and interpret physically some basic principles for researchers and engineers. These insights can be essential and very useful in antenna design, giving many degrees of freedom to antenna engineer and researchers to optimize their structures. We aim to build an overview of some approaches that can help antennas engineer in the optimization and physical understanding.</p>
+<p>The antenna can be viewed by three perspectives in accordance with [1]-[3]. Firstly, as a transducer that couple electric power into radiated electromagnetic energy. Secondly as an electric circuit element, a powerful tool and maybe the preferred for the most radiofrequency (RF) engineers, aided especially by smith charts and transmission line theory [3]. And finally by electromagnetic (EM) view, where the field’s distribution should comply with Maxwell’s equations. In this context, metasurfaces and transformation optics techniques that control EM’s signatures efficiently have been widely employed after Pendry [4] and Leonhardt [5] disclosure of the electromagnetic cloak.</p>
+<p>On the other hand, solving analytically complex electromagnetic problems can be laborious. Computational techniques as Finite Element Method (FEM), Finite Difference Time Doman (FDTD), Method of Moments and Integral Methods are preferred to simplify and accelerate the analysis in the design process [2],[6]-[7]. Generally, commercial software provides built-in optimization algorithms as interpolated quasi newton, particle swarm, and genetic algorithm [8]-[9]. However, it works well for fine-tune mostly, being the initial concept and design still dependent on the physical basis of the researches and antenna engineers.</p>
+</section>
+<section id="antenna-perspectives">
+<h2>2 Antenna Perspectives<a class="headerlink" href="#antenna-perspectives" title="Permalink to this heading">#</a></h2>
+<p>As pointed out in previous chapter, antenna may be analyzed by three different kinds of operation, as a transducer, a radiator and, an electric circuit element, being all intrinsic related to each other. The radiation quality may be evaluated by its energy conversion efficiency, equivalent circuit parameters behavior as by its radiation characteristics. These items are discussed in following sub items.</p>
+<section id="electric-circuit-element">
+<h3>2.1	Electric Circuit Element<a class="headerlink" href="#electric-circuit-element" title="Permalink to this heading">#</a></h3>
+<p>In order to create radiation, everything begins with a current flow which excitate a transmission line waveguide or waevguides.</p>
+</section>
+<section id="electromagnetic-radiator">
+<h3>2.2 Electromagnetic Radiator<a class="headerlink" href="#electromagnetic-radiator" title="Permalink to this heading">#</a></h3>
+<p>Good radiation is the main objective of antenna design and, an analysis by means of electromagnetic theory is essential to predict and improve antenna performance.</p>
+<p>In addition, solving the Helmholtz homogeneous wave equation is the starting step to solve any electromagnetic problem [10]-[11]. As a consequence of being a second-order differential equation and a linear operator, the solution of wave equation yields a linear combination of eigenfunctions that depending on the coordinate system, can be even harmonic functions as sines, cosines, and complex exponentials, satisfying Laplace equation for the Cartesian coordinate system, or Bessel’s functions well fitted for cylindrical and spherical coordinates [11]. Meanwhile, the eigenvalues are always related to the wave phase constant (frequency) as shown in (2b), in frequency domain form [12]. In order to ensure the uniqueness theorem, proper Cauchy boundary conditions must be applied to these Sturm-Liouville problems [14].</p>
+<p>∇^2 E+k^2 E=0                                (2a)</p>
+<p>[L+α]E=0 , being L= ∇^2 and α=k^2       (2b)</p>
+<p>E=∑_(-∞)^(+∞) a_n f_n (α_n d_n ) , for eigenfunction f_n       (3)</p>
+<p>Then, applying Fourier Spectral transform twice in (2a) over space domain similar to the Fourier transformation that yields frequency form, we obtain equation (4a) and (4b). From it, we can infer that to respect the wave equation, electromagnetic fields radiated should vary over space with an angular (or spatial) wave constant equal to the time/frequency wave constant (eigenvalue). In others words, EM field’s spatial oscillation should have the same period of the time oscillations. If for a given eigenvalue, fields do not respect this condition, it will vanish rapidly.</p>
+<p>K^2 E+k^2 E=0                                                                             (4a)</p>
+<p>K=k                                                                                        (4b)</p>
+</section>
+<section id="transducer">
+<h3>2.3 Transducer<a class="headerlink" href="#transducer" title="Permalink to this heading">#</a></h3>
+<p>Antenna is basically an energy converter that couples electric power into radiated electromagnetic power, and vice-versa. In this context, energy efficiency is often a major concern for their applications. Thus, electromagnetic radiated power by an antenna should be as close as possible of the electric power delivered at its terminals. Being the radiated electromagnetic power dependent of the electric field E and magnetic field H as expressed in (1a), and for electric counterpart, from voltage V and current I (1b) [10].</p>
+</section>
+</section>
+<section id="canonical-antennas">
+<h2>3 Canonical Antennas<a class="headerlink" href="#canonical-antennas" title="Permalink to this heading">#</a></h2>
+<section id="electric-dipole">
+<h3>3.1 Electric Dipole<a class="headerlink" href="#electric-dipole" title="Permalink to this heading">#</a></h3>
+<p>Therefore, if these assumptions are applied to the canonical half wavelength dipole, we can find out why it is a well suitable radiator. As mandatory by boundary conditions, the current and fields, and its differentiations should vanish at the end of dipoles due to conductor discontinuity. Once, a narrowband excitation is applied at the antenna terminals with frequency f (related to wavelength λ in free space, and to c, light velocity in free space, where c=λf), as depicted in Fig. 1. Field’s and current’s oscillations over space will match λ/2, half period of sine function, eigenfunction of Helmholtz equation solution for Cartesian coordinates as in eq. (3) and, oscillating at time with the related operation frequency f of excitation.</p>
+<p>For unidimensional Cartesian coordinates, we obtain for a dipole</p>
+<p>E_u (x)=[C_n cos(α_n x_u )+C_1 sin(α_n x_u )]          (3)</p>
+<p>Then, the problem can be solved and expressed by means of the wave equation basis. Otherwise, for dipoles with dimension very small compared to the wavelength, field’s variation condition over the space starts to not be fulfilled perfectly by the sine or cosine function at the related frequency as depicted in Fig. 2(b), and fields will vanish rapidly, providing a poor radiation efficiency. For long dipoles, possessing dimensions equal or greater than half wavelength, the field distribution can be fulfilled by appropriate eigenfunctions. In addition, in this case it will present more poles of radiation that will interfere with each other, either constructively or destructively at some zones of the space. This is explained by Fresnel-Huygens diffraction, where each new wavelet acts as a new source of wavelets [11]-[12]. When these are out of phase in a certain point of space, it generates destructive interference, otherwise, if in phase, constructive interference as a wavelength dipole in Fig. 2(c), two poles of radiation arises like a two element array. Nevertheless, the impedance matching will not be perfect for all wavelengths, only for odd multiples of λ/2. This is further discussed in subsection C.</p>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1BxA6HqoZs9-XgznjPzCX5zn4Za5I0sUD" 
+    style="width: 600px;  height: 500 px"  /></p>
+</section>
+</section>
+<section id="time-frequency-domain-analysis">
+<h2>Time-Frequency Domain Analysis<a class="headerlink" href="#time-frequency-domain-analysis" title="Permalink to this heading">#</a></h2>
+<p>The time domain reflectometry is widely used in research and industry, for measurement purposes, calibration, optimization of antennas and microwave circuits, detection of faults, commonly employed by fiber installation technicians. It can give several informations, about the position of the faults, and the type of the faults.
+We gonna beyond the reflectometry, we gonna analyse the trasmission signals as well as all the spectral information, including the space-frequency and time-frequency.</p>
+<section id="time-domain-different-line-lengths-resistive-port-impedance-resistitive-load-impedance">
+<h3>Time Domain different Line Lengths, Resistive Port Impedance, Resistitive Load Impedance<a class="headerlink" href="#time-domain-different-line-lengths-resistive-port-impedance-resistitive-load-impedance" title="Permalink to this heading">#</a></h3>
+<p>In order to iniate our</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TIME Domain</span>
+<span class="kn">from</span> <span class="nn">skrf.media</span> <span class="kn">import</span> <span class="n">MLine</span>
+<span class="kn">import</span> <span class="nn">skrf</span> <span class="k">as</span> <span class="nn">rf</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.readCSTFiles</span> <span class="kn">import</span> <span class="n">readCSTTDFiles</span><span class="p">,</span><span class="n">readCSTTDFilesZLres</span><span class="p">,</span><span class="n">readCSTSparZpZLres</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.simuParams</span> <span class="kn">import</span> <span class="n">SimuParam</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.plotfunc</span> <span class="kn">import</span> <span class="n">plot1DTparametric</span><span class="p">,</span><span class="n">plot1DS</span><span class="p">,</span><span class="n">plot1DSparametric</span><span class="p">,</span><span class="n">S1d</span><span class="p">,</span><span class="n">plot2DTparametric</span><span class="p">,</span><span class="n">plot1DSparametricUwrap</span><span class="p">,</span><span class="n">plot2DSparametricMagdB</span><span class="p">,</span><span class="n">plot2DSparametricPhase</span>
+<span class="kn">from</span> <span class="nn">bookfuncs.plotfunc</span> <span class="kn">import</span> <span class="n">pplot2DSparametricMag</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">exp</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span><span class="n">log10</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span><span class="nb">abs</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">tanh</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">loadtxt</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="n">par</span><span class="o">=</span><span class="n">SimuParam</span><span class="p">()</span>
+<span class="n">par</span><span class="o">.</span><span class="n">set_empar</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">er</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ur</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">sig</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">L</span><span class="o">=</span><span class="mf">50e-3</span>
+<span class="n">Vp</span><span class="o">=</span><span class="n">par</span><span class="o">.</span><span class="n">emconst</span><span class="p">[</span><span class="s1">&#39;cc&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">par</span><span class="o">.</span><span class="n">emconst</span><span class="p">[</span><span class="s1">&#39;er&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">tL</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="n">Vp</span>
+
+
+<span class="n">TDL50</span><span class="p">,</span><span class="n">TDL100</span><span class="p">,</span><span class="n">TDL100Zp30</span><span class="p">,</span><span class="n">TDL100Zp100</span><span class="o">=</span><span class="n">readCSTTDFiles</span><span class="p">()</span>
+<span class="n">TDL100ZLres50</span><span class="p">,</span><span class="n">TDL100ZLres30</span><span class="p">,</span><span class="n">TDL100ZLres100</span><span class="o">=</span><span class="n">readCSTTDFilesZLres</span><span class="p">()</span>
+<span class="n">S_L25_rf</span><span class="p">,</span><span class="n">S_L50_rf</span><span class="p">,</span><span class="n">S_L100Zp30_rf</span><span class="p">,</span><span class="n">S_L100Zp50_rf</span><span class="p">,</span><span class="n">S_L100Zp100_rf</span><span class="p">,</span><span class="n">S_L100ZLres30_rf</span><span class="p">,</span><span class="n">S_L100ZLres50_rf</span><span class="p">,</span><span class="n">S_L100ZLres100_rf</span><span class="o">=</span><span class="n">readCSTSparZpZLres</span><span class="p">()</span>
+
+<span class="c1"># Using Max value</span>
+<span class="n">imaxI1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">]))</span>
+<span class="n">imaxI1L100</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">]))</span>
+
+<span class="n">imaxI21L50</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">]))</span>
+<span class="n">imaxI21L100</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">]))</span>
+
+<span class="n">simutL50</span><span class="o">=</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">imaxI21L50</span><span class="p">]</span><span class="o">-</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">imaxI1</span><span class="p">]</span>
+<span class="n">simutL100</span><span class="o">=</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">imaxI21L100</span><span class="p">]</span><span class="o">-</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">][</span><span class="n">imaxI1L100</span><span class="p">]</span>
+
+<span class="c1"># print(imaxI1)</span>
+<span class="c1"># print(imaxI21)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model Vp </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Vp</span><span class="o">/</span><span class="mf">1e8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model Propatation time L=</span><span class="si">{}</span><span class="s2"> mm, t= </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="mf">1e-3</span><span class="p">,</span><span class="n">tL</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mf">1e-9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Simu Propatation time L=</span><span class="si">{}</span><span class="s2"> mm, t= </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="n">simutL50</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Simu Propatation time L=</span><span class="si">{}</span><span class="s2"> mm, t= </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">simutL100</span><span class="p">))</span>
+
+
+<span class="n">fig</span><span class="p">,</span><span class="n">axt</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">p1</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span>  
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">],</span><span class="s2">&quot;Time Signals vs L&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;Time Signals vs L&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL50</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">],</span><span class="s2">&quot;Time Signals vs L&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                
+                <span class="p">)</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span>  
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I1&#39;</span><span class="p">],</span><span class="s2">&quot;Time Signals vs L&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="p">,</span>     
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;Time Signals vs L&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>  <span class="p">,</span>             
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">],</span><span class="s2">&quot;Time Signals vs L&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="p">,</span>              
+                                <span class="p">)</span>
+
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Zp 50&#39;</span><span class="p">,</span><span class="s1">&#39;Zp 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 100&#39;</span><span class="p">])</span>
+<span class="c1">## I21 Diffents Load Impedances</span>
+<span class="n">p1</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">TDL100ZLres50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span>  
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">],</span><span class="s2">&quot;I21 vs Zport=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100Zp30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100Zp30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100Zp30</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">],</span><span class="s2">&quot;I21 vs Zport=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100Zp100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100Zp100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100Zp100</span><span class="p">[</span><span class="s1">&#39;I21&#39;</span><span class="p">],</span><span class="s2">&quot;I21 vs Zport=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+
+                   <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Zp 50&#39;</span><span class="p">,</span><span class="s1">&#39;Zp 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 100&#39;</span><span class="p">])</span>
+<span class="c1">## I11 Diffents Load Impedances</span>
+<span class="n">p1</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span>  
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;I11 vs Zport=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100Zp30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100Zp30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100Zp30</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;I11 vs Zport=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100Zp100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100Zp100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100Zp100</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;I11 vs Zport=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+
+
+                   <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Zp 50&#39;</span><span class="p">,</span><span class="s1">&#39;Zp 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 100&#39;</span><span class="p">])</span>
+
+
+<span class="c1">## I1 Diffents Load Impedances</span>
+<span class="c1"># plot2DTparametric(axt,TDL100ZLres50[&#39;t&#39;]*1e-9,  </span>
+<span class="c1">#                                 (0,2,[TDL100ZLres50[&#39;t&#39;].min(),TDL100ZLres50[&#39;t&#39;].max()],[-1,1.5],TDL100ZLres50[&#39;I1&#39;],&quot;I1 vs Zport=50,30,100&quot;,&#39;b&#39;,&#39;-&#39;)</span>
+
+<span class="c1">#                    )</span>
+<span class="c1"># plot2DTparametric(axt,TDL100ZLres30[&#39;t&#39;]*1e-9,  </span>
+<span class="c1">#                                 (0,2,[TDL100ZLres30[&#39;t&#39;].min(),TDL100ZLres30[&#39;t&#39;].max()],[-1,1.5],TDL100ZLres30[&#39;I1&#39;],&quot;I1 vs Zport=50,30,100&quot;,&#39;r&#39;,&#39;-&#39;),</span>
+<span class="c1">#                                 (0,2,[TDL100ZLres100[&#39;t&#39;].min(),TDL100ZLres100[&#39;t&#39;].max()],[-1,1.5],TDL100ZLres100[&#39;I1&#39;],&quot;I1 vs Zport=50,30,100&quot;,&#39;g&#39;,&#39;-&#39;),</span>
+
+<span class="c1">#                    )</span>
+<span class="c1"># axt[0,2].legend([&#39;Zp 50&#39;,&#39;Zp 30&#39;,&#39;ZP 100&#39;])</span>
+<span class="c1">## I11 Diffents Load Impedances</span>
+<span class="n">p1</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">TDL100ZLres50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span>  
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100ZLres50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100ZLres50</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100ZLres50</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;I11 vs ZL=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                   <span class="p">)</span>
+<span class="n">plot2DTparametric</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">TDL100ZLres30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">,</span>  
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100ZLres30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100ZLres30</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100ZLres30</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;I11 vs ZL=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                                <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,[</span><span class="n">TDL100ZLres100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">TDL100ZLres100</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.5</span><span class="p">],</span><span class="n">TDL100ZLres100</span><span class="p">[</span><span class="s1">&#39;I11&#39;</span><span class="p">],</span><span class="s2">&quot;I11 vs ZL=50,30,100&quot;</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+
+                   <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;ZL 50&#39;</span><span class="p">,</span><span class="s1">&#39;ZL 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZL 100&#39;</span><span class="p">])</span>
+
+<span class="n">p1</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">plot2DSparametricMagdB</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">S_L100Zp30_rf</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100Zp50_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100Zp30_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100Zp100_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;S11 Mag vs ZL Res&#39;</span><span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;ZP 50&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 100&#39;</span><span class="p">])</span>
+
+<span class="n">p1</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">2</span>
+
+<span class="n">plot2DSparametricPhase</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">S_L100Zp30_rf</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100Zp50_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100Zp30_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100Zp100_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;S11 Phase vs ZL Res&#39;</span><span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;ZP 50&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZP 100&#39;</span><span class="p">])</span>
+
+<span class="n">p1</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="n">plot2DSparametricMagdB</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">S_L100ZLres30_rf</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+                     <span class="c1">#   (p1,p2,S_L100Zp50_rf.s[:,0,0],&#39;m&#39;,&#39;-&#39;),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100ZLres50_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100ZLres30_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100ZLres100_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;S11 Mag vs ZL Res&#39;</span><span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;ZL 50&#39;</span><span class="p">,</span><span class="s1">&#39;ZL 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZL 100&#39;</span><span class="p">])</span>
+
+<span class="n">p1</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">p2</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">plot2DSparametricPhase</span><span class="p">(</span><span class="n">axt</span><span class="p">,</span><span class="n">S_L100ZLres30_rf</span><span class="o">.</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100ZLres50_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100ZLres30_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                       <span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">S_L100ZLres100_rf</span><span class="o">.</span><span class="n">s</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
+                <span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;S11 Phase vs ZL Res&#39;</span><span class="p">)</span>
+<span class="n">axt</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;ZL 50&#39;</span><span class="p">,</span><span class="s1">&#39;ZL 30&#39;</span><span class="p">,</span><span class="s1">&#39;ZL 100&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># TIME Domain</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">skrf.media</span> <span class="kn">import</span> <span class="n">MLine</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">skrf</span> <span class="k">as</span> <span class="nn">rf</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">bookfuncs.readCSTFiles</span> <span class="kn">import</span> <span class="n">readCSTTDFiles</span><span class="p">,</span><span class="n">readCSTTDFilesZLres</span><span class="p">,</span><span class="n">readCSTSparZpZLres</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;skrf&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1 Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antenna-perspectives">2 Antenna Perspectives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-circuit-element">2.1	Electric Circuit Element</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electromagnetic-radiator">2.2 Electromagnetic Radiator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transducer">2.3 Transducer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canonical-antennas">3 Canonical Antennas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#electric-dipole">3.1 Electric Dipole</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-frequency-domain-analysis">Time-Frequency Domain Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-domain-different-line-lengths-resistive-port-impedance-resistitive-load-impedance">Time Domain different Line Lengths, Resistive Port Impedance, Resistitive Load Impedance</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By LEA UFPA
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

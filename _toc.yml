@@ -1,0 +1,31 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: spectralBook
+parts:
+  - caption: Spectral Analysis for Applied Electromagnetism
+    numbered: True  # Only applies to chapters in Part 1.
+    chapters:
+    - file: ChapterSpectral
+    - file: ChapterEMMethod
+    - file: ChapterMW
+    - file: ChapterMWDevices1
+    - file: ChapterMWDevices2
+    - file: ChapterAntenna
+    - file: ChapterMetasurfaces
+    - file: ChapterRIS
+    - file: Reference    
+  - caption: Applied Design of RF/PCB Integrated Circuits
+    numbered: True  # Only applies to chapters in Part 1.
+    chapters:
+    - file: pcbRFMWBook
+    - file: ChapterMWIC1
+    - file: ChapterMWIC2
+    - file: ChapterMWIC3
+    - file: ChapterMWIC4
+    - file: Reference2
+
+
+
+

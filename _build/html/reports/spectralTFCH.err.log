@@ -1,0 +1,84 @@
+Traceback (most recent call last):
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\55919\anaconda3\envs\qe-mini-example\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Windowing 
+import numpy as np
+from numpy import sin, exp, cos, log10, pi,angle, cos
+import pandas as pd
+import matplotlib.pyplot as plt
+from bookfuncs.simuParams import  SimuParam
+from bookfuncs.spectralfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot1DSparametricUwrap
+from scipy import signal
+
+par=SimuParam()
+par.par
+# Time sinals
+print(t.shape)
+t=np.arange(par.par.loc['HSinP','t0'],1/(2*par.par.loc['HSinP','f']),par.par.loc['HSinP','dt'])
+xt_rect=np.ones(t.shape)
+xt_tri=signal.windows.triang(len(t))
+xt_sin=sin(2*pi*1e9*t) #np.diff(xt_0Deg)
+# xt_gau=exp(-np.power((t-td)/tau,2))#np.diff(xt_0Deg)
+
+
+# Fourier
+Nfft=1025 # FFT points
+YsRect=S1d(xt_rect,Nfft,par.par.loc['HSinP','Fs']) # Frequency Domain Signal
+YsTri=S1d(xt_tri,Nfft,par.par.loc['HSinN','Fs']) # Frequency Domain Signal
+YsSin=S1d(xt_sin,Nfft,par.par.loc['HSinN','Fs']) # Frequency Domain Signal
+
+# Plot Half cycle Sin Signal
+fig1,axt=plt.subplots(1,2)
+fig1.set_size_inches((10,5))
+plot1DTparametric(axt,t,(0,[t.min()/1e-9,t.max()/1e-9],[-1,1],xt_rect,"Half Sin - Positive cycle",'b','-'),
+                       (0,[t.min()/1e-9,t.max()/1e-9],[-1,1],xt_tri,"Half Sin - Negative cycle",'r','-'))
+plot1DTparametric(axt,t,(0,[t.min()/1e-9,t.max()/1e-9],[-1,1.2],xt_sin,"Half Sin - Positive cycle",'g','-'))
+
+
+# Frequency Domain of 
+fig2,axf=plt.subplots(1,2)
+fig2.set_size_inches((10,5))
+plot1DSparametric(axf,YsRect['f'],3,(0,YsRect['S'],'b','-'),(0,YsTri['S'],'r','-'),(0,YsSin['S'],'g','-'))
+axf[0].legend(['Rect', 'Tri','Sin'])
+# angleDiff=180/pi*(np.angle(YsDiff['S'])-np.angle(YsRect['S']))
+# axf[1].plot(YsRect['f']/1e9,angleDiff)
+ix=np.argmin(abs(YsRect['f']-0))
+# print(ix)
+axf[1].annotate("  Freq:"+str(int(YsRect['f'][ix]))+" Ph:"+str(int(180/pi*np.angle(YsRect['S'][ix]))), xy=(YsRect['f'][ix], 180/pi*np.angle(YsRect['S'][ix])),
+                 xytext=(YsRect['f'][ix], 180/pi*np.angle(YsRect['S'][ix])+30),arrowprops=dict(arrowstyle='->', color='red'))
+
+axf[1].annotate("  Freq:"+str(int(YsTri['f'][ix]))+" Ph:"+str(int(180/pi*np.angle(YsTri['S'][ix]))), xy=(YsTri['f'][ix], 180/pi*np.angle(YsTri['S'][ix])),
+                 xytext=(YsTri['f'][ix], 180/pi*np.angle(YsTri['S'][ix])+30),arrowprops=dict(arrowstyle='->', color='red'))
+
+
+
+
+
+------------------
+
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mImportError[0m                               Traceback (most recent call last)
+Cell [1;32mIn[4], line 7[0m
+[0;32m      5[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;32m      6[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbookfuncs[39;00m[38;5;21;01m.[39;00m[38;5;21;01msimuParams[39;00m [38;5;28;01mimport[39;00m  SimuParam
+[1;32m----> 7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mbookfuncs[39;00m[38;5;21;01m.[39;00m[38;5;21;01mspectralfunc[39;00m [38;5;28;01mimport[39;00m plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot1DSparametricUwrap
+[0;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m [38;5;28;01mimport[39;00m signal
+[0;32m     10[0m par[38;5;241m=[39mSimuParam()
+
+[1;31mImportError[0m: cannot import name 'plot1DTparametric' from 'bookfuncs.spectralfunc' (H:\Meu Drive\SocieForParaOPlay\SpectralBook\bookfuncs\spectralfunc.py)
+
