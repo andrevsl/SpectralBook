@@ -22,7 +22,7 @@ def mslineBalanis(emconst,w,h,freq):
         Z0=(120*pi/sqrt(eff))/(w/h+1.393+0.667*log(w/h+1.444))
         
     omega=2*pi*freq
-    Gamma=sqrt(1j*omega*emconst['u0']*(emconst['sig'][0]+1j*omega*emconst['e0']))
+    Gamma=sqrt(1j*omega*emconst['u0']*(emconst['sig'][0]+1j*omega*emconst['e0']*eff))
     return omega,Gamma,Z0,eff
 
 

@@ -9,8 +9,9 @@ def dipoleAntenna(emconst,w,h,freq):
     # Balanis/Pozar Equations a checar se começou com o Gupta?(As do gupta sao diferentes, procurar melhor depois ou agora de quem é) 
     # ele ta nas ref do Balanis/Pozar, o balanis diz que ta resumindo a informação (Advanced electromagnetism)
     # o pessoal skrf ajudou colocou umas referencias hammerstad_er, mas ta diferente a equacao com um 10 no lugar do 12 (mas tao bem diferentes, sei nao)
-    Rin=power(I0/Iin,2)*Rr
-    Xin=power(I0/Iin,2)*Xm
+    Rr=
+    Rin=Rr/power(sin(beta*l),2)
+    Xin=Xm/power(sin(beta*l),2)
    
-    return Rin,,Rr,Xin,Xm
+    return Rin,Rr,Xin,Xm
 
