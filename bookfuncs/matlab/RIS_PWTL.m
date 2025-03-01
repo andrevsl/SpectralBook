@@ -39,6 +39,7 @@ Zin=Zp*Zd_TM./(Zp+Zd_TM);
 Gamma=(Zin-eta0TM)./(Zin+eta0TM);
 
 Lg=Zd_TM./omega
+d=1
 %%
 fob=5e9;
 [~,idf]=min(abs(f-fob));
