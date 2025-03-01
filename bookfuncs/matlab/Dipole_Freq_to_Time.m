@@ -11,15 +11,14 @@ eta=sqrt(u0/e0);       %Impedancia do meio
 f0=3e9 ;                  % Observation frequency
 Lamb0=cc/f0 ;              % Observation wavelength
 Ld=Lamb0/10;                 % Dipole Length
-Wd=Lamb0/1000 ;              % Dipole Length
+Wd=Lamb0/1000 ;              % Dipole Width
 Nq=96;           %Numero de pontos na frequencia
-RefZ0=50;
-Fs=50e9;
-Nfft=1025;
-DeltaFs=Fs/(Nfft-1)/1e6;
+RefZ0=50;  %Reference Impedance Generator
+Fs=50e9;  %% FFT sampling frequency
+Nfft=1025; %% NFFT sampling frequency
+DeltaFs=Fs/(Nfft-1)/1e6; % Delta Fs
 f=Fs/2*linspace(-1,1,Nfft);
 f_inicial=0.1e9;      %Frequencia inicial de analise do dipolo
-f_final=10e9;        %Frequencia final de analise
 [~,id0]=min(abs(f-0));
 % [~,idf]=min(abs(f-f_final));
 freq=f(id0+1:end);
@@ -32,7 +31,6 @@ f(id0)
 spar=sparameters(d,freq,RefZ0)
 rfwrite(spar,[Path,'dipole.s2p'])
 s11=squeeze(spar.Parameters).'
-z11=squeeze(s2z(s11));
 
 figure
 rfplot(spar)
@@ -44,10 +42,9 @@ title('Voltage Time Signal')
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Mag (V)','fontsize',10,'fontweight','b');
 %% Time Reversal Setting
-
 deltat=1/Fs;
 Nt=1025;
-BW=10e9;
+BW=20e9;
 tau=1/BW;
 td=-2*tau;
 t0=-1e-9;
@@ -65,9 +62,10 @@ title('Voltage Time Signal')
 xlabel('Time (ns)','fontsize',10,'fontweight','b');
 ylabel('Amplitude (V)','fontsize',10,'fontweight','b');
 xlim([-1 4])
+
 subplot 222
 plot(t/1e-9,real(Vreflected),t/1e-9,imag(Vreflected))
-title('Phase VSinc')
+title('Phase Vreclected')
 xlabel('Time (ns)','fontsize',10,'fontweight','b');
 ylabel('Amplitude (V)','fontsize',10,'fontweight','b');
 
@@ -82,48 +80,22 @@ title('Phase VSinc')
 plot(f/1e9,180/pi*angle(fftshift(VSinc)))
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-%% Dipole Model
-z=impedance(d,freq)
-figure
-subplot 211
-plot(freq,abs(z),freq,abs(z11))
-title('Mag/Phase')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Mag (\Omega)','fontsize',10,'fontweight','b');
-legend('z','z2')
-subplot 212
-plot(freq,180/pi*angle(z),freq,180/pi*angle(z11))
-title('Mag/Phase')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-legend('z','z2')
-
+%% Plot Dipole Impedance
+z11=squeeze(s2z(s11));
+zlim=[-2000,2000]
+plotZfreq(freq,z11,zlim)
 
 %% Smith chart
-% Set values desired for first arrow
-radius = 0.8; % Height from top to bottom
-radius2 = -0.8; % Height from top to bottom
-centre = [0 0];
-arrow_angle = 0; % Desired orientation angle in degrees
-angle =160; % Anglebetween start and end of arrow
-direction = 1; % for CW enter 1, for CCW enter 0
-direction2 =0 ; % for CW enter 1, for CCW enter 0
-
-colour = 'k'; % Colour of arrow
-colour2 = 'r'; % Colour of arrow
-head_size = 20; % Arrow head size
 clear h
+addMatching
 figure
 h=smithplot(spar), hold on
-t=text(radius-0.5,-0.7,'CW Toward Generator')
-t(1).Color = 'black';
-t(1).FontSize = 16;
-set(t,'Rotation',90);
-t2=text(-radius+0.5,-0.5,'CCW Toward Load')
-t2(1).Color = 'black';
-t2(1).FontSize = 16;
-set(t2,'Rotation',90);
-circular_arrow(h, radius, centre, arrow_angle, angle, direction, colour, head_size);
-circular_arrow(h, radius2, centre, arrow_angle, angle, direction2, colour2, head_size);
-lgd = findobj('type', 'legend')
-set(lgd(1), 'visible', 'off')
+% t=text(radius-0.5,-0.7,'CW Toward Generator')
+% t(1).Color = 'black';
+% t(1).FontSize = 16;
+% set(t,'Rotation',90);
+% t2=text(-radius+0.5,-0.5,'CCW Toward Load')
+% t2(1).Color = 'black';
+% t2(1).FontSize = 16;
+% set(t2,'Rotation',90);
+

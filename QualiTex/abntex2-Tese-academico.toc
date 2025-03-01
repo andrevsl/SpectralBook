@@ -1,0 +1,45 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase []{Introdução}}{15}{chapter.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase []{Teoria RIS}}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Metasurfaces}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Modelagem Eletromagnética}{17}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Definição dos Campos Eletromagnéticos}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Modelagem pelo Método de Arranjo de Antenas}{19}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Modelagem pelas Equações de Espaço Livre}{19}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Modelagem pelo Método de Ondas Planas}{19}{subsection.2.2.4}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase []{Formulação do MoMCSL}}{20}{chapter.3}%
+\contentsline {section}{\numberline {3.1}MoM com Impedância Superficial}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Disposição da RIS}{22}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Far-Field Approximation}{23}{subsection.3.1.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase []{Resultados Numéricos}}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Validação da Malha}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Direcionamento do Feixe}{25}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Direcionamento Ativo}{27}{section.4.3}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase []{Conclusão}}{30}{chapter.5}%
+\vspace {\cftbeforechapterskip }
+\renewcommand *{\cftappendixname }{AP\^ENDICE \space }
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase []{Método de Ondas Planas e Linhas de Transmissão }}{31}{appendix.A}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase []{MoMCSL}}{33}{appendix.B}%
+\contentsline {subsection}{\numberline {B.0.1} Representação Numérica}{33}{subsection.B.0.1}%
+\contentsline {subsection}{\numberline {B.0.2}Representação Matricial}{38}{subsection.B.0.2}%

@@ -1,0 +1,18 @@
+
+
+
+
+\begin{document}
+\chapter{Formulação do Método dos Momentos}\label{cap_exemplos}
+
+Nesse capítulo desccreveremos a formulação matemática e física do método dos momentos (MoM). A implementação matemática e os cálculos numéricos serão realizados usando o programa comercial Matlab. As IRSs, por serem estruturas planares, optou-se pelo método dos momentos bidimensional (MoM-2D) para analisar numericamente como realizado por Costa e Dmitriev [8]. Este método utiliza as equações integrais do vetor magnético pontecial A e do potencial escalar elétrico $\phi$ em seu desenvolvimento, advindas das equações de Maxwell. Apesar da última também poder ser escrita em função da densidade corrente ou do potencial magnético A. Tem-se a semântica de que fazendo a separação das duas, a primeira representa a lei de faraday da indução, no qual os campos eletromagnéticos variantes no tempo rotacionam, o mais representativo da propagação no campo distante, e a segunda, a lei de Gauss da concentração de cargas encerradas por determinada superfície, para o qual os campos não dirvergem ou convergem ao/do infinito, característico do campo próximo, onde há descontinuidades das linhas de campo e das condições de contorno. Logo as seguintes formulações são usadas
+
+\begin{equation}
+  \overline{E}_{s}=-j\omega A - \nabla \phi
+\end{equation}
+
+\begin{equation}
+  \overline{E}_{s}=-j\mu \intop \frac{e^{-j k R}}{4 \pi R}
+  \end{equation}
+% -
+\end{document}
