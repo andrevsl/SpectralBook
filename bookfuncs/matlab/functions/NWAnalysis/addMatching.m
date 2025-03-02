@@ -1,8 +1,8 @@
-function ZinNew=addMatching(type,Zin,Z)
+function ZinNew=addMatching(type,Zin,Zadd)
     if type=='Series'
-        ZinNew=Zin+Z;
+        ZinNew=Zin+Zadd;
     else if type=='Shunt'
-        ZinNew=Zin*Z/(Zin+Z);
+        ZinNew=Zin*Zadd/(Zin+Zadd);
     end
     end
 

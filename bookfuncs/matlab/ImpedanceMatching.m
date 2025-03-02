@@ -1,6 +1,6 @@
 %% Antenna Dipole Code
 clear all
-addpath(genpath('H:\Meu Drive\SocieForParaOPlay\SpectralBook\bookfuncs\matlab')) %%CST API
+addpath(genpath('D:\SpectralBook\bookfuncs\matlab')) %%CST API
 Path='H:\Meu Drive\SocieForParaOPlay\SpectralBook\bookfuncs\matlab\MatlabSimuOutputs\'
 %% Parameters
 jay=sqrt(-1);        %Unidade imaginaria 
@@ -32,7 +32,7 @@ spardipole=sparameters(d,freq,RefZ0)
 rfplot(spardipole)
 % rfwrite(spar,[Path,'dipole.s2p'])
 s11Dipole=squeeze(spardipole.Parameters).';
-zinDipole=squeeze(s2z(s11));
+zinDipole=squeeze(s2z(s11Dipole));
 
 % s_rat = rational(spardipole);
 % z_rat = rational(freq,z11);
