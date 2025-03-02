@@ -9,6 +9,7 @@ parts:
     chapters:
     - file: ChapterSpectral
     - file: ChapterEMMethod
+    - file: ChapterCircuits
     - file: ChapterMW
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
