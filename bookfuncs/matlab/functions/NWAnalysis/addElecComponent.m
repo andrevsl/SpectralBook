@@ -1,4 +1,4 @@
-function ZinNew=addMatching(type,Zin,Zadd)
+function ZinNew=addElecComponent(type,Zin,Zadd)
     if type=='Series'
         ZinNew=Zin+Zadd;
     else if type=='Shunt'
