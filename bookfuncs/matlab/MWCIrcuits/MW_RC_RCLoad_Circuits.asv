@@ -44,11 +44,11 @@ omegazero=-1./(CAP.*(RES-Z0ref));
 figure,
 %%%Impedance 
 plotZfreq(freq/1e9,Zeq.',[-100 200],string(Res))
-% sgtitle(['Parametric Res Cap=',string(Captarget)])
+sgtitle(['Parametric Res Cap=',string(Captarget)])
 
 
 figure,
-% sgtitle(['Parametric Res Cap=',string(Captarget)])
+sgtitle(['Parametric Res Cap=',string(Captarget)])
 
 subplot 221
 plot(freq/1e9,20*log10(abs(S11Circ)))
@@ -57,29 +57,28 @@ xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Mag (dB)','fontsize',10,'fontweight','b');
 legend(string(Res))
 
-subplot 223
+subplot 222
+title('Phase S11')
 plot(freq/1e9,180/pi*angle((S11Circ)))
-title('Phase S11 ')
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
 legend(string(Res))
 
-subplot 222
-plot(freq/1e9,20*log10(abs(VGain)))
-title('Mag Voltage Gain')
+subplot 221
+plot(freq/1e9,20*log10(abs(S11Circ)))
+title('Mag S11')
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Mag (dB)','fontsize',10,'fontweight','b');
 legend(string(Res))
 
-subplot 224
-plot(freq/1e9,180/pi*angle((VGain)))
+subplot 222
+title('Phase S11')
+plot(freq/1e9,180/pi*angle((S11Circ)))
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-title('Phase Voltage Gain')
-
 legend(string(Res))
 %% RC Series -Parametric Capacitance - RC Load (High Pass filter)
-Restarget=40;
+Restarget=100;
 [~,idr]=min(abs(Res-Restarget));
 Zeq=squeeze(Zcirc(:,idr,:));
 S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
@@ -91,37 +90,21 @@ figure,
 plotZfreq(freq/1e9,Zeq.',[-100 200],string(Cap))
 
 figure,
-% sgtitle(['Parametric Res Cap=',string(Captarget)])
+% sgtitle(['Parametric Cap R=',string(Restarget)])
 
-subplot 221
+subplot 211
 plot(freq/1e9,20*log10(abs(S11Circ)))
 title('Mag S11')
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Mag (dB)','fontsize',10,'fontweight','b');
-legend(string(Res))
+legend(string(Cap))
 
-subplot 223
+subplot 212
+title('Phase S11')
 plot(freq/1e9,180/pi*angle((S11Circ)))
-title('Phase S11 ')
 xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
 ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 222
-plot(freq/1e9,20*log10(abs(VGain)))
-title('Mag Voltage Gain')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Mag (dB)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 224
-plot(freq/1e9,180/pi*angle((VGain)))
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-title('Phase Voltage Gain')
-
-legend(string(Res))
-
+legend(string(Cap))
 %% Time Domain Analysis
 Captarget=1e-12
 [~,idcap]=min(abs(Cap-Captarget));

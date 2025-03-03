@@ -29,7 +29,7 @@ f(id0)
 
 %% S-Parameters
 spar=sparameters(d,freq,RefZ0)
-rfwrite(spar,[Path,'dipole.s2p'])
+% rfwrite(spar,[Path,'dipole.s2p'])
 s11=squeeze(spar.Parameters).'
 
 figure
