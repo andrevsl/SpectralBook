@@ -14,7 +14,7 @@ parts:
       section:
       - file: ChapterMWWG
       - file: ChapterMWNetwork
-      - file: ChapterMWDevices1
+    - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAntenna
     - file: ChapterPhasedArrays
