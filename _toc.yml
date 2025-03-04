@@ -11,9 +11,10 @@ parts:
     - file: ChapterEMMethod
     - file: ChapterCircuits
     - file: ChapterMWTL
-    - file: ChapterMWWG
-    - file: ChapterMWNetwork
-    - file: ChapterMWDevices1
+      section:
+      - file: ChapterMWWG
+      - file: ChapterMWNetwork
+      - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAntenna
     - file: ChapterMetasurfaces

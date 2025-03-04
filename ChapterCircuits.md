@@ -1,4 +1,4 @@
-# Electical Circuits
+# Electical Circuits 
 <style>
 
 .images{
@@ -10,7 +10,7 @@
 - Circuit Analysis by Laplace
 - Grafos 
 - Thevenin/Norton/Superposition
-- Frequency Respose
+
 
 
 ## AC Voltage/Currents
