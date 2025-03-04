@@ -42,7 +42,6 @@ Following this thought, the cheerful source pushes electrons and at each instant
 ![image info](./bookimages/TLACFlow3.png)
 
 
-
 ![image info](./bookimages/TLACFlow4.png)
 
 Following this thought, the source attracts and pushes electrons, but given the very long wavelength and low frequency, it takes a while to change to the attraction polarity, and then the electrons have already leaked away, but at high frequencies the wavelengths decrease, changing polarity very quickly. Could this be why there are more losses at high frequencies, the charges go back and forth, and end up dissipating energy? I don't know.
@@ -73,7 +72,7 @@ In a N- Port System, by definition
     style="width: 500px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
 </img>
 
-
+ A link to an equation directive: {eq}`my_other_label`
 $$
   w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
 $$(my_other_label)
