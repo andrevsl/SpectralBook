@@ -9,7 +9,6 @@ par.er=er;
 par.er2=1;
 par.f=f;
 par.w=2*pi*par.f;
-par.w=2*pi*par.f;
 par.c=1/sqrt(par.eps0*par.mu0);
 
 %%%% Refrative Index
