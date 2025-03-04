@@ -65,12 +65,13 @@ We gonna see that the forward or backward waves, as we've seen in previous secti
 
 ### N-Port
 
-In a N- Port System, by definition
+In a N- Port System, by definition, we gonna have N ports at defiend planes of reference $t_n$, which will have a reference impedance $Z_{0n}$, foward waves enterung the system $$
 
-
-<img src=".\bookimages\ChapterCircuits\Nport.png"
-    style="width: 500px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
-</img>
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1ET94oZxq5ziFZT_2WpiBvt7bqxCYaqoY" 
+    style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
+<img src=".\bookimages\ChapterCircuits\Nport.png" 
+    style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
+(POZAR- fazer figura depois)
 
 A link to an equation directive: {eq}`my_other_label`
 asdasdada.
