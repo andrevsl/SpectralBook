@@ -1,0 +1,198 @@
+Traceback (most recent call last):
+  File "C:\Users\55919\anaconda3\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\55919\anaconda3\Lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\55919\anaconda3\Lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\55919\anaconda3\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\55919\anaconda3\Lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\55919\anaconda3\Lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\55919\anaconda3\Lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# TIME Domain
+from skrf.media import MLine
+import skrf as rf
+import sys
+import os
+sys.path.append('H:\Meu Drive\SocieForParaOPlay')
+from SpectralBook.bookfuncs.readCSTFiles import readCSTTDFiles,readCSTTDFilesZLres,readCSTSparZpZLres
+from SpectralBook.bookfuncs.simuParams import SimuParam
+from SpectralBook.bookfuncs.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot2DTparametric,plot1DSparametricUwrap,plot2DSparametricMagdB,plot2DSparametricPhase
+from SpectralBook.bookfuncs.plotfunc import plot2DSparametricMag
+
+from numpy import exp, sqrt, cos, sin, log,log10, pi,abs, angle, tanh, loadtxt
+import numpy as np
+import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings('ignore')
+
+par=SimuParam()
+par.set_empar(id=0,er=2,ur=1,sig=0)
+L=50e-3
+Vp=par.emconst['cc']/sqrt(par.emconst['er'][0])
+tL=L/Vp
+
+
+TDL50,TDL100,TDL100Zp30,TDL100Zp100=readCSTTDFiles()
+TDL100ZLres50,TDL100ZLres30,TDL100ZLres100=readCSTTDFilesZLres()
+S_L25_rf,S_L50_rf,S_L100Zp30_rf,S_L100Zp50_rf,S_L100Zp100_rf,S_L100ZLres30_rf,S_L100ZLres50_rf,S_L100ZLres100_rf=readCSTSparZpZLres()
+
+# Using Max value
+imaxI1=np.argmin(abs(TDL50['I1'].max()-TDL50['I1']))
+imaxI1L100=np.argmin(abs(TDL100['I1'].max()-TDL100['I1']))
+
+imaxI21L50=np.argmin(abs(TDL50['I21'].max()-TDL50['I21']))
+imaxI21L100=np.argmin(abs(TDL100['I21'].max()-TDL100['I21']))
+
+simutL50=TDL50['t'][imaxI21L50]-TDL50['t'][imaxI1]
+simutL100=TDL100['t'][imaxI21L100]-TDL100['t'][imaxI1L100]
+
+# print(imaxI1)
+# print(imaxI21)
+
+print("Model Vp {}".format(Vp/1e8))
+print("Model Propatation time L={} mm, t= {}".format(L/1e-3,tL[0]/1e-9))
+print("Simu Propatation time L={} mm, t= {}".format(50,simutL50))
+print("Simu Propatation time L={} mm, t= {}".format(100,simutL100))
+
+
+fig,axt=plt.subplots(3,3)
+fig.set_size_inches(18,15)
+fig.tight_layout()
+p1=0
+p2=0
+plot2DTparametric(axt,TDL50['t']*1e-9,  
+                                (p1,p2,[TDL50['t'].min(),TDL50['t'].max()],[-1,1.5],TDL50['I1'],"Time Signals vs L",'b','-'),
+                                (p1,p2,[TDL50['t'].min(),TDL50['t'].max()],[-1,1.5],TDL50['I11'],"Time Signals vs L",'b',':'),
+                                (p1,p2,[TDL50['t'].min(),TDL50['t'].max()],[-1,1.5],TDL50['I21'],"Time Signals vs L",'b','-'),
+                                
+                )
+plot2DTparametric(axt,TDL100['t']*1e-9,  
+                                (p1,p2,[TDL100['t'].min(),TDL100['t'].max()],[-1,1.5],TDL100['I1'],"Time Signals vs L",'r','-') ,     
+                                (p1,p2,[TDL100['t'].min(),TDL100['t'].max()],[-1,1.5],TDL100['I11'],"Time Signals vs L",'r',':')  ,             
+                                (p1,p2,[TDL100['t'].min(),TDL100['t'].max()],[-1,1.5],TDL100['I21'],"Time Signals vs L",'g','-') ,              
+                                )
+
+axt[p1,p2].legend(['Zp 50','Zp 30','ZP 100'])
+## I21 Diffents Load Impedances
+p1=0
+p2=1
+plot2DTparametric(axt,TDL100ZLres50['t']*1e-9,  
+                                (p1,p2,[TDL100['t'].min(),TDL100['t'].max()],[-1,1.5],TDL100['I21'],"I21 vs Zport=50,30,100",'b','-'),
+                                (p1,p2,[TDL100Zp30['t'].min(),TDL100Zp30['t'].max()],[-1,1.5],TDL100Zp30['I21'],"I21 vs Zport=50,30,100",'r','-'),
+                                (p1,p2,[TDL100Zp100['t'].min(),TDL100Zp100['t'].max()],[-1,1.5],TDL100Zp100['I21'],"I21 vs Zport=50,30,100",'g','-'),
+
+                   )
+axt[p1,p2].legend(['Zp 50','Zp 30','ZP 100'])
+## I11 Diffents Load Impedances
+p1=1
+p2=0
+plot2DTparametric(axt,TDL100['t']*1e-9,  
+                                (p1,p2,[TDL100['t'].min(),TDL100['t'].max()],[-1,1.5],TDL100['I11'],"I11 vs Zport=50,30,100",'b','-'),
+                                (p1,p2,[TDL100Zp30['t'].min(),TDL100Zp30['t'].max()],[-1,1.5],TDL100Zp30['I11'],"I11 vs Zport=50,30,100",'r','-'),
+                                (p1,p2,[TDL100Zp100['t'].min(),TDL100Zp100['t'].max()],[-1,1.5],TDL100Zp100['I11'],"I11 vs Zport=50,30,100",'g','-'),
+
+
+                   )
+axt[p1,p2].legend(['Zp 50','Zp 30','ZP 100'])
+
+
+## I1 Diffents Load Impedances
+# plot2DTparametric(axt,TDL100ZLres50['t']*1e-9,  
+#                                 (0,2,[TDL100ZLres50['t'].min(),TDL100ZLres50['t'].max()],[-1,1.5],TDL100ZLres50['I1'],"I1 vs Zport=50,30,100",'b','-')
+
+#                    )
+# plot2DTparametric(axt,TDL100ZLres30['t']*1e-9,  
+#                                 (0,2,[TDL100ZLres30['t'].min(),TDL100ZLres30['t'].max()],[-1,1.5],TDL100ZLres30['I1'],"I1 vs Zport=50,30,100",'r','-'),
+#                                 (0,2,[TDL100ZLres100['t'].min(),TDL100ZLres100['t'].max()],[-1,1.5],TDL100ZLres100['I1'],"I1 vs Zport=50,30,100",'g','-'),
+
+#                    )
+# axt[0,2].legend(['Zp 50','Zp 30','ZP 100'])
+## I11 Diffents Load Impedances
+p1=2
+p2=0
+plot2DTparametric(axt,TDL100ZLres50['t']*1e-9,  
+                                (p1,p2,[TDL100ZLres50['t'].min(),TDL100ZLres50['t'].max()],[-1,1.5],TDL100ZLres50['I11'],"I11 vs ZL=50,30,100",'b','-'),
+                   )
+plot2DTparametric(axt,TDL100ZLres30['t']*1e-9,  
+                                (p1,p2,[TDL100ZLres30['t'].min(),TDL100ZLres30['t'].max()],[-1,1.5],TDL100ZLres30['I11'],"I11 vs ZL=50,30,100",'r','-'),
+                                (p1,p2,[TDL100ZLres100['t'].min(),TDL100ZLres100['t'].max()],[-1,1.5],TDL100ZLres100['I11'],"I11 vs ZL=50,30,100",'g','-'),
+
+                   )
+axt[p1,p2].legend(['ZL 50','ZL 30','ZL 100'])
+
+p1=1
+p2=1
+plot2DSparametricMagdB(axt,S_L100Zp30_rf.f, [0,10],
+                       (p1,p2,S_L100Zp50_rf.s[:,0,0],'b','-'),
+                       (p1,p2,S_L100Zp30_rf.s[:,0,0],'r','-'),
+                       (p1,p2,S_L100Zp100_rf.s[:,0,0],'g','-'),
+                )
+axt[p1,p2].set_title('S11 Mag vs ZL Res')
+axt[p1,p2].legend(['ZP 50','ZP 30','ZP 100'])
+
+p1=1
+p2=2
+
+plot2DSparametricPhase(axt,S_L100Zp30_rf.f, [0,10],
+                       (p1,p2,S_L100Zp50_rf.s[:,0,0],'b','-'),
+                       (p1,p2,S_L100Zp30_rf.s[:,0,0],'r','-'),
+                       (p1,p2,S_L100Zp100_rf.s[:,0,0],'g','-'),
+)
+axt[p1,p2].set_title('S11 Phase vs ZL Res')
+axt[p1,p2].legend(['ZP 50','ZP 30','ZP 100'])
+
+p1=2
+p2=1
+
+plot2DSparametricMagdB(axt,S_L100ZLres30_rf.f, [0,10],
+                     #   (p1,p2,S_L100Zp50_rf.s[:,0,0],'m','-'),
+                       (p1,p2,S_L100ZLres50_rf.s[:,0,0],'b','-'),
+                       (p1,p2,S_L100ZLres30_rf.s[:,0,0],'r','-'),
+                       (p1,p2,S_L100ZLres100_rf.s[:,0,0],'g','-'),
+                )
+axt[p1,p2].set_title('S11 Mag vs ZL Res')
+axt[p1,p2].legend(['ZL 50','ZL 30','ZL 100'])
+
+p1=2
+p2=2
+plot2DSparametricPhase(axt,S_L100ZLres30_rf.f, [0,10],
+                       (p1,p2,S_L100ZLres50_rf.s[:,0,0],'b','-'),
+                       (p1,p2,S_L100ZLres30_rf.s[:,0,0],'r','-'),
+                       (p1,p2,S_L100ZLres100_rf.s[:,0,0],'g','-'),
+                )
+axt[p1,p2].set_title('S11 Phase vs ZL Res')
+axt[p1,p2].legend(['ZL 50','ZL 30','ZL 100'])
+plt.subplots_adjust(wspace=0.2, hspace=0.3)
+mslineBalanis(emconst,w,h,freq)
+------------------
+
+----- stderr -----
+<>:6: SyntaxWarning: invalid escape sequence '\M'
+<>:6: SyntaxWarning: invalid escape sequence '\M'
+C:\Users\55919\AppData\Local\Temp\ipykernel_26736\4127414402.py:6: SyntaxWarning: invalid escape sequence '\M'
+  sys.path.append('H:\Meu Drive\SocieForParaOPlay')
+----- stdout -----
+Model Vp 2.1198461098074755
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mIndexError[0m                                Traceback (most recent call last)
+[1;32m~\AppData\Local\Temp\ipykernel_26736\4127414402.py[0m in [0;36m<cell line: 0>[1;34m()[0m
+[0;32m     41[0m [1;33m[0m[0m
+[0;32m     42[0m [0mprint[0m[1;33m([0m[1;34m"Model Vp {}"[0m[1;33m.[0m[0mformat[0m[1;33m([0m[0mVp[0m[1;33m/[0m[1;36m1e8[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m---> 43[1;33m [0mprint[0m[1;33m([0m[1;34m"Model Propatation time L={} mm, t= {}"[0m[1;33m.[0m[0mformat[0m[1;33m([0m[0mL[0m[1;33m/[0m[1;36m1e-3[0m[1;33m,[0m[0mtL[0m[1;33m[[0m[1;36m0[0m[1;33m][0m[1;33m/[0m[1;36m1e-9[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m     44[0m [0mprint[0m[1;33m([0m[1;34m"Simu Propatation time L={} mm, t= {}"[0m[1;33m.[0m[0mformat[0m[1;33m([0m[1;36m50[0m[1;33m,[0m[0msimutL50[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0;32m     45[0m [0mprint[0m[1;33m([0m[1;34m"Simu Propatation time L={} mm, t= {}"[0m[1;33m.[0m[0mformat[0m[1;33m([0m[1;36m100[0m[1;33m,[0m[0msimutL100[0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+
+[1;31mIndexError[0m: invalid index to scalar variable.
+

@@ -10,7 +10,9 @@ parts:
     - file: ChapterSpectral
     - file: ChapterEMMethod
     - file: ChapterCircuits
-    - file: ChapterMW
+    - file: ChapterMWTL
+    - file: ChapterMWWG
+    - file: ChapterMWNetwork
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAntenna
