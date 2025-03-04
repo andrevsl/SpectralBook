@@ -19,9 +19,10 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
-# sphinx:
-#   config:
-#     bibtex_reference_style: author_year
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Information about where the book exists on the web
 repository:
