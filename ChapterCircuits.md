@@ -7,9 +7,11 @@
 </style>
 
 - AC Voltages/Currents
-- Circuit Anlysis by Laplace 
+- Circuit Analysis by Laplace
+- Grafos 
 - Thevenin/Norton/Superposition
 - Frequency Respose
+
 
 ## AC Voltage/Currents
 
