@@ -1,5 +1,10 @@
 
 # Microwave: Network Analysis
+<style>
+.images{
+    text-align:center;
+}
+</style>
 
 ## Network Analysis - S-Parameters
 
@@ -207,13 +212,7 @@ $$
 Pensando se crio um capitulo só com a teoria de frequency reponse (pensando)
 We have a pole and a zero, located respectivelly at $z_p=-1/ (C(R+Z_0))$ and $z_z=-1/ (C(R-Z_0))$. As known for electrical circuits theory:
 
-- A zero
-   - Amplitude in yeilds a zero until the a infinite amplitude to the function response an phase, while a pole yields a infinite output for the function.
 
-- A pole
-   - Amplitude in yeilds a zero until the a infinite amplitude to the function response an phase, while a pole yields a infinite output for the function.
- and the corner frequencies, where $\omega_p=1/ (C(R+Z_0))$ 
-The corner frequecies specifies where the signal will
 
 
  $\omega_z=1/ (C(R-Z_0))$
