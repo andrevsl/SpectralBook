@@ -69,12 +69,9 @@ In a N- Port System, by definition, we gonna have N ports at defiend planes of r
 
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1ET94oZxq5ziFZT_2WpiBvt7bqxCYaqoY" 
     style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
-<img src=".\bookimages\ChapterCircuits\Nport.png" 
-    style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
 (POZAR- fazer figura depois)
 
-A link to an equation directive: {eq}`my_other_label`
-asdasdada.
+Reference test {eq}`my_other_label` asdasdada.
 
 $$
   w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
