@@ -1,3 +1,5 @@
+# Electical Circuits
+
 ## AC Voltage/Currents
 
 What are current and alternating current? By definition and usual temporal analysis, it is a voltage or current signal that alternate its polarity over the time. In the spectral Analysis, we've seen that when we have alternate polarities, we eliminate the zero frequency, there is no DC components anymore, we shift the spectrum toward frequencies greater than zero, depending on the signal characteristics.
@@ -20,36 +22,8 @@ Now analyzing the current at the origin, for example, injecting an alternating c
 Looking at the diagram above, an alternating current of pulses, considering that at each position x the direction of the charges changes, the charges return to their initial position
 (I wonder if the diagram is correct)
 
-\begin{equation}
 
-x_2-x_1= half wavelength of the pulse 1
-
-\end{equation}
-
-\begin{gather*}
-a_1=b_1+c_1\\s
-a_2=b_2+c_2-d_2+e_2
-\end{gather*}
-
-\begin{align}
-a_{11}& =b_{11}&
-  a_{12}& =b_{12}\\
-a_{21}& =b_{21}&
-  a_{22}& =b_{22}+c_{22}
-\end{align}
-
-```{math}
-:label: my_label
-w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
-```
-$$
-  w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
-$$ (my_other_label)
-
-\begin{gather*}
-a_1=b_1+c_1\\
-a_2=b_2+c_2-d_2+e_2
-\end{gather*}
+$x_2-x_1$= half wavelength of the pulse 1
 
 $t_2-t_1=$ half wavelength of the pulse
 
@@ -84,3 +58,22 @@ Muitas dúvidas, não sei explicar, com argumentos bem físicos, o que acontece,
 Mas o que significa diferença de fase em termos de fluxo de cargas elétricas no tempo e no espaço? Pela referência de fase (ou referência de tempo, translação no tempo infere translação de fase), como vimos nas equações de meio ciclo.
 
 Mas o que significa diferença de fase em termos de fluxo de cargas elétricas no tempo e no espaço?
+
+## Network Analysis - S-Parameters
+
+S-parameters are commonly used to analyze newtork dynamics, because it takes into account the foward/backward waves or power travelling into the lines. However other techniques as Impedance/Admittance and ABCD parameters are also used as needed for a given application, but s-parameters are usually the core among those transformations, because it deals with the concept of travelling waves, with foward and backward direction.
+We gonna see that the forward or backward waves, as we've seen in previous section, it can have positive or negative polarity. Besides, this concept is crucial, because the foward waves that "really" carry the usefull power to the load or to the other side of the network. The backward waves yeilds power loss to the network as we gonna see further.
+
+### N-Port
+
+In a N- Port System, by definition
+
+
+<img src=".\bookimages\ChapterCircuits\Nport.png"
+    style="width: 500px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
+</img>
+
+
+$$
+  w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
+$$(my_other_label)
