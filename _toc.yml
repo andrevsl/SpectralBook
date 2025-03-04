@@ -17,6 +17,7 @@ parts:
       - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAntenna
+    - file: ChapterPhasedArrays
     - file: ChapterMetasurfaces
     - file: ChapterRIS
     - file: Reference    

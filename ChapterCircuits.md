@@ -10,7 +10,7 @@
 - Circuit Analysis by Laplace
 - Grafos 
 - Thevenin/Norton/Superposition
-
+Deep theory after, only the urgent tools
 
 
 ## AC Voltage/Currents
@@ -71,7 +71,9 @@ Mas o que significa diferença de fase em termos de fluxo de cargas elétricas n
 
 ## Frequency Response
 
+Deep theory after, only the urgent tools
 
+### Zeros
 - A zero
    - Amplitude in yeilds a zero until the a infinite amplitude to the function response an phase, while a pole yields a infinite output for the function.
 
