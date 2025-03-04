@@ -72,7 +72,9 @@ In a N- Port System, by definition
     style="width: 500px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
 </img>
 
- A link to an equation directive: {eq}`my_other_label`
+A link to an equation directive: {eq}`my_other_label`
+asdasdada.
+
 $$
   w_{t+1} = (1 + r_{t+1}) s(w_t) + y_{t+1}
 $$(my_other_label)
