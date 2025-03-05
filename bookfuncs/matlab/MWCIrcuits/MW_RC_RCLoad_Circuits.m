@@ -1,7 +1,7 @@
 %% Antenna Dipole Code
 clear all
-addpath(genpath('D:\SpectralBook\bookfuncs\matlab')) %%CST API
-Path='H:\Meu Drive\SocieForParaOPlay\SpectralBook\bookfuncs\matlab\MatlabSimuOutputs\'
+addpath(genpath('D:\SpectralBook\bookfuncs\matlab')) %%CST 
+
 %% Parameters
 jay=sqrt(-1);        %Unidade imaginaria 
 cc=2.997925e8;        %Velocidade da luz
@@ -24,11 +24,11 @@ Lambda=cc./freq;
 k=2.*pi.*freq.*sqrt(e0.*u0);
 %% RC Series 
 type='Series'
-Res=[1,40,70,100];
+Res=[0,10,40,70,100];
 Cap=[0.001*1e-12,0.01*1e-12,0.1*1e-12,1*1e-12];
 [RES,CAP,FREQ]=meshgrid(Res,Cap,freq);
 % fres=1/sqrt(Lind*Cap);
-Zin=1./sqrt(j*2*pi*FREQ.*CAP);
+Zin=1./(1j*2*pi*FREQ.*CAP);
 Zcirc=addElecComponent(type,Zin,RES);
 
 %% RC Series -Parametric Resistance - RC Load (High Pass filter)
@@ -36,104 +36,70 @@ Captarget=1e-12
 [~,idcap]=min(abs(Cap-Captarget));
 Zeq=squeeze(Zcirc(idcap,:,:));
 S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
-VGain=1+S11Circ;
+VGain=(1+S11Circ)/2;
 
-omegapole=-1./(CAP.*(RES+Z0ref));
-omegazero=-1./(CAP.*(RES-Z0ref));
-
-figure,
 %%%Impedance 
-plotZfreq(freq/1e9,Zeq.',[-100 200],string(Res))
-% sgtitle(['Parametric Res Cap=',string(Captarget)])
-
-
 figure,
-% sgtitle(['Parametric Res Cap=',string(Captarget)])
+plotZfreq(freq/1e9,Zeq.',[-100 200],string(Res))
+figure,
+plotFDdBParametric(freq,S11Circ,Res)
 
-subplot 221
-plot(freq/1e9,20*log10(abs(S11Circ)))
-title('Mag S11')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Mag (dB)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 223
-plot(freq/1e9,180/pi*angle((S11Circ)))
-title('Phase S11 ')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 222
-plot(freq/1e9,20*log10(abs(VGain)))
-title('Mag Voltage Gain')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Mag (dB)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 224
-plot(freq/1e9,180/pi*angle((VGain)))
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-title('Phase Voltage Gain')
-
-legend(string(Res))
 %% RC Series -Parametric Capacitance - RC Load (High Pass filter)
-Restarget=40;
+Restarget=0;
 [~,idr]=min(abs(Res-Restarget));
 Zeq=squeeze(Zcirc(:,idr,:));
 S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
 VGain=1+S11Circ;
-figure,
-%%%Impedance 
-% sgtitle({'Parametric Cap R=',string(Restarget)})
 
+figure,
 plotZfreq(freq/1e9,Zeq.',[-100 200],string(Cap))
 
 figure,
+plotFDdBParametric(freq,S11Circ,Cap)
 % sgtitle(['Parametric Res Cap=',string(Captarget)])
 
-subplot 221
-plot(freq/1e9,20*log10(abs(S11Circ)))
-title('Mag S11')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Mag (dB)','fontsize',10,'fontweight','b');
-legend(string(Res))
 
-subplot 223
-plot(freq/1e9,180/pi*angle((S11Circ)))
-title('Phase S11 ')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 222
-plot(freq/1e9,20*log10(abs(VGain)))
-title('Mag Voltage Gain')
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Mag (dB)','fontsize',10,'fontweight','b');
-legend(string(Res))
-
-subplot 224
-plot(freq/1e9,180/pi*angle((VGain)))
-xlabel('Frequency (GHz)','fontsize',10,'fontweight','b');
-ylabel('Phase (Deg)','fontsize',10,'fontweight','b');
-title('Phase Voltage Gain')
-
-legend(string(Res))
-
-%% Time Domain Analysis
-Captarget=1e-12
+%% Single RC values
+Captarget=10e-12
 [~,idcap]=min(abs(Cap-Captarget));
 Restarget=0
 [~,idr]=min(abs(Res-Restarget));
 Zeq=squeeze(Zcirc(idcap,idr,:)).';
-S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
-s11_fit_data = rational(freq,S11Circ)
-[z,p,k,dcgain] = zpk(s11_fit_data)
-omegazero(idcap,idr,1)
-omegapole(idcap,idr,1)
 
+R=0
+ 1/(Captarget*(R-Z0ref))/1e9/(2*pi)
+ 1/(Captarget*(R+Z0ref))/1e9/(2*pi)
+
+omegapole=-1./(CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref));
+omegazero=-1./(CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref));
+
+S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
+VGain=(1-S11Circ)/2
+SS1eq=(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref))./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
+% SS1eq=(1)./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
+% SS1eq=(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref))
+
+VGaineq=(1-j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)))./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
+
+figure,
+% plot(freq/1e9,20*log10(abs(S11Circ))),hold on
+plot(freq/1e9,20*log10(abs(squeeze(VGain)))),hold on
+
+figure,
+plot(freq/1e9,180/pi*(angle(squeeze(SS1eq)))),hold on
+
+s11_fit_data = rational(freq,S11Circ)
+fresp = freqresp(s11_fit_data,freq);
+
+figure,
+plot(freq/1e9,20*log10(abs(squeeze(S11Circ))),freq/1e9,20*log10(abs(squeeze(fresp))))
+
+[z,p,k,dcgain] = zpk(s11_fit_data)
+-omegazero(1)/(2*pi)/1e9
+-z/(2*pi)/1e9
+omegapole(1)
+-p/(2*pi)/1e9
+%% Time Doamin
 S11Nfreq=[fliplr(conj(S11Circ)),S11Circ(1),S11Circ];
 deltat=1/Fs;
 Nt=1025;
@@ -152,7 +118,6 @@ IS=(Vinc-VSreflected)./Z0ref;
 Vreflected=ifft(ifftshift(VSreflected));
 Vtd=ifft(ifftshift(VS));
 Itd=ifft(ifftshift(IS));
-
 
 
 figure,

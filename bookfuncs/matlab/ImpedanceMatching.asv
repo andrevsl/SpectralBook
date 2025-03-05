@@ -80,8 +80,7 @@ ftarget=freq(idr);
 type='Shunt'
 % Nspoints=length(Zmatching);
 Nspoints=1000;
-Nspointsvec=[1:Nspoints+1];
-Lind=linspace(1e-9,0.9e-9,Nspoints);
+☺Lind=linspace(1e-9,0.9e-9,Nspoints);
 Zmatching=j*2*pi*ftarget*Lind;
 
 ZinNew=addElecComponent(type,zinDipole(idr),Zmatching);

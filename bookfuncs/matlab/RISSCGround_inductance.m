@@ -29,10 +29,34 @@ Lg=imag(Zd_TM./omega/1e-9)
 %% Ground Short-circuit Inductance vs Permittivity
 
 figure,
+subplot 311
 plot(f/1e9,squeeze(Lg(1,:,:)))
+title('Inductance for Er=2.2')
 xlabel('Frequency GHz','FontSize',14,'FontWeight','bold')
 ylabel('Inductance','FontSize',14,'FontWeight','bold')
-% legend(Leg)
+legend(string(d/1e-3))
+ax = gca;ax.XAxis.FontSize = 18;ax.YAxis.FontSize = 18;
+set(gcf,'color','w');sizef = [4000 1900];res = 300;
+set(gcf,'Units','inches','Position',[2 2 sizef/res]);
+grid
+
+subplot 312
+plot(f/1e9,squeeze(Lg(2,:,1:3)))
+title('Inductance for Er=4.4')
+xlabel('Frequency GHz','FontSize',14,'FontWeight','bold')
+ylabel('Inductance','FontSize',14,'FontWeight','bold')
+legend(string(d/1e-3))
+ax = gca;ax.XAxis.FontSize = 18;ax.YAxis.FontSize = 18;
+set(gcf,'color','w');sizef = [4000 1900];res = 300;
+set(gcf,'Units','inches','Position',[2 2 sizef/res]);
+grid
+
+subplot 313
+plot(f/1e9,squeeze(Lg(2,:,4:end)))
+title('Inductance for Er=4.4')
+xlabel('Frequency GHz','FontSize',14,'FontWeight','bold')
+ylabel('Inductance','FontSize',14,'FontWeight','bold')
+legend(string(d(4:end)/1e-3))
 ax = gca;ax.XAxis.FontSize = 18;ax.YAxis.FontSize = 18;
 set(gcf,'color','w');sizef = [4000 1900];res = 300;
 set(gcf,'Units','inches','Position',[2 2 sizef/res]);
