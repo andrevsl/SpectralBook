@@ -3,16 +3,17 @@
 
 ###  Linear Space and Time Varying (2D)
 The voltage waves and currents for a canonical transmission line with a time dimension and one spatial dimension can be defined as
-
-\begin{equation}
+$$
 V(t,z)=V^{+}(t,z) e^{-\gamma_z \cdot z } + V^{-}(t,z)e^{\gamma_z \cdot z }
-\end{equation}
+$$
 
-\begin{equation}
+$$
 V(t,z)=V^{+}(t,z) e^{-\gamma_z \cdot z } + V^{-}(t,z)e^{\gamma_z \cdot z } 
-\end{equation}
+$$
 
-$$I(t,z)=I^{+}(t,z) e^{-\gamma_z \cdot z } + I^{-}(t,z)e^{\gamma_z \cdot z } $$
+$$
+I(t,z)=I^{+}(t,z) e^{-\gamma_z \cdot z } + I^{-}(t,z)e^{\gamma_z \cdot z } 
+$$
 
 In frequency-time domain
 
@@ -58,14 +59,5 @@ Considering the coupling between Electromagnetic Polarizations, the divergence o
 $$V_x=Z_{xx}I_x +Z_{xy}I_{y}$$
 
 $$V_y=Z_{yx}I_x +Z_{yy}I_{y}$$
-
-
-Usin the Method of Moments, it is possible to obtain an approximation of the impedances
-
-$$ Z^{xx}_0=\frac{E^{+}_{n \Delta x} \Delta x}{I^{+}_{n \Delta x}}=-\frac{E^{-}_{n \Delta x} \Delta x}{I^{-}_{n \Delta x}}  \ ?$$
-
-
-$$ Z^{yy}_0=\frac{E^{+}_{n \Delta y} \Delta y}{I^{+}_{n \Delta y}} \ ? $$
-
 
 

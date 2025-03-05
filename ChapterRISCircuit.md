@@ -22,7 +22,7 @@ $$
 Como $ Z_g$ é muito pequena, tem-se
 
 $$
-Z_d=j\eta_d\tan{kl}
+Z_d=j\eta_d\tan{kl}=jX_d
 $$
 
  
@@ -34,16 +34,18 @@ $$
 
 $$
 
-$$
 
-   Z_{in}= \frac{(R_p+j\omega L_p+\frac{1}{j\omega C_p}) (j\eta_d\tan{kl})}
-   {(R_p+j\omega L_p+\frac{1}{j\omega C_p})+(j\eta_d\tan{kl})}
-
-$$
-Se todo circuito for encapsulado como descrito inicialmente, a impedância $Z_s$, será
+Se todo circuito for encapsulado como descrito inicialmente, em uma impedância $Z_s$, teremos
 
 $$
 
     Z_s=\frac{Z_{in}\eta_0^{TM}}{\eta_0^{TM}-Z_{in}}
 $$
 
+Porém analisando melhor,
+$$
+
+   Z_{in}= \frac{(R_p+j\omega L_p+\frac{1}{j\omega C_p}) (jX_d)}
+   {(R_p+j\omega L_p+\frac{1}{j\omega C_p})+(jX_d)}
+
+$$

@@ -14,7 +14,7 @@
 - Inferir a impedância superficial por MOM periodico?
 
 ### Ground Inductance
-
+ - For higher frequecies, it should be used lower permittivity substrates or small thickness
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1DjFYlnoSSf-5_zBDVuR8ienuzwkZxpsY" 
     style="width: 800px;  height: 1000 px;display: block;margin-left: auto;margin-right: auto;"  />
 
