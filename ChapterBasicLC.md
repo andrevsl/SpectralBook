@@ -4,13 +4,9 @@
     text-align:center;
 }
 </style>
-# Application to Electrical Circuits
 
-## RC Filters
 
-RC circuits are typical configuration used among many application, for example, antena systems, an small dipole, can be viewed as an RC circuit across some frequency range.
-
-### RC Load 
+# LC Load 
 Considering a 1-port System, where the load is an RC circuit with reference port impedance $Z_0=50$, and load impedance, which is also the input impedance of the system,
 
 $$

@@ -126,3 +126,4 @@ Integration of signal
 
 l
 
+## Foster Theorem

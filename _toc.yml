@@ -9,15 +9,21 @@ parts:
     chapters:
     - file: ChapterSpectral
     - file: ChapterEMMethod
-    - file: ChapterCircuits
+    - file: ChapterMW
       sections:
       - file: ChapterMWTL
       - file: ChapterMWWG
       - file: ChapterMWNetworkSpar
-    - file: ChapterCircuitsFIlters
+    - file: ChapterBasicCircuits
+      sections:
+      - file: ChapterBasicRC
+      - file: ChapterBasicLC
+      - file: ChapterBasicRLCSeries
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAntenna
+      sections:
+      - file: ChapterAntennaDipole
     - file: ChapterPhasedArrays
     - file: ChapterMetasurfaces
     - file: ChapterRIS
@@ -28,7 +34,7 @@ parts:
       - file: ChapterRISCircuit
     - file: ChapterMIMO
     - file: Reference    
-  - caption: Applied Design of RF/PCB Integrated Circuits
+  - caption: Applied Design of RF/MW Integrated Circuits
     numbered: True  # Only applies to chapters in Part 1.
     chapters:
     - file: pcbRFMWBook
