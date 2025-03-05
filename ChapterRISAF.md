@@ -13,6 +13,7 @@ Fig. Fazer Figura
 
 
 O modelo planar do método de arranjo de antenas clássico {cite}`balanisAntenna` é dado por
+
 $$
 \overline{E}_s=\sum_{m=1}^{M} \sum_{n=1}^{N} I_{1m}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_x}
                                 I_{1n}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_x}

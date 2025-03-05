@@ -4,7 +4,7 @@
     text-align:center;
 }
 </style>
-# Application to Electrical Systems
+# Application to Electrical Circuits
 
 ## RC Filters
 
