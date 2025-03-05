@@ -13,7 +13,8 @@ parts:
       sections:
       - file: ChapterMWTL
       - file: ChapterMWWG
-      - file: ChapterMWNetwork
+      - file: ChapterMWNetworkSpar
+    - file: ChapterCircuitsFIlters
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAntenna

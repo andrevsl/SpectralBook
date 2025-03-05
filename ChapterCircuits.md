@@ -81,9 +81,16 @@ Mas o que significa diferença de fase em termos de fluxo de cargas elétricas n
 Theory after, only the urgent tools, it might to be moved to spectral analysis chapter
 
 ### Zeros
+Derivation of signal
+   - $\omega<=\omega_1=0$
+      - zero
+      - 
 
+   - $\omega_1<0<\omega$
+      -  $\omega_1$.
+      - phase negative
    - $\omega<=\omega_1$
-      - Amplitude with zero response until the corner frequency $\omega_1$.
+      - Amplitude with zero dB response until the corner frequency $\omega_1$.
       - Phase approximatelly zero
 
    - $\omega_1<\omega<=10\omega_1$ 
@@ -95,9 +102,18 @@ Theory after, only the urgent tools, it might to be moved to spectral analysis c
       - Phase approximatelly $\phi=90$ deg
 
 
-- A pole
+#### Pole
+Integration of signal
+   - $\omega<=\omega_1=0$
+      - Infinite Response
+      - Integration of signal
+   
+   - $\omega_1<0<\omega$
+      - 
+      - Phase positive
+
    - $\omega<=\omega_1$
-      - Amplitude in yeilds a zero resonse until the frequency.
+      - Amplitude with zero dB response until the corner frequency $\omega_1$.
       - Phase approximatelly zero
 
    - $\omega_1<\omega<=10\omega_1$ 

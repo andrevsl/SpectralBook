@@ -1,12 +1,11 @@
 
-# Microwave: Network Analysis
 <style>
 .images{
     text-align:center;
 }
 </style>
 
-## Network Analysis - S-Parameters
+# Network Analysis - S-Parameters
 
 Scattering parameters (S-Parameters) are commonly used to analyze newtork dynamics, because it takes into account the foward/backward waves or power travelling waves into the networks. However other techniques as Impedance/Admittance and ABCD matrices are also used as needed for a given application, but S-Parameters are usually the core among those transformations, because it deals as already stated with the concept of the power flow direction.
 We gonna see that the forward or backward waves, as we've seen in previous section, it can have positive or negative polarity. Besides, this concept is crucial, because the foward waves that "really" carry the usefull power to the load or to the other side of the network. The backward waves, when not being seen as transmited power, yeilds power loss to the network as we gonna see further.
@@ -57,48 +56,17 @@ $$
 V_n^{-}=\frac{V_{n}-Z_{0n}I_{n}}{2} 
 $$
 
-From electric circuit's law, related the generator connected to a given port,
+##### Refleciton coeficient
 
-<div class='images'>
-
-<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1HJevSJNgrxOR0HLlT5kJRzvxaMkLOPYn" 
-    style="width: 350px;  height: 400 px;"  />
-</div>
-
-$$
-V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})=V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{in}}
-$$
-
-
-$$
-V_2=Z_LI_2=Z_L\frac{I_2^{+}-I_2^{-}}{Z_{0n}}
-$$
-
-
-The power delivered to the load is (to do for the complex impedance case)
-
-$$
-
-P_L=\frac{1}{2} \Re\{V_1I_1^{*}\} =\frac{1}{2Z_0}(|V_1^{+}|^2-|V_1^{-}|^2)
-
-$$
-
-#### Measurements
-In order to obtain the scattering matrix elements, generally to have an exact solution for the systems, one excitation port voltage is excited at time, the excitation signal wil be cosneidered $V^{+}_n$, all other port are measured, the value obetained will be $V^{-}_n$, including the backward wave of the excited port using directional couplers (vector analyzers).
-
-
-#### 1-Port Excited All others Passive Port
 
 $$
 [\Gamma_n]=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
 $$
 
+##### Input Impedance
 
-#### All Port Excited 
 
-$$
-[\Gamma_n]=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
-$$
+
 
 
 ### 2-Port
@@ -158,7 +126,7 @@ $$
 The reflection coeficient $\Gamma_L$, for reaching the load at the port 2.
 
 $$
-   \Gamma_{L}=\frac{ Z_L-Z_0 } {Z_L+Z_0 }
+   \Gamma_{L}=\frac{V^{+}_2}{V^{-}_2}==\frac{ Z_L-Z_0 } {Z_L+Z_0 }
 $$
 
 
@@ -175,49 +143,109 @@ $$
 $$
 
 
+#### Power Gain
+
+- Power gain
+- Transducer power Gain
+- Avalaible power Gain
+- Operating power Gain
+
+#### Voltage Gain
+$$
+\frac{V_{2}}{V^{+}_1}=\frac{V^{+}_2+V^{-}_2}{V^{+}_1}=
+\frac{\Gamma_LV^{-}_2}{V^{+}_1}+S_{21}=
+(\Gamma_L+1)S_{21}
+$$ 
+#### Current Gain
+$$
+\frac{I_{2}}{I^{+}_1}=
+(\Gamma_L-1)S_{21}
+$$ 
+### 1-Port
+
+#### Input Impedance
+
+$$
+   Z_{in}=Z_{11}=Z_L
+$$
+
+
 #### Power 
+$$
+   Z_{in}=Z_{11}=Z_L
+$$
 
 #### Voltage Gain
 
+$$
+\frac{V_{L}}{V^{+}_1}=\frac{V^{+}_1+V^{-}_1}{V^{+}_1}=1+S_{11}=\frac{V_g}{V^{+}_1}\frac{Z_{in}}{Z_{in}+Z_0}
+$$ 
+
+
 #### Current Gain
-
-
-## Network Analysis - Z/Y-Parameters 
-
-## Network Analysis - ABCD-Parameters
-
-
-## RC Filters
-
-RC circuits are typical configuration used among many application, for example, antena systems, an small dipole, can be viewed as an RC circuit across some frequency range.
-
-### RC Load 
-Considering a 1-port System, where the load is an RC circuit with reference port impedance $Z_0=50$, and load impedance, which is also the input impedance of the system,
+Analogously, the current gain
 
 $$
-Z_{in}=Z_{L}=R+\frac{1}{j\omega C}
+\frac{I_{L}}{I^{+}_1}=\frac{V^{+}_1-V^{-}_1}{V^{+}_1}=1-S_{11}
 $$
-#### Reflection Coeficient
 
-Usually in electrical circuits we analyze the voltages ratio, i.e. the transfer fucntion, which relates the output voltage to the incident voltage. For mirowave system the reflection/trasmission coeficient is commonly used, it takes into account the effect of backwardwaves among the impedances, which in this case for 1-port circuit, it is equal to the $S_{11}$ at the source port,
+### Microwave vs Electrical Circuits Point of View
+
+The trick part is when to treat the system as the traditional electric circuit, and when treat as microwave elements which can have impedance mismatches adn reflections.
+From electric circuit's law, related the generator connected to a given port. 
+
+<div class='images'>
+
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1HJevSJNgrxOR0HLlT5kJRzvxaMkLOPYn" 
+    style="width: 350px;  height: 400 px;"  />
+</div>
+
+You cannot do that, because when you attach the generator you have another system, the voltages $V_n^{+/-}$ and current will change. 
 
 $$
-S_{11}=\frac{V^{-}_1}{V^{+}_1}=\frac{Z_{in}-Z_0}{Z_{in}+Z_0}=\frac{R+\frac{1}{j\omega C}-Z_0}{R+\frac{1}{j\omega C}+Z_0}
+V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})=V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{0n}}
 $$
 
 
 $$
-S_{11}=\frac{1+j\omega C(R-Z_0)}{1+j\omega C(R+Z_0)}
+V_2=Z_LI_2=Z_L\frac{V_2^{+}-V_2^{-}}{Z_{0n}}
 $$
-Pensando se crio um capitulo só com a teoria de frequency reponse (pensando)
-We have a pole and a zero, located respectivelly at $z_p=-1/ (C(R+Z_0))$ and $z_z=-1/ (C(R-Z_0))$. As known for electrical circuits theory:
 
+The reference impedance provides flexibility to make the transformation for different source/load impedances.
 
-
-
- $\omega_z=1/ (C(R-Z_0))$
 
 $$
-V_{L}=V_1=V^{+}_1+V^{-}_1
+V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})=V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{in}}
 $$
+
+
+The power delivered to the load is (to do for the complex impedance case)
+
+$$
+
+P_L=\frac{1}{2} \Re\{V_1I_1^{*}\} =\frac{1}{2Z_0}(|V_1^{+}|^2-|V_1^{-}|^2)
+
+$$
+
+#### Measurements
+In order to obtain the scattering matrix elements, generally to have an exact solution for the systems, one excitation port voltage is excited at time, the excitation signal wil be cosneidered $V^{+}_n$, all other port are measured, the value obetained will be $V^{-}_n$, including the backward wave of the excited port using directional couplers (vector analyzers).
+
+
+#### 1-Port Excited All others Passive Port
+
+$$
+[\Gamma_n]=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
+$$
+
+
+#### All Port Excited 
+
+$$
+[\Gamma_n]=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
+$$
+
+
+# Network Analysis - Z/Y-Parameters 
+
+# Network Analysis - ABCD-Parameters
 
