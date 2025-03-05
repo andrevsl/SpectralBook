@@ -10,13 +10,13 @@
 Scattering parameters (S-Parameters) are commonly used to analyze newtork dynamics, because it takes into account the foward/backward waves or power travelling waves into the networks. However other techniques as Impedance/Admittance and ABCD matrices are also used as needed for a given application, but S-Parameters are usually the core among those transformations, because it deals as already stated with the concept of the power flow direction.
 We gonna see that the forward or backward waves, as we've seen in previous section, it can have positive or negative polarity. Besides, this concept is crucial, because the foward waves that "really" carry the usefull power to the load or to the other side of the network. The backward waves, when not being seen as transmited power, yeilds power loss to the network as we gonna see further.
 
-### N-Port
+## N-Port
 
 In a N- Port System, by definition, we gonna have N ports interacting with each other, exchanging power within a system, each one located at a defined plane of reference $t_n$, which will have a reference impedance $Z_{0n}$, forward waves leaving the port and entering the system $V^{+}_{n}$, and backward waves $V^{*}_{n}$ arriving from the system or reflected at the port $n$.
 
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1ET94oZxq5ziFZT_2WpiBvt7bqxCYaqoY" 
     style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
-(POZAR- fazer figura depois)
+(POZAR- fazer figura depois- adicionando a impedância de ref conectada a porta talvez, unica mudança talvez, figura muito legal)
 
 The foward waves are related by the scaterring matrix {eq}`NSParMatrix` as found below.
 
@@ -25,20 +25,20 @@ $$
 $$(NSParMatrix)
 
 
-##### Power Waves
+### Power Waves
 
-Generally normalized waves are employed due to interesting properties which facilite the analysis, being portable to be used or analyzed with different sources/load impedance. Where the normalized incident power wave is $a_n=V^{+}_n/\sqrt{Z_{0n}}$, and the reflected normalized power wave is $b_n=V^{-}_n/\sqrt{Z_{0n}}$, then we have
+Generally normalized waves are employed due to interesting properties which facilite the analysis, being portable to be used or analyzed with different sources/load impedance, as we gonna see further. Where the normalized incident power wave is $a_n=V^{+}_n/\sqrt{Z_{0n}}$, and the reflected normalized power wave is $b_n=V^{-}_n/\sqrt{Z_{0n}}$, then we have
 
 $$
 [b_n]=[S][a_n]
 $$(NSParPowerWaveMatrix)
+
 
 Then, for the voltages, following the Kirchhoff's laws, it is the addition of the foward and backward voltages, because the backward voltage it does not infer a negative voltage polarity, instead, a voltage which is generating a backward wave from the same terminals reference.
 
 $$
 V_n=V_n^{+}+V_n^{-}
 $$
-
 
 On the other side, for the currents, also following the Kirchhoff's laws, it is the substraction of the foward and backward currents, hence a backward current implies direction, also opposite sign, so the negative signal is important, besides the current will be taken related to the reference impedance. Very mind blowing all that stuff. 
 
@@ -51,20 +51,96 @@ Then, replacing the equations () into () we gona find
 $$
 V_n^{+}=\frac{V_{n}+Z_{0n}I_{n}}{2}  
 $$
+$$
+a_n=\frac{V_{n}+Z_{0n}I_{n}}{2\sqrt{Z_{0n}}}  
+$$
 
 $$
 V_n^{-}=\frac{V_{n}-Z_{0n}I_{n}}{2} 
 $$
+$$
+b_n=\frac{V_{n}+Z_{0n}I_{n}}{2\sqrt{Z_{0n}}}  
+$$
 
-##### Refleciton coeficient
+### Reflection coeficient
+
+
+The reflection coefficient stands for the ratio between the backward waves and forward waves voltages, implying that the port when excited with a signal which will generate foward wave, however, the system will not absorb totally the signal due to impedance mismatches, if it occurs, then a backward wave is generated with opposite direction.
+Before connecting the $nth$ port to the soruce, we place the reference impedance $Z_{0n}$ at its termination, supposing we have a foward wave $V^{+}_n$ incoming the system, and a backward wave  $V^{-}_n$ leaving the system into the reference load. 
+
+#### Port Terminated with a Reference Impedance
+
+Attaching the By the scatering parameter definition we have
+
+$$
+\Gamma_n=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
+$$
+
+From the system we have
+
+$$
+V_n=Z_{n}^{in}I_n
+$$
+
+$$
+V^{+}_n+V^{-}_n=Z_{n}^{in}\frac{V^{+}_n-V^{-}_n}{ Z_{0n}}
+$$
+Dividing by  $V^{+}_n$ and rearranging the equation we have
+
+$$
+\Gamma_n=\frac{Z_{n}^{in}-Z_{0n}}{Z_{n}^{in}+Z_{0n}}
+$$(GammNthImpedance)
+
+#### Port Terminated with a Source
+
+Attaching a generator, replacing the reference impedance by the voltage source $V_{gn}$ and  its source impedance $Z_{gn}$
+
+<div class='images'>
+
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1HJevSJNgrxOR0HLlT5kJRzvxaMkLOPYn" 
+    style="width: 350px;  height: 400 px;"  />
+</div>
+
+
+
+The reference impedance provides flexibility to make the transformation for different source/load impedances.
 
 
 $$
-[\Gamma_n]=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
+V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})
 $$
 
-##### Input Impedance
+$$
+Z^{in}_{n}I_n=
+V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{in}}
 
+$$
+
+as $\Gamma_n=\frac{V_n^{-}}{V_n^{+}}$, dividing by $V_n^{+}$,
+
+$$
+Z^{in}_{n}I_n=
+V_{gn}-Z_g\frac{(1-\Gamma_n)}{Z^{in}_{n}}
+
+$$
+
+from {eq}`GammNthImpedance`
+
+$$
+Z^{in}_{n}=Z_0\frac{1+\Gamma_n}{1-\Gamma_n}
+$$
+
+
+### Power
+
+
+The power delivered to the system by the $nth$ port
+
+$$
+
+P_L=\frac{1}{2} \Re\{V_nI_n^{*}\} =\frac{1}{2Z_0}(|V_n^{+}|^2-|V_n^{-}|^2)
+
+$$
 
 ### 2-Port
 
@@ -106,7 +182,7 @@ $$
  In a 2-Port system we will define 4 reflection coeficients depending on the location and side it has been seen as ilustrated below. We gonna have the reflection coeficient $\Gamma_{in}$ for the signals outcoming from the generator at the port 1 toward the systems. 
 
 $$
-   \Gamma_{in}=\frac{ Z_{in}-Z_0 } {Z_{in}+Z_0 }=S_{11}+\frac{ S_{12}S_{21}\Gamma_L } {1- S_{22}\Gamma_{L}}
+   \Gamma_{in}=\frac{V^{-}_{1}}{V^{+}_{1}}=\frac{ Z_{in}-Z_0 } {Z_{in}+Z_0 }
 $$
 
 $$
@@ -115,6 +191,10 @@ V^{-}_{1}=\frac{ S_{11}V^{+}_{1}+S_{12}V^{+}_{2}}{ V^{+}_1}=1+\frac{ S_{12}V^{+}
 V^{-}_{2}=\frac{ S_{21}V^{+}_{1}+S_{22}V^{+}_{2}}{ V^{+}_2} \\
 $$
 
+
+$$
+   \Gamma_{in}=S_{11}+\frac{ S_{12}S_{21}\Gamma_L } {1- S_{22}\Gamma_{L}}
+$$
 The reflection coeficient $\Gamma_G$, for the signals incoming into the generator at the port 1 from the network. 
 $$
    \Gamma_{G}=\frac{ Z_G-Z_0 } {Z_G+Z_0 }
@@ -136,7 +216,7 @@ $$
 #### Input Impedance
 
 $$
-   \Z_{in}=Z_{11}-\frac{ Z_{12}Z_{21}} {Z_{22}+Z_L}
+   Z_{in}=Z_{11}-\frac{ Z_{12}Z_{21}} {Z_{22}+Z_L}
 $$
 
 
@@ -158,6 +238,8 @@ $$
 \frac{I_{2}}{I^{+}_1}=
 (\Gamma_L-1)S_{21}
 $$ 
+
+
 ### 1-Port
 
 #### Input Impedance
@@ -188,41 +270,21 @@ $$
 
 ### Microwave vs Electrical Circuits Point of View
 
-The trick part is when to treat the system as the traditional electric circuit, and when treat as microwave elements which can have impedance mismatches adn reflections.
+The trick part is when to treat the system as the traditional electric circuit, and when treat as microwave elements which can have impedance mismatches adn reflections. We need to treat as both.
 From electric circuit's law, related the generator connected to a given port. 
 
-<div class='images'>
-
-<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1HJevSJNgrxOR0HLlT5kJRzvxaMkLOPYn" 
-    style="width: 350px;  height: 400 px;"  />
-</div>
-
-You cannot do that, because when you attach the generator you have another system, the voltages $V_n^{+/-}$ and current will change. 
-
+#### Maximum Power Transfer
+In order to have maximal power transfer
+Usually Electrical circuits and Microwave circuits, respectivelly,
 $$
-V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})=V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{0n}}
+   Z_{0}=Z_{in}^{*}
 $$
 
-
 $$
-V_2=Z_LI_2=Z_L\frac{V_2^{+}-V_2^{-}}{Z_{0n}}
-$$
-
-The reference impedance provides flexibility to make the transformation for different source/load impedances.
-
-
-$$
-V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})=V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{in}}
+   Z_{0}=Z_{in}
 $$
 
-
-The power delivered to the load is (to do for the complex impedance case)
-
-$$
-
-P_L=\frac{1}{2} \Re\{V_1I_1^{*}\} =\frac{1}{2Z_0}(|V_1^{+}|^2-|V_1^{-}|^2)
-
-$$
+As we've already known the electrical systems and microwave don't like reactive energy, then to respect both conditions, ensure maximal power transmission, the reference impedances and impedances of the sytems (input, output, load, Source) impedances must be real valued.
 
 #### Measurements
 In order to obtain the scattering matrix elements, generally to have an exact solution for the systems, one excitation port voltage is excited at time, the excitation signal wil be cosneidered $V^{+}_n$, all other port are measured, the value obetained will be $V^{-}_n$, including the backward wave of the excited port using directional couplers (vector analyzers).
