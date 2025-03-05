@@ -68,7 +68,6 @@ $$
 
 
 
-
 ### 2-Port
 
 For a 2-Port System, the most employed in microwave systems as we are always analysing point-to-point networks, as power transmission lines, antenna matching circuits, amplifiers, phase shifters,etc. We will gonna analyze separetally this system.

@@ -21,6 +21,11 @@ parts:
     - file: ChapterPhasedArrays
     - file: ChapterMetasurfaces
     - file: ChapterRIS
+      sections:
+      - file: ChapterRISFreeSpace
+      - file: ChapterRISAF
+      - file: ChapterRISPWTL
+      - file: ChapterRISCircuit
     - file: Reference    
   - caption: Applied Design of RF/PCB Integrated Circuits
     numbered: True  # Only applies to chapters in Part 1.
