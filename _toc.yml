@@ -21,7 +21,7 @@ parts:
       - file: ChapterBasicRLCSeries
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
-    - file: ChapterAntenna
+    - file: ChapterAppAntenna
       sections:
       - file: ChapterAntennaDipole
     - file: ChapterPhasedArrays
