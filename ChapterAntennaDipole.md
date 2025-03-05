@@ -1,5 +1,5 @@
 
-# Dipole
+# Dipole Analysis
 
 ## Small Dipole
 - Series Inductance

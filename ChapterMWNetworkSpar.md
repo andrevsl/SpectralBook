@@ -70,7 +70,7 @@ Before connecting the $nth$ port to the soruce, we place the reference impedance
 
 #### Port Terminated with a Reference Impedance
 
-Attaching the By the scatering parameter definition we have
+Attaching the reference impedance $Z_{0n}$ to the port of the system. By the scatering parameter definition we have,
 
 $$
 \Gamma_n=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
@@ -122,12 +122,19 @@ $$
 Z^{in}_{n}I_n=
 V_{gn}-Z_g\frac{(1-\Gamma_n)}{Z^{in}_{n}}
 
-$$
+$$(ZinVgnZgn)
 
 from {eq}`GammNthImpedance`
 
 $$
 Z^{in}_{n}=Z_0\frac{1+\Gamma_n}{1-\Gamma_n}
+$$(ZinFromGammaIn)
+
+then replacing {eq}`ZinFromGammaIn`into {eq}`ZinVgnZgn`
+
+$$
+Z^{in}_{n}I_n=
+V_{gn}-Z_g\frac{(1-\Gamma_n)}{Z^{in}_{n}}
 $$
 
 
