@@ -15,7 +15,8 @@
 
 ### Ground Inductance
 
-![GroundInductance.png](.\bookimages\RISChapter\GrroundInductance.png)
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1DjFYlnoSSf-5_zBDVuR8ienuzwkZxpsY" 
+    style="width: 800px;  height: 1000 px;display: block;margin-left: auto;margin-right: auto;"  />
 
 
 ## Estudo do circuito de Controle dos Varactors (Depois ou antes da Quali se conseguir)
