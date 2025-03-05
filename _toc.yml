@@ -26,6 +26,7 @@ parts:
       - file: ChapterRISAF
       - file: ChapterRISPWTL
       - file: ChapterRISCircuit
+    - file: ChapterMIMO
     - file: Reference    
   - caption: Applied Design of RF/PCB Integrated Circuits
     numbered: True  # Only applies to chapters in Part 1.
