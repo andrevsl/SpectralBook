@@ -1,4 +1,4 @@
-# Electical Circuits 
+# Microwave Circuits 
 <style>
 
 .images{
@@ -6,11 +6,18 @@
 }
 </style>
 
-- AC Voltages/Currents
-- Circuit Analysis by Laplace
-- Grafos 
-- Thevenin/Norton/Superposition
-Deep theory after, only the urgent tools
+## General Overview
+  Electrical circuits are topological networks, topology in mathematical concept, which studies the space properties invariance under continous deformation. We have an arrangement of nodes, and edges, where the disposition does not matter, but the interaction. Will it matter in the microwave circuits? (Or still topological). The electromagnetic properties will change? The voltages, currents remain unchangeable if you stretch the transmission lines, what does justifies the topological idea of the electromagnetism. The symmetric operations? Graph theory also helps to visualize and decribe the interconexions, as well as, to optimize this circuits, the telecommunication and computer science have stolen the ideas.
+    
+  Electric circuits are the basic representation of the electromagnetic circuits, being both the same, which the concerned metrics are Voltages and Currents. In the microwave countepart we add the beauties of the electromagnetic fields and its effects as main metrics. 
+  
+
+
+  {cite}`balanisAntenna`.
+
+
+### Justification
+   In the literature we will commonly find the time analysis using narrow band signals. However wide band signals can provide a richer time-space-frequency resolution from the time motion of the current. Using Full Wave simulations of the transmission lines and waveguides, we will try to analyse practical application of the time-frequency-space domain analysis.
 
 
 ## AC Voltage/Currents
@@ -71,14 +78,35 @@ Mas o que significa diferença de fase em termos de fluxo de cargas elétricas n
 
 ## Frequency Response
 
-Deep theory after, only the urgent tools
+Theory after, only the urgent tools, it might to be moved to spectral analysis chapter
 
 ### Zeros
-- A zero
-   - Amplitude in yeilds a zero until the a infinite amplitude to the function response an phase, while a pole yields a infinite output for the function.
+
+   - $\omega<=\omega_1$
+      - Amplitude with zero response until the corner frequency $\omega_1$.
+      - Phase approximatelly zero
+
+   - $\omega_1<\omega<=10\omega_1$ 
+      - Amplitude starts to increase with an slope of 20dB/(frequency decade)
+      - Phase approximatelly $\phi=45$ deg at $\omega=\omega_1$
+
+   - $\omega>10\omega_1$ 
+      -  An Amplitude slope of 20dB/(frequency decade), for example 20 dB at $\omega=10\omega_1$, 40 dB at $\omega=100\omega_1$
+      - Phase approximatelly $\phi=90$ deg
+
 
 - A pole
-   - Amplitude in yeilds a zero until the a infinite amplitude to the function response an phase, while a pole yields a infinite output for the function.
- and the corner frequencies, where $\omega_p=1/ (C(R+Z_0))$ 
-The corner frequecies specifies where the signal will
+   - $\omega<=\omega_1$
+      - Amplitude in yeilds a zero resonse until the frequency.
+      - Phase approximatelly zero
+
+   - $\omega_1<\omega<=10\omega_1$ 
+      - Amplitude starts to decrease with an slope of -20dB/(frequency decade)
+      - Phase approximatelly $\phi=-45$ Deg at $\omega=\omega_1$
+
+   - $\omega>10\omega_1$ 
+      - Amplitude with an slope of -20dB/(frequency decade), for example 20 dB at $\omega=10\omega_1$, 40 dB at $\omega=100\omega_1$
+      - Phase approximatelly $\phi=-90$ deg
+
+l
 
