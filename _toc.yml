@@ -8,6 +8,10 @@ parts:
     numbered: True  # Only applies to chapters in Part 1.
     chapters:
     - file: ChapterSpectral
+      sections:
+      - file: ChapterSpectralWindow
+      - file: ChapterSpectralNB
+      - file: ChapterSpectralWB
     - file: ChapterEMMethod
     - file: ChapterMW
       sections:

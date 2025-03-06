@@ -10,7 +10,7 @@
 Considering a 1-port System, where the load is an RC circuit with reference port impedance $Z_0=50$, and load impedance, which is also the input impedance of the system,
 
 $$
-Z_{in}=Z_{L}=R+\frac{1}{j\omega C}
+Z_{in}=Z_{L}=R+j\omega L
 $$
 #### Reflection Coeficient
 

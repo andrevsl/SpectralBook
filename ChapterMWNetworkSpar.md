@@ -43,57 +43,74 @@ $$
 On the other side, for the currents, also following the Kirchhoff's laws, it is the substraction of the foward and backward currents, hence a backward current implies direction, also opposite sign, so the negative signal is important, besides the current will be taken related to the reference impedance. Very mind blowing all that stuff. 
 
 $$
-I_n=I_n^{+}-I_n^{-}=\frac{1}{Z_{0n}}(V_n^{+}-V_n^{-})
+I_{0n}=I_{0n}^{+}-I_{0n}{-}
 $$
 
+Considering we have a reference impedance $Z_{0n}$ attached to the port
+
+$$
+I_{0n}=I_{0n}^{+}-I_{0n}^{-}=\frac{1}{Z_{0n}}(V_{0n}^{+}-V_{0n}^{-})
+$$
 Then, replacing the equations () into () we gona find
 
 $$
-V_n^{+}=\frac{V_{n}+Z_{0n}I_{n}}{2}  
+V_{0n}^{+}=\frac{V_{0n}+Z_{0n}I_{0n}}{2}  
 $$
 $$
-a_n=\frac{V_{n}+Z_{0n}I_{n}}{2\sqrt{Z_{0n}}}  
+a_{0n}=\frac{V_{0n}+Z_{0n}I_{0n}}{2\sqrt{R_{0n}}}  
 $$
 
 $$
-V_n^{-}=\frac{V_{n}-Z_{0n}I_{n}}{2} 
+V_{0n}^{-}=\frac{V_{0n}-Z_{0n}^{*}I_{0n}}{2} 
 $$
 $$
-b_n=\frac{V_{n}+Z_{0n}I_{n}}{2\sqrt{Z_{0n}}}  
+b_{0n}=\frac{V_{0n}-Z_{0n}^{*}I_{0n}}{2\sqrt{R_{0n}}}  
 $$
 
 ### Reflection coeficient
 
 
 The reflection coefficient stands for the ratio between the backward waves and forward waves voltages, implying that the port when excited with a signal which will generate foward wave, however, the system will not absorb totally the signal due to impedance mismatches, if it occurs, then a backward wave is generated with opposite direction.
-Before connecting the $nth$ port to the soruce, we place the reference impedance $Z_{0n}$ at its termination, supposing we have a foward wave $V^{+}_n$ incoming the system, and a backward wave  $V^{-}_n$ leaving the system into the reference load. 
+Before connecting the $nth$ port to the soruce, we place the reference impedance $Z_{0n}$ at its termination, supposing we have a foward wave $V^{+}_{0n}$ incoming the system, and a backward wave  $V^{-}_{0n}$ leaving the system into the reference load. 
+
+#### Source with a Reference Impedance
+$$
+   \Gamma_{G}=\frac{ Z_G-Z_0 } {Z_G+Z_0 }
+$$
+
 
 #### Port Terminated with a Reference Impedance
 
 Attaching the reference impedance $Z_{0n}$ to the port of the system. By the scatering parameter definition we have,
 
 $$
-\Gamma_n=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
+\Gamma_{n}^{in}=\frac{V^{-}_{0n}}{ V^{+}_{0n}}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{0n}}{ V^{+}_{0n}}
 $$
 
 From the system we have
 
 $$
-V_n=Z_{n}^{in}I_n
+V_{0n}=Z_{n}^{in}I_{0n}
 $$
 
 $$
-V^{+}_n+V^{-}_n=Z_{n}^{in}\frac{V^{+}_n-V^{-}_n}{ Z_{0n}}
+V^{+}_{0n}+V^{-}_{0n}=Z_{n}^{in}\frac{V^{+}_{0n}-V^{-}_{0n}}{ Z_{0n}}
 $$
 Dividing by  $V^{+}_n$ and rearranging the equation we have
 
 $$
-\Gamma_n=\frac{Z_{n}^{in}-Z_{0n}}{Z_{n}^{in}+Z_{0n}}
-$$(GammNthImpedance)
+\Gamma_{0n}^{in}=\frac{Z_{n}^{in}-Z_{0n}}{Z_{n}^{in}+Z_{0n}}
+$$(GammaNthImpedance)
 
+#### Load with a Reference Impedance
+$$
+\Gamma_{n}^{G}=\frac{Z_{gn}-Z_{0n}}{Z_{gn}+Z_{0n}}
+$$(GammaGNthImpedance)
+
+(GammaNthImpedance)
 #### Port Terminated with a Source
 
-Attaching a generator, replacing the reference impedance by the voltage source $V_{gn}$ and  its source impedance $Z_{gn}$
+The reference impedance provides flexibility to make the transformation for different source/load impedances. Attaching a generator, replacing the reference impedance by the voltage source $V_{gn}$ and  its source impedance $Z_{gn}$
 
 <div class='images'>
 
@@ -101,51 +118,69 @@ Attaching a generator, replacing the reference impedance by the voltage source $
     style="width: 350px;  height: 400 px;"  />
 </div>
 
+The Refletion between the source impedance and the system can defined as
+$$
+\Gamma_{n}^{in}=\frac{Z_{n}^{in}-Z_{gn}}{Z_{n}^{in}+Z_{gn}}
+$$(GammaGNthImpedance)
 
+Across the system input impedance we have
 
-The reference impedance provides flexibility to make the transformation for different source/load impedances.
+$$
+V_n=V_{gn} \frac{Z_{n}^{in}}{Z_{n}^{in}+Z_{gn}}
+$$(vgNthTerminated)
+
+from {eq}`GammaNthImpedance` and {eq}`GammaGNthImpedance`  
 
 
 $$
-V_n=Z^{in}_{n}I_n=V_{gn}-Z_g(I_n^{+}-I_n^{-})
-$$
-
-$$
-Z^{in}_{n}I_n=
-V_{gn}-Z_g\frac{(V_n^{+}-V_n^{-})}{Z_{in}}
-
-$$
-
-as $\Gamma_n=\frac{V_n^{-}}{V_n^{+}}$, dividing by $V_n^{+}$,
-
-$$
-Z^{in}_{n}I_n=
-V_{gn}-Z_g\frac{(1-\Gamma_n)}{Z^{in}_{n}}
-
-$$(ZinVgnZgn)
-
-from {eq}`GammNthImpedance`
-
-$$
-Z^{in}_{n}=Z_0\frac{1+\Gamma_n}{1-\Gamma_n}
+Z^{in}_{0n}=Z_{0n}\frac{1+\Gamma_{0n}^{in}}{1-\Gamma_{0n}^{in}}
 $$(ZinFromGammaIn)
 
-then replacing {eq}`ZinFromGammaIn`into {eq}`ZinVgnZgn`
+$$
+Z_{gn}=Z_{0n}\frac{1+\Gamma_{0n}^{G}}{1-\Gamma_{0n}^{G}}
+$$(ZgFromGammaG)
+
+the replacing into {eq}`vgNthTerminated` and rearraging
 
 $$
-Z^{in}_{n}I_n=
-V_{gn}-Z_g\frac{(1-\Gamma_n)}{Z^{in}_{n}}
+V_n=V_{gn} \frac{(1+\Gamma_{0n}^{in})(1-\Gamma_{0n}^{G})}
+{2(1-\Gamma_{0n}^{in}\Gamma_{0n}^{G})}
 $$
+
+$$
+V_{n}^{+}=V_{gn} \frac{(1+\Gamma_{0n}^{in})(1-\Gamma_{0n}^{G})}
+{2(1-\Gamma_{0n}^{in}\Gamma_{0n}^{G})(1+\Gamma_{n}^{in})}
+$$
+(to be validated with simulations)
+
+if $Z_{0n}=Z_{gn}$ implies $\Gamma_{0n}^{G}=0$
+
+$$
+V_{n}=\frac{V_{gn}}{2}(1+\Gamma_{0n}^{in})
+$$
+
+
+then we can infer
+$$
+
+V_{n}^{+}=\frac{V_{gn}}{2}
+$$
+
+ As expected by the electrical circuit theory, half voltage across the source impedance, and half voltage across the input impedace at the $nth$ port. For this reason the source impedance is preferred to be equal to the reference impedance.
+
+#### Port Terminated with a Load
 
 
 ### Power
+#### Input Power
 
+The input power, it is only possible when a voltage source or current source is attached to the $nth$ port.
 
 The power delivered to the system by the $nth$ port
 
 $$
 
-P_L=\frac{1}{2} \Re\{V_nI_n^{*}\} =\frac{1}{2Z_0}(|V_n^{+}|^2-|V_n^{-}|^2)
+P_n=\frac{1}{2} \Re\{V_nI_n^{*}\} =\frac{1}{2Z_0}(|V_n^{+}|^2-|V_n^{-}|^2)
 
 $$
 

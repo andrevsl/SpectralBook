@@ -1,0 +1,21 @@
+syms Lp Ld Rp Z0 Cp s
+
+eq=Lp*Ld*s^3+s^2*(Lp*Ld-Z0*Lp-Z0*Ld)+s*(RLd-Z0*Rp)-Z0*Cp
+syms a b c d
+eq=a*s^3+b*s^3+c*s^2+d
+solve(eq,s)
+
+syms z
+
+x = roots([Lp*Ld (Rp*Ld-Z0*Lp-Z0*Ld) (Rp*Ld-Z0*Rp) -Z0/Cp])
+
+subs(y)
+
+pole1_func = matlabFunction(x(1), 'Vars', [Lp Ld Rp Z0 Cp]);
+pole23_func = matlabFunction(x(2), 'Vars', [Lp Ld Rp Z0 Cp]);
+
+% Now you can use the numeric_function to evaluate the expression numerically
+Lp_value = 3;
+Ld_value = 4;
+Cp=
+result = numeric_function(x_value, y_value);

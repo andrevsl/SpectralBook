@@ -30,7 +30,7 @@ E o coeficiente de reflexão se deduz como,
 $$
    \Gamma= \frac{Z_{in}-\eta_1^{TM}}
     {Z_{in}+\eta_1^{TM}}
-$$
+$$(GammPWTLZin)
 
 Se os dois meios forem o espaço livre,
 

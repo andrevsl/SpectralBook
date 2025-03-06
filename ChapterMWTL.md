@@ -1,15 +1,31 @@
 
 # Microwave: Transmission Lines
 
+
+Differently from the conventional electrical circuits with low frequency where this effects can be neglete.Within the Microwave system, where the wavelength is comparable to the structure, the voltages and current will interact with the different impedances among the system, generating backward waves or reflected wavesm in opposite sense of the excitation signa, called foward wave, as alread introduced in the AC voltage section. 
+The foward voltage can be defined as the 
+
+The voltage waves can have positive or negative polarities, different different directions.
+However the current will
+
+Examples
+- Foward Voltage Wave with Positive Polarity ->Foward Current
+
+- Foward Wave with Negative Polarity -> Foward Current
+
+- Backward Voltage Wave with Positive Polarity ->Backward Current
+
+- Backward Wave with Negative Polarity -> Foward Current
+
+An electrical circuit with different series impedances should be treated taking into account those interactions.
+
+
 ###  Linear Space and Time Varying (2D)
 The voltage waves and currents for a canonical transmission line with a time dimension and one spatial dimension can be defined as
 $$
 V(t,z)=V^{+}(t,z) e^{-\gamma_z \cdot z } + V^{-}(t,z)e^{\gamma_z \cdot z }
 $$
 
-$$
-V(t,z)=V^{+}(t,z) e^{-\gamma_z \cdot z } + V^{-}(t,z)e^{\gamma_z \cdot z } 
-$$
 
 $$
 I(t,z)=I^{+}(t,z) e^{-\gamma_z \cdot z } + I^{-}(t,z)e^{\gamma_z \cdot z } 
