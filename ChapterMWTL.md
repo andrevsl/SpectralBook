@@ -2,8 +2,8 @@
 # Microwave: Transmission Lines
 
 
-Differently from the conventional electrical circuits with low frequency where this effects can be neglete.Within the Microwave system, where the wavelength is comparable to the structure, the voltages and current will interact with the different impedances among the system, generating backward waves or reflected wavesm in opposite sense of the excitation signa, called foward wave, as alread introduced in the AC voltage section. 
-The foward voltage can be defined as the 
+Differently from the conventional electrical circuits with low frequency where this effects can be negleted. Within the Microwave system, where the wavelength is comparable to the structure, the voltages and current will interact with the different impedances among the system, generating backward waves or reflected waves in opposite sense of the excitation signal, called foward wave, as alread introduced in the AC voltage section. 
+The foward voltage can be defined as the voltage that would be obtained if the maximum power condition is respected, conjugated matching.
 
 The voltage waves can have positive or negative polarities, different different directions.
 However the current will
@@ -17,7 +17,7 @@ Examples
 
 - Backward Wave with Negative Polarity -> Foward Current
 
-An electrical circuit with different series impedances should be treated taking into account those interactions.
+An electrical circuit with different series or parallel impedances should be treated taking into account those interactions.
 
 
 ###  Linear Space and Time Varying (2D)
@@ -56,7 +56,7 @@ $$Z_{0}=\frac{V^{+}(z)}{I^{+}(z)} =\frac{V^{+}(z)}{I^{+}(z)} $$
 
 ### 2.1 Planar Space and Time Varying (3D)
 
-or for 2D (?)
+
 
 $$Z_{0x}(x,y)=?\frac{V^{+,-}_x(x,y)}{I^{+,-}_x(x,y)} =+ or - \frac{V^{-,+}_x(x,y)}{I^{-,+}_x(x,y)} $$
 

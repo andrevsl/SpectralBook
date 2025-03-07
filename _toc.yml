@@ -27,7 +27,7 @@ parts:
     - file: ChapterMWDevices2
     - file: ChapterAppAntenna
       sections:
-      - file: ChapterAntennaDipole
+      - file: ChapterAppAntennaDipole
     - file: ChapterPhasedArrays
     - file: ChapterMetasurfaces
     - file: ChapterRIS

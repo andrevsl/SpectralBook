@@ -71,7 +71,7 @@ $$
       (sR_p L_d+s^2 L_pL_d+L_d/C_p)s
    }
    {
-  sR_p+s^2 L_p+1/C_p+s^2L_d
+      sR_p+s^2 L_p+1/C_p+s^2L_d
    }
 
 $$
@@ -134,3 +134,5 @@ $$
 
    }
    $$
+
+   Expandindo em frações parciais

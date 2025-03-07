@@ -32,7 +32,7 @@
 - Tentando reproduzir o controle dos varactors no MPLAB
 
 ## Tecnica de Medição RIS (Depois ou antes da Quali se conseguir)
-
+Ref:
 - SIMU 2 cornetas lado/lado versus espaçamento (Anlisar S21 e Decaimento do Campo no Ambiente) 
 - SIMU 2 cornetas lado/lado versus inclinação (Anlisar S21 e Decaimento do Campo no Ambiente) 
 - SIMU 2 cornetas lado/lado com objetos metalicos no ambiente (Anlisar S21 e Decaimento do Campo no Ambiente))
