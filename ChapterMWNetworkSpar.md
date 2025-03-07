@@ -1,4 +1,17 @@
 
+---
+jupytext:
+  formats: ipynb,md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.9'
+    jupytext_version: 1.5.0
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
 <style>
 .images{
     text-align:center;
@@ -6,6 +19,7 @@
 </style>
 
 # Network Analysis - S-Parameters
+
 
 Scattering parameters (S-Parameters) are commonly used to analyze newtork dynamics, because it takes into account the foward/backward waves or power travelling waves into the networks. However other techniques as Impedance/Admittance and ABCD matrices are also used as needed for a given application, but S-Parameters are usually the core among those transformations, because it deals as already stated with the concept of the power flow direction.
 We gonna see that the forward or backward waves, as we've seen in previous section, it can have positive or negative polarity. Besides, this concept is crucial, because the foward waves that "really" carry the usefull power to the load or to the other side of the network. The backward waves, when not being seen as transmited power, yeilds power loss to the network as we gonna see further.
@@ -30,6 +44,22 @@ Generally normalized waves are employed due to interesting properties which faci
 $$
 [b_n]=[S][a_n]
 $$(NSParPowerWaveMatrix)
+
+
+```{prf:theorem} Characterization of the Exponential Distribution
+:label: exp_unique
+
+If $X$ is a random variable supported on $\RR_+$, then there exists a
+$\lambda > 0$ such that $X \sim \Exp(\lambda)$ if and only if, for all
+positive $s, t$,
+
+$$
+    \PP \{X > s + t \,|\, X > s \} = \PP \{X > t\}
+$$ (memexpo)
+
+```
+
+
 
 ### Ports terminated with a Reference Impedances
 Then, for the voltages, following the Kirchhoff's laws, it is the addition of the foward and backward voltages, because the backward voltage it does not infer a negative voltage polarity, instead, a voltage which is generating a backward wave from the same terminals reference.
