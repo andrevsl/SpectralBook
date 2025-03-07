@@ -1,4 +1,3 @@
-
 ---
 jupytext:
   formats: ipynb,md:myst
