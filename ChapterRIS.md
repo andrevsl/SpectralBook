@@ -17,7 +17,7 @@
 ### Ground Inductance
  - For higher frequecies, it should be used lower permittivity substrates or small thickness
  - No artigo do Arismar Baixa indutancia, baixa espessura do substrato, pela teoria dos circutios RLC, fator de qualidade maior com baixa indutancia, maior com alta capacitancia, pela formula de ressonancia $f=\sqrt{LC}$, para a frequencia ser maior, é preciso baixa capacitância, por isso os rings? analisando os circuitos equivalentes
- Ja que
+
 
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1DjFYlnoSSf-5_zBDVuR8ienuzwkZxpsY" 
     style="width: 800px;  height: 1000 px;display: block;margin-left: auto;margin-right: auto;"  />

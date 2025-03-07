@@ -22,9 +22,8 @@ Antenna treatment as circuit element may be the most interesting way to optimize
 
 As well known in literature the antenna circuit can be represented by a simple circuit presenting radiation resistance $R_{rad}$, loss resistance $R_{loss}$, and a reactance $X_{A}$. Also as a transmission line model with characteristic impedance $Z_{0}$, that works as a impedance transformer between generator impedance  $Z_{0}$ to free space wave impedance $\eta_0$ in the medium as shown in eq. (3). 
 
-
-![image.png](.\bookimages\AntennaChapter\AntennaCircuit.png)
-
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1DdP5X08WwKilb3iiOvc2tR3-LSnpf9ug" 
+    style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
 <!-- <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1wQ1a23yn0DjUxHOTGMt-yfg3RfNskui5" 
     style="width: 300px;  height: 300 px"  />
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1wQbXkHxG__qFOIhwyXBQ-OnLGHEJ28j8" 
@@ -39,12 +38,6 @@ Good radiation is the main objective of antenna design and, an analysis by means
 
 In addition, solving the Helmholtz homogeneous wave equation is the starting step to solve any electromagnetic problem [10]-[11]. As a consequence of being a second-order differential equation and a linear operator, the solution of wave equation yields a linear combination of eigenfunctions that depending on the coordinate system, can be even harmonic functions as sines, cosines, and complex exponentials, satisfying Laplace equation for the Cartesian coordinate system, or Bessel’s functions well fitted for cylindrical and spherical coordinates [11]. Meanwhile, the eigenvalues are always related to the wave phase constant (frequency) as shown in (2b), in frequency domain form [12]. In order to ensure the uniqueness theorem, proper Cauchy boundary conditions must be applied to these Sturm-Liouville problems [14].
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
 
 $$
 
