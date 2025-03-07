@@ -69,3 +69,9 @@ print("this is some stderr", file=sys.stderr)
 ## Space-Time Convention 3D
 
 
+```{code-cell} ipython3
+:tags: [scroll-output]
+
+for ii in range(40):
+    print(f"this is output line {ii}")
+```
