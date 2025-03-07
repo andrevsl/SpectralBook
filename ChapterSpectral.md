@@ -1,4 +1,6 @@
-# Introduction 
+# Spectral Analysis
+
+## Introduction 
 
 In this chapter we will analyze the spetral behavior of the signals in space, frequency and time, in order to acquire physical and mathematical insights for applied electromagnetics.
 The signal's time variation is intrinsically linked to  time-frequency as well known. Usually, the Fourier analysis is the widely used spectral transformation to evaluate the signal's characteristics. Discrete-Time Fourier Series (DFS) are intended for periodic signals and the Discrete-Time Fourier Transform for non-periodic signals, commonly implemented by fast fourier transform (FFT) algorithms. We will analyze canonical periodic and non-periodic time signals using FFT to extract useful information for electromagnetic signal processing.
