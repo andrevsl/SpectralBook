@@ -81,6 +81,7 @@ $$x_{t}(t,x)=\sin{(\omega_0 t+kz)}$$
 :tags: [scroll-output]
 :tags: [hide-input]
 #  Convention
+!pip install pandas
 import numpy as np
 from numpy import sin, exp, cos, log10, pi,angle,sqrt,log
 from bookfuncs.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot2DTparametric
