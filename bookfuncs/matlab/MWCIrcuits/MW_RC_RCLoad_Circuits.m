@@ -1,5 +1,6 @@
 %% Antenna Dipole Code
 clear all
+close all
 addpath(genpath('D:\SpectralBook\bookfuncs\matlab')) %%CST 
 
 %% Parameters
@@ -60,7 +61,7 @@ plotFDdBParametric(freq,S11Circ,Cap)
 
 
 %% Single RC values
-Captarget=10e-12
+Captarget=1e-12
 [~,idcap]=min(abs(Cap-Captarget));
 Restarget=0
 [~,idr]=min(abs(Res-Restarget));
@@ -74,16 +75,14 @@ omegapole=-1./(CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref));
 omegazero=-1./(CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref));
 
 S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
-VGain=(1-S11Circ)/2
 SS1eq=(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref))./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
 % SS1eq=(1)./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
 % SS1eq=(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref))
 
-VGaineq=(1-j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)))./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
 
 figure,
-% plot(freq/1e9,20*log10(abs(S11Circ))),hold on
-plot(freq/1e9,20*log10(abs(squeeze(VGain)))),hold on
+plot(freq/1e9,20*log10(abs(S11Circ))),hold on
+plot(freq/1e9,20*log10(abs(squeeze(SS1eq)))),hold on
 
 figure,
 plot(freq/1e9,180/pi*(angle(squeeze(SS1eq)))),hold on
@@ -101,7 +100,10 @@ omegapole(1)
 -p/(2*pi)/1e9
 %% Time Doamin
 S11Nfreq=[fliplr(conj(S11Circ)),S11Circ(1),S11Circ];
+S11Nfreq=[fliplr(conj(squeeze(SS1eq).')),S11Circ(1),squeeze(SS1eq).'];
+
 deltat=1/Fs;
+
 Nt=1025;
 BW=30e9;
 tau=1/BW;

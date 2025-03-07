@@ -6,13 +6,13 @@ u0=1.256640e-6;       %Permeabilidade absoluta do meio
 eta0=sqrt(u0/e0);       %Impedancia do meio
 Nq=121;
 f_inicial=1e9;      %Frequencia inicial de analise
-f_final=30e9;        %Frequencia final de analis
+f_final=14e9;        %Frequencia final de analis
 f=linspace(f_inicial,f_final,Nq);
 theta=0 %5Incidente Angle
 
 %% Substrate Parameters
 er=[2.2 4.4]
-d=[0.5 0.8 1 1.2 1.5]*1e-3;
+d=[0.5 0.8 1 1.2 1.5 2.3]*1e-3;
 [Freq,ER,D]=meshgrid(f,er,d);
 erd=ER-j*0.088;
 omega=2*pi*Freq;
