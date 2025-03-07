@@ -24,6 +24,7 @@ parts:
       - file: ChapterBasicLC
       - file: ChapterBasicRLCSeries
       - file: ChapterBasicCascadeRLCSeries
+    - file: ChapterDigitalFilters
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAppAntenna
