@@ -127,8 +127,9 @@ The Smith charts  Theory to write after
 If you have a Anntenna load, and a intput reflection coeficient. 
 You are measuring the input reflection at terminals of the load. Then, in order to add an electric component going toward the generator (CW) in the Smith chart. However if you have a transmisiion Line or antenna electric path, and tou need information about the impedances of the antenna, you go toward the load direction (CCW) in the Smith chart.
 
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1DdP5X08WwKilb3iiOvc2tR3-LSnpf9ug" 
+    style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
 
-![image.png](.\bookimages\AntennaChapter\AntennaCircuit.png)
 
 You have many classical electric components options to build your matching network
 Simulation Paremeters

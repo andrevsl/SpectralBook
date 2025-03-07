@@ -7,6 +7,7 @@
 ## Estudo do Circuito RIS
 
 - Validar o artigo de ref corretamente (Capacitância analitica)
+- Simular diferentes FSS/Circuitos e analisar
 - Analisar o intervalo variação tipo de circuito de Indutâncias/capacitâncias para as frequências target ?(3.5-6 GHz,7-8Ghz,7.125–8.5 GHz, 10.7–13.25 GHz, 14–15.35 GHz,24-40 Ghz)
 - Analisar o efeito no circuito equivalente de Vias, stubs, coils
 - Simular/Validar no MoM uma estrutura complexa encapsulada em uma Zs?
@@ -15,6 +16,9 @@
 
 ### Ground Inductance
  - For higher frequecies, it should be used lower permittivity substrates or small thickness
+ - No artigo do Arismar Baixa indutancia, baixa espessura do substrato, pela teoria dos circutios RLC, fator de qualidade maior com baixa indutancia, maior com alta capacitancia, pela formula de ressonancia $f=\sqrt{LC}$, para a frequencia ser maior, é preciso baixa capacitância, por isso os rings? analisando os circuitos equivalentes
+ Ja que
+
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1DjFYlnoSSf-5_zBDVuR8ienuzwkZxpsY" 
     style="width: 800px;  height: 1000 px;display: block;margin-left: auto;margin-right: auto;"  />
 
