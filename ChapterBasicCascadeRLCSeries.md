@@ -7,91 +7,71 @@
 
 
 # Cascade RLC Series
-$$
-Z_{in}=Z_{L}=R+j\omega L+\frac{1}{j\omega C}
-$$
 
-In the laplace domain
+Let consider the 3 RLC circuits
 $$
-Z_{in}(s)=\frac{sR+s^2 L+1/ C}{s}
-$$
-
-
-In the laplace domain
+Z_{1}=R_1+j\omega L_1+\frac{1}{j\omega C_1}
 $$
 
 $$
-## Reflection Coeficient
-
-Usually in electrical circuits we analyze the voltages ratio, i.e. the transfer fucntion, which relates the output voltage to the incident voltage. For mirowave system the reflection/trasmission coeficient is commonly used, it takes into account the effect of backwardwaves among the impedances, which in this case for 1-port circuit, it is equal to the $S_{11}$ at the source port,
+\Gamma_{1}=\frac{Z_{1}-Z_0}
+{Z_{1}+Z_0}
+$$(Gamma1)
 
 $$
-S_{11}=
-\frac{
-    \frac{sR+s^2 L+1/ C}{s}-Z_0
-    }{
-     \frac{sR+s^2 L+1/ C}{s}+Z_0
+Z_{2}=R_2+j\omega L_2+\frac{1}{j\omega C_2}
+$$
+
+$$
+\Gamma_{2}=\frac{Z_{2}-Z_0}
+{Z_{2}+Z_0}
+$$(Gamma2)
+
+
+$$
+Z_{3}=R_3+j\omega L_1+\frac{1}{j\omega C_3}
+$$
+
+$$
+\Gamma_{3}=\frac{Z_{3}-Z_0}
+{Z_{3}+Z_0}
+$$(Gamma3)
+
+
+##  Parallel of 2- RLC series
+
+By the definition
+
+$$
+Zeq=\frac{Z_1Z_2}{Z_1+Z_2}
+$$
+
+the reflection coeficient is
+
+$$
+\Gamma_{eq}=\frac{
+    \frac{Z_1Z_2}{Z_1+Z_2}-Z_0
+    }
+    {
+    \frac{Z_1Z_2}{Z_1+Z_2}+Z_0
+    }
+$$
+$$
+\Gamma_{eq}=\frac{
+Z_1Z_2-Z_0(Z_1+Z_2)
+    }
+    {
+  Z_1Z_2+Z_0(Z_1+Z_2)
     }
 $$
 
+if we multiply {eq}`Gamma1` and {eq}`Gamma2`
 
 $$
-S_{11}=
-\frac{
-    s^2 L+s(R-Z_0)+1/ C
-    }{
-    s^2 L+s(R+Z_0)+1/ C
+\Gamma_{eq}=\frac{
+Z_1Z_2-Z_0(Z_1+Z_2)
+    }
+    {
+  Z_1Z_2+Z_0(Z_1+Z_2)
     }
 $$
-
-We have two pole and a zero, located respectivelly at 
-
-$$
-
-p_{1,2}=\frac{
--(R-Z_0)\pm \sqrt{(R-Z_0)^2-4L/ C}
-}{
-    2L
-}
-
-$$
-$$
-
-z_{1,2}=\frac{
--(R+Z_0)\pm \sqrt{(R+Z_0)^2-4L/ C}
-}{
-    2L
-}
-
-$$
-
-**For $R=0$**
-
-$$
-S_{11}=\frac{1-j\omega C(Z_0)}{1+j\omega C(Z_0)}
-$$
-$$
-|S_{11}|=1
-$$
-$$
-\angle S_{11}=\arctan{(-\omega CZ_0)}-\arctan{(\omega CZ_0)}=-2\arctan{(\omega CZ_0)}
-
-Then we have a All-Band Stop filter
-
-$$
-
-
-if $Z_{eq}=R-Z_0<0$
-
-if $Z_{eq}=R-Z_0>0$
-
-## Quality Factor and Bandwidth
-
-$$
-Q=\frac{\omega L}{R}=\frac{1}{\omega RC}
-$$
-
-
-## Power
-
-## Cascade Parallel of RLC series
