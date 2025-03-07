@@ -57,7 +57,13 @@ $$x_{t}(t,x)=\sin{(-\omega_0 t-kz)}$$
 
 $$x_{t}(t,x)=\sin{(\omega_0 t+kz)}$$
 
+```{code-cell} ipython3
+:tags: [remove-stderr]
 
+import sys
+print("this is some stdout")
+print("this is some stderr", file=sys.stderr)
+```
 ## Space-Time Convention 3D
 
 

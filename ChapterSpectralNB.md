@@ -38,7 +38,13 @@ being $t_0=1/f_0$
 $$X_{s}^{+}(f)= \frac{e^{i 2\pi \frac{1}{2f_0} (f_0-f)}}{(i 2\pi (f_0-f))2i}  -\frac{1}{(i 2\pi (f_0-f))2i}
                 + \frac{e^{-i 2\pi t(f_0+f)}}{(-i 2\pi (f_0+f))2i} \biggl|_{0}^{t_0/2}$$ 
 
+```{code-cell} ipython3
+:tags: [remove-stderr]
 
+import sys
+print("this is some stdout")
+print("this is some stderr", file=sys.stderr)
+```
 The shape of the half cycle signals resemble a gaussian pulse (?) in frequency domain, we se that the amplitude is centered in zero frequency, even if the carrier frequency is 1 GHz. Insofar as two identical signals with opposite signals are summed, it nulls each other. In frequency domain, it is explained by the phase inversion (phase difference of 180 Degrees) for all frequency components as shown by the deduction above and the phase plots below.
 
 
