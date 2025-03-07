@@ -13,7 +13,27 @@ kernelspec:
 ---
 
 # Spectral Analysis
+```{code-cell} ipython3
+:tags: [scroll-output]
+:tags: [hide-input]
+:tags: [hide-output]
+#  Convention
+!pip install pandas
+import numpy as np
+from numpy import sin, exp, cos, log10, pi,angle,sqrt,log
+from bookfuncs.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot2DTparametric
+import pandas as pd
+import matplotlib.pyplot as plt
 
+
+from bookfuncs.simuParams import *
+from bookfuncs.simuParams import  SimuParam
+
+import time
+import warnings
+warnings.filterwarnings(action='ignore')
+
+```
 ## Introduction 
 
 In this chapter we will analyze the spetral behavior of the signals in space, frequency and time, in order to acquire physical and mathematical insights for applied electromagnetics.
@@ -76,25 +96,10 @@ $$x_{t}(t,x)=\sin{(\omega_0 t+kz)}$$
 
 ## Space-Time Convention 3D
 
-
 ```{code-cell} ipython3
 :tags: [scroll-output]
 :tags: [hide-input]
 #  Convention
-!pip install pandas
-import numpy as np
-from numpy import sin, exp, cos, log10, pi,angle,sqrt,log
-from bookfuncs.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot2DTparametric
-import pandas as pd
-import matplotlib.pyplot as plt
-
-
-from bookfuncs.simuParams import *
-from bookfuncs.simuParams import  SimuParam
-
-import time
-import warnings
-warnings.filterwarnings(action='ignore')
 
 par=SimuParam()
 par.par
@@ -152,8 +157,54 @@ x.shape
 
 ```
 
-```{python echo=TRUE}
-print("Hallo I'm an RMarkdown block!")
+```{code-cell} ipython3
+:tags: [scroll-output]
+:tags: [hide-input]
+#  Convention
+
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+import matplotlib as mpl
+from matplotlib.colors import LinearSegmentedColormap
+
+fig1,ax=plt.subplots(1,2)
+fig1.set_size_inches((14,10))
+# fig1.suptitle(' Wave Propagation Convention ', fontsize=30)   
+# 100 time 120 space
+diff_xt_mp=np.diff(xt_mp,1)
+ax[0].set_title('Diff')
+# pos=ax[0].imshow((xt_mp), origin='upper', interpolation='bilinear',extent =[ x.min()*10, x.max()*10,t.min()/1e-9, t.max()/1e-9])
+# pos2=ax[0].imshow((xt_mp), origin='upper', interpolation='bilinear',extent =[ x.min()*10, x.max()*10,t.min()/1e-9, t.max()/1e-9])
+
+cmap_name = 'my_list'
+colors = [(1, 0, 0), (0, 1, 0), (0, 0, 1)]  # R -> G -> B
+# fig, axs = plt.subplots(2, 2, figsize=(8, 9))
+# fig1.subplots_adjust(left=0.02, bottom=0.06, right=0.95, top=0.94, wspace=0.05)
+
+# Create the colormap
+cmap = LinearSegmentedColormap.from_list(cmap_name, colors, N=100)
+# Fewer bins will result in "coarser" colomap interpolation
+im=ax[0].imshow((xt_mp), origin='upper', interpolation='bilinear',extent =[x.min()*1000, x.max()*1000, t.min()/1e-9, t.max()/1e-9],aspect='auto')
+divider = make_axes_locatable(ax[0])
+cax = divider.append_axes("right", size="5%", pad=0.05)
+fig1.colorbar(im, ax=ax[0],fraction=0.046, pad=0.04)
+
+im2=ax[1].imshow((diff_xt_mp), origin='upper', interpolation='bilinear',extent =[x.min()*1000, x.max()*1000, t.min()/1e-9, t.max()/1e-9],aspect='auto')
+
+fig1.colorbar(im2, ax=ax[1],fraction=0.046, pad=0.04)
+extent =[ x.min()*10, x.max()*10,t.min()/1e-9, t.max()/1e-9]
+
+    
+ax[0].set_xlabel('Space ')
+ax[0].set_ylabel('time ')
+
+
+# extent =[ x.min()*1000, x.max()*1000,t.min()/1e-9, t.max()/1e-9]
+
+
+plt.show()
+extent
 ```
 
 
