@@ -23,11 +23,13 @@ parts:
       - file: ChapterBasicRC
       - file: ChapterBasicLC
       - file: ChapterBasicRLCSeries
+      - file: ChapterBasicCascadeRLCSeries
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
     - file: ChapterAppAntenna
       sections:
       - file: ChapterAppAntennaDipole
+      - file: ChapterAppAntennaLoop
     - file: ChapterPhasedArrays
     - file: ChapterMetasurfaces
     - file: ChapterRIS
