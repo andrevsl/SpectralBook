@@ -12,7 +12,7 @@ We gonna see that the forward or backward waves, as we've seen in previous secti
 
 ## N-Port
 
-In a N- Port System, by definition, we gonna have N ports interacting with each other, exchanging power within a system, each one located at a defined plane of reference $t_n$, which will have a reference impedance $Z_{0n}$, forward waves leaving the port and entering the system $V^{+}_{n}$, and backward waves $V^{*}_{n}$ arriving from the system or reflected at the port $n$.
+In a N- Port System, by definition, we gonna have N ports interacting with each other, exchanging power within a system, each one located at a defined plane of reference $t_n$, which will have a reference impedance $Z_{0n}$, forward waves leaving the port and entering the system $V^{+}_{n}$, and backward waves $V^{*}_{n}$ arriving from the system or reflected at the port $n$. 
 
 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1ET94oZxq5ziFZT_2WpiBvt7bqxCYaqoY" 
     style="width: 400px;  height: 400 px;display: block;margin-left: auto;margin-right: auto;"  />
@@ -25,25 +25,23 @@ $$
 $$(NSParMatrix)
 
 
-### Power Waves
-
 Generally normalized waves are employed due to interesting properties which facilite the analysis, being portable to be used or analyzed with different sources/load impedance, as we gonna see further. Where the normalized incident power wave is $a_n=V^{+}_n/\sqrt{Z_{0n}}$, and the reflected normalized power wave is $b_n=V^{-}_n/\sqrt{Z_{0n}}$, then we have
 
 $$
 [b_n]=[S][a_n]
 $$(NSParPowerWaveMatrix)
 
-
+### Ports terminated with a Reference Impedances
 Then, for the voltages, following the Kirchhoff's laws, it is the addition of the foward and backward voltages, because the backward voltage it does not infer a negative voltage polarity, instead, a voltage which is generating a backward wave from the same terminals reference.
 
 $$
-V_n=V_n^{+}+V_n^{-}
+V_{0n}=V_{0n}^{+}-V_{0n}^{-}
 $$
 
 On the other side, for the currents, also following the Kirchhoff's laws, it is the substraction of the foward and backward currents, hence a backward current implies direction, also opposite sign, so the negative signal is important, besides the current will be taken related to the reference impedance. Very mind blowing all that stuff. 
 
 $$
-I_{0n}=I_{0n}^{+}-I_{0n}{-}
+I_{0n}=I_{0n}^{+}-I_{0n}^{-}
 $$
 
 Considering we have a reference impedance $Z_{0n}$ attached to the port
@@ -51,18 +49,34 @@ Considering we have a reference impedance $Z_{0n}$ attached to the port
 $$
 I_{0n}=I_{0n}^{+}-I_{0n}^{-}=\frac{1}{Z_{0n}}(V_{0n}^{+}-V_{0n}^{-})
 $$
-Then, replacing the equations () into () we gona find
 
+Then, replacing the equations () into () we gona find
 $$
 V_{0n}^{+}=\frac{V_{0n}+Z_{0n}I_{0n}}{2}  
-$$
-$$
-a_{0n}=\frac{V_{0n}+Z_{0n}I_{0n}}{2\sqrt{R_{0n}}}  
 $$
 
 $$
 V_{0n}^{-}=\frac{V_{0n}-Z_{0n}^{*}I_{0n}}{2} 
 $$
+The voltage can be defined if the input impedance of the system $Z_{in}=Z_0^{*}$ is conjugated matched to the reference imepdance
+
+$$
+V_{0n}^{+}=V_{0n}\frac{Z_0^{*}}{Z_0+Z_0^{*}}=V_{0n}\frac{Z_0^{*}}{2R_0}
+$$
+$$
+I_{0n}^{+}=V_{0n}\frac{1}{2R_0}
+$$
+
+$$
+P_{0n}^{+}=1/2\R e{\{V_{0n}^{+}{I_{0n}^{+}}^{*}\}}=V_{0n}^2\frac{1}{8R_0}=\frac{1}{2}|a_n|^{2}/4
+$$
+for power waves definition
+
+
+$$
+a_{0n}=\frac{V_{0n}+Z_{0n}I_{0n}}{2\sqrt{R_{0n}}}  
+$$
+
 $$
 b_{0n}=\frac{V_{0n}-Z_{0n}^{*}I_{0n}}{2\sqrt{R_{0n}}}  
 $$
@@ -104,10 +118,10 @@ $$(GammaNthImpedance)
 
 #### Load with a Reference Impedance
 $$
-\Gamma_{n}^{G}=\frac{Z_{gn}-Z_{0n}}{Z_{gn}+Z_{0n}}
-$$(GammaGNthImpedance)
+\Gamma_{n}^{L}=\frac{Z_{Ln}-Z_{0n}}{Z_{Ln}+Z_{0n}}
+$$(GammaLNthImpedance)
 
-(GammaNthImpedance)
+
 #### Port Terminated with a Source
 
 The reference impedance provides flexibility to make the transformation for different source/load impedances. Attaching a generator, replacing the reference impedance by the voltage source $V_{gn}$ and  its source impedance $Z_{gn}$
@@ -120,11 +134,10 @@ The reference impedance provides flexibility to make the transformation for diff
 
 The Refletion between the source impedance and the system can defined as
 $$
-\Gamma_{n}^{in}=\frac{Z_{n}^{in}-Z_{gn}}{Z_{n}^{in}+Z_{gn}}
+\Gamma_{n}^{d}=\frac{Z_{n}^{in}-Z_{gn}}{Z_{n}^{in}+Z_{gn}}
 $$(GammaGNthImpedance)
 
 Across the system input impedance we have
-
 $$
 V_n=V_{gn} \frac{Z_{n}^{in}}{Z_{n}^{in}+Z_{gn}}
 $$(vgNthTerminated)
@@ -133,7 +146,7 @@ from {eq}`GammaNthImpedance` and {eq}`GammaGNthImpedance`
 
 
 $$
-Z^{in}_{0n}=Z_{0n}\frac{1+\Gamma_{0n}^{in}}{1-\Gamma_{0n}^{in}}
+Z^{in}_{n}=Z_{0n}\frac{1+\Gamma_{n}^{in}}{1-\Gamma_{n}^{in}}
 $$(ZinFromGammaIn)
 
 $$
@@ -262,24 +275,13 @@ $$
 $$
 
 
-#### Power Gain
+####63 Power Gain
 
 - Power gain
 - Transducer power Gain
 - Avalaible power Gain
 - Operating power Gain
 
-#### Voltage Gain
-$$
-\frac{V_{2}}{V^{+}_1}=\frac{V^{+}_2+V^{-}_2}{V^{+}_1}=
-\frac{\Gamma_LV^{-}_2}{V^{+}_1}+S_{21}=
-(\Gamma_L+1)S_{21}
-$$ 
-#### Current Gain
-$$
-\frac{I_{2}}{I^{+}_1}=
-(\Gamma_L-1)S_{21}
-$$ 
 
 
 ### 1-Port
@@ -296,19 +298,7 @@ $$
    Z_{in}=Z_{11}=Z_L
 $$
 
-#### Voltage Gain
 
-$$
-\frac{V_{L}}{V^{+}_1}=\frac{V^{+}_1+V^{-}_1}{V^{+}_1}=1+S_{11}=\frac{V_g}{V^{+}_1}\frac{Z_{in}}{Z_{in}+Z_0}
-$$ 
-
-
-#### Current Gain
-Analogously, the current gain
-
-$$
-\frac{I_{L}}{I^{+}_1}=\frac{V^{+}_1-V^{-}_1}{V^{+}_1}=1-S_{11}
-$$
 
 ### Microwave vs Electrical Circuits Point of View
 

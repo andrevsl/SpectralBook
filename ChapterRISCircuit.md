@@ -53,12 +53,7 @@ $$
 $$
 
 Porém analisando melhor,
-$$
 
-   Z_{in}= \frac{(R_p+j\omega L_p+\frac{1}{j\omega C_p}) (jX_d)}
-   {(R_p+j\omega L_p+\frac{1}{j\omega C_p})+(jX_d)}
-
-$$
 $$
 
    Z_{in}= \frac
@@ -81,45 +76,7 @@ $$
 
 $$
 
-insertin in the reflection coeficient {eq}`GammPWTLZin`
-$$
-   \Gamma= \frac{
-      (R_p+j\omega L_p+\frac{1}{j\omega C_p}) (jX_d)
-  -\eta_1^{TM}((R_p+j\omega L_p+\frac{1}{j\omega C_p})+(jX_d))
-               }
-               {
-      (R_p+j\omega L_p+\frac{1}{j\omega C_p}) (jX_d)
-   +\eta_1^{TM}((R_p+j\omega L_p+\frac{1}{j\omega C_p})+(jX_d))
-   }
-$$
-
-
-$$
-   \Gamma= \frac{
-       (-\omega L_pX_d-\eta_1^{TM}R_p+\frac{X_d}{\omega C_p})
-            +j(X_dR_p-\eta_1^{TM}X_d-\eta_1^{TM}\omega L_p+\frac{\eta_1^{TM}}{\omega C_p})   
-               }
-               {
-                 (-\omega L_pX_d+\eta_1^{TM}R_p+\frac{X_d}{\omega C_p})
-            +j(X_dR_p+\eta_1^{TM}X_d+\eta_1^{TM}\omega L_p-\frac{\eta_1^{TM}}{\omega C_p})   
-
-
-    }
-$$
-
-
-$$
-   \Gamma= \frac{
-       (-\omega^2C_p L_pX_d-\eta_1^{TM}\omega C_pR_p+X_d)
-            +j(X_d\omega C_pR_p-\eta_1^{TM}\omega C_pX_d-\eta_1^{TM}\omega^2 C_p L_p-\eta_1^{TM})   
-               }
-               {
-     (-\omega^2C_p L_pX_d+\eta_1^{TM}\omega C_pR_p+X_d)
-            +j(X_d\omega C_pR_p+\eta_1^{TM}\omega C_pX_d+\eta_1^{TM}\omega^2 C_p L_p+\eta_1^{TM})   
-
-
-    }
-$$
+inserindo na equação do coeficiente de reflexão {eq}`GammPWTLZin`
 
 $$
 \frac{
@@ -166,13 +123,13 @@ $$
 $$
    \frac{
 
-   s^3 L_pL_d+s^2( L_pL_d-\eta_1^{TM}L_p-\eta_1^{TM}L_d)
-   +s(R_pL_d-\eta_1^{TM}R_p)
+   s^3 L_pL_d+s^2( R_pL_d-\eta_1^{TM}L_p-\eta_1^{TM}L_d)
+   +s(L_d/C_p-\eta_1^{TM}R_p)
    -\eta_1^{TM}/C_p
    }{
 
-   s^3 L_pL_d+s^2( L_pL_d+\eta_1^{TM}L_p+\eta_1^{TM}L_d)
-   +s(R_pL_d+\eta_1^{TM}R_p)
+   s^3 L_pL_d+s^2( R_pL_d+\eta_1^{TM}L_p+\eta_1^{TM}L_d)
+   +s(L_d/C_p+\eta_1^{TM}R_p)
    +\eta_1^{TM}/C_p
 
    }

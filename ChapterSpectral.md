@@ -75,3 +75,7 @@ print("this is some stderr", file=sys.stderr)
 for ii in range(40):
     print(f"this is output line {ii}")
 ```
+
+```{python echo=TRUE}
+print("Hallo I'm an RMarkdown block!")
+```
