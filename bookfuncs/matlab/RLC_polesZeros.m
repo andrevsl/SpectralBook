@@ -8,7 +8,7 @@ zeors2_func = matlabFunction(z(2), 'Vars', [Lp Ld Rp Z0 Cp]);
 zeors3_func = matlabFunction(z(3), 'Vars', [Lp Ld Rp Z0 Cp]);
 
 poles1_func = matlabFunction(p(1), 'Vars', [Lp Ld Rp Z0 Cp]);
-poles2_func = matlabFunction(p(2), 'Vars', [Lp Ld Rp Z0 Cp]);
+poles2_func = matlabFunction(p(2), 'Vars', [Lp Ld Rp Z0 Cp]); 
 poles3_func = matlabFunction(p(3), 'Vars', [Lp Ld Rp Z0 Cp]);
 simplify(p(2))
 % Now you can use the numeric_function to evaluate the expression numerically

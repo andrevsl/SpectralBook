@@ -13,23 +13,59 @@ $$
 Z_{in}=Z_{L}=R+j\omega L+\frac{1}{j\omega C}
 $$
 
-#### Reflection Coeficient
+In the laplace domain
+$$
+Z_{in}(s)=\frac{sR+s^2 L+1/ C}{s}
+$$
+
+
+In the laplace domain
+$$
+
+$$
+## Reflection Coeficient
 
 Usually in electrical circuits we analyze the voltages ratio, i.e. the transfer fucntion, which relates the output voltage to the incident voltage. For mirowave system the reflection/trasmission coeficient is commonly used, it takes into account the effect of backwardwaves among the impedances, which in this case for 1-port circuit, it is equal to the $S_{11}$ at the source port,
 
 $$
-S_{11}=\frac{V^{-}_1}{V^{+}_1}=
-\frac{Z_{in}-Z_0}{Z_{in}+Z_0}=\frac{R+j\omega L+\frac{1}{j\omega C}-Z_0}
-{R+j\omega L+\frac{1}{j\omega C}+Z_0}
+S_{11}=
+\frac{
+    \frac{sR+s^2 L+1/ C}{s}-Z_0
+    }{
+     \frac{sR+s^2 L+1/ C}{s}+Z_0
+    }
 $$
 
 
 $$
-S_{11}=\frac{1+j\omega C(R-Z_0)}{1+j\omega C(R+Z_0)}
+S_{11}=
+\frac{
+    s^2 L+s(R-Z_0)+1/ C
+    }{
+    s^2 L+s(R+Z_0)+1/ C
+    }
 $$
 
+We have two pole and a zero, located respectivelly at 
 
-We have a pole and a zero, located respectivelly at $p_1=-1/ (C(R+Z_0))$ and $z_1=-1/ (C(R-Z_0))$. 
+$$
+
+p_{1,2}=\frac{
+-(R-Z_0)\pm \sqrt{(R-Z_0)^2-4L/ C}
+}{
+    2L
+}
+
+$$
+$$
+
+z_{1,2}=\frac{
+-(R+Z_0)\pm \sqrt{(R+Z_0)^2-4L/ C}
+}{
+    2L
+}
+
+$$
 
 **For $R=0$**
 
@@ -51,30 +87,13 @@ if $Z_{eq}=R-Z_0<0$
 
 if $Z_{eq}=R-Z_0>0$
 
-For the other cases we gonna have a high pass filter
-
-#### Voltage Gain
-Thus the transfer fucntion of Voltages would be, gain
+## Quality Factor and Bandwidth
 
 $$
-\frac{V_{L}}{V^{+}_1}=1+\frac{1+j\omega C(R-Z_0)}{1+j\omega C(R+Z_0)}
+Q=\frac{\omega L}{R}=\frac{1}{\omega RC}
 $$
 
 
-$$
-\frac{V_{L}}{V^{+}_1}=2\frac{1+j\omega RC}{1+j\omega C(R+Z_0)}
-$$
+## Power
 
-
-**For $R=0$**
-
-No zeros, on pole, then we have a low pass filter, since from frequency response theory the poles engenders a decaying output ? But everything was reflected at the S11. Thus for 1-port microwave circuits there is no sense to analyze voltage gains, But the reflection coeficient.
-Power gain, as real power or reactive power ratio, depending on the application should be used, but real power it is the most common.
-(colocar como exercicio mencionar no texto que mais favoravel para microondas high power gains ou reflexão/transmissão?) Voltages gains, mais para circuitos de baixa frequência e controle.
-
-#### Current Gain
-Analogously the transfer fucntion of Current, the current gain
-
-$$
-\frac{I_{L}}{I^{+}_1}=\frac{V^{+}_1-V^{-}_1}{V^{+}_1}=1-S_{11}
-$$
+## Cascade Parallel of RLC series
