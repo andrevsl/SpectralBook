@@ -37,7 +37,6 @@ Captarget=1e-12
 [~,idcap]=min(abs(Cap-Captarget));
 Zeq=squeeze(Zcirc(idcap,:,:));
 S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
-VGain=(1+S11Circ)/2;
 
 %%%Impedance 
 figure,

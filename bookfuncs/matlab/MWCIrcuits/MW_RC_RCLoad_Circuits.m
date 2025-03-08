@@ -29,7 +29,7 @@ Res=[0,10,40,70,100];
 Cap=[0.001*1e-12,0.01*1e-12,0.1*1e-12,1*1e-12];
 [RES,CAP,FREQ]=meshgrid(Res,Cap,freq);
 % fres=1/sqrt(Lind*Cap);
-Zin=1./(1j*2*pi*FREQ.*CAP);
+Zin=createRLC(FREQ,type,RES,0,CAP);
 Zcirc=addElecComponent(type,Zin,RES);
 
 %% RC Series -Parametric Resistance - RC Load (High Pass filter)
@@ -70,7 +70,6 @@ Zeq=squeeze(Zcirc(idcap,idr,:)).';
 R=0
  1/(Captarget*(R-Z0ref))/1e9/(2*pi)
  1/(Captarget*(R+Z0ref))/1e9/(2*pi)
-
 omegapole=-1./(CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref));
 omegazero=-1./(CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref));
 
@@ -79,7 +78,6 @@ SS1eq=(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref))./
 % SS1eq=(1)./(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)+Z0ref))
 % SS1eq=(1+j*2*pi*FREQ(idcap,idr,:).*CAP(idcap,idr,:).*(RES(idcap,idr,:)-Z0ref))
 
-
 figure,
 plot(freq/1e9,20*log10(abs(S11Circ))),hold on
 plot(freq/1e9,20*log10(abs(squeeze(SS1eq)))),hold on
@@ -87,7 +85,7 @@ plot(freq/1e9,20*log10(abs(squeeze(SS1eq)))),hold on
 figure,
 plot(freq/1e9,180/pi*(angle(squeeze(SS1eq)))),hold on
 
-s11_fit_data = rational(freq,S11Circ)
+    s11_fit_data =  \(freq,S11Circ)
 fresp = freqresp(s11_fit_data,freq);
 
 figure,
@@ -103,11 +101,9 @@ S11Nfreq=[fliplr(conj(S11Circ)),S11Circ(1),S11Circ];
 S11Nfreq=[fliplr(conj(squeeze(SS1eq).')),S11Circ(1),squeeze(SS1eq).'];
 
 deltat=1/Fs;
-
 Nt=1025;
 BW=30e9;
 tau=1/BW;
-
 td=-26*tau;
 t0=-1e-9;
 tf=Nt*deltat;
