@@ -40,7 +40,7 @@ from bookfuncs.py.PlotData.plotfunc import plot1DTparametric,plot1DS,plot1DSpara
 
 
 
-# Cascade RLC Series
+# Unit Cell with Sheet Impedances
 
 Let consider the 3 RLC circuits
 $$

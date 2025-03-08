@@ -38,9 +38,7 @@ from bookfuncs.py.PlotData.plotfunc import plot1DTparametric,plot1DS,plot1DSpara
 
 ```
 
-
-
-# Cascade RLC Series
+# Cascade RLC Shunt
 
 Let consider the 3 RLC circuits
 $$

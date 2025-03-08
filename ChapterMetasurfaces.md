@@ -35,6 +35,11 @@ import warnings
 warnings.filterwarnings(action='ignore')
 
 ```
+## Resistive Sheet
+
+## Inductive Sheet
+
+## Capacitive Sheet
 
 ## Low Pass FSS
 ## Hig Pass FSS
