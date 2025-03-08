@@ -59,7 +59,6 @@ figure,
 plotFDdBParametric(freq,S11Circ,Cap)
 % sgtitle(['Parametric Res Cap=',string(Captarget)])
 
-
 %% Single RC values
 Captarget=1e-12
 [~,idcap]=min(abs(Cap-Captarget));
@@ -85,7 +84,7 @@ plot(freq/1e9,20*log10(abs(squeeze(SS1eq)))),hold on
 figure,
 plot(freq/1e9,180/pi*(angle(squeeze(SS1eq)))),hold on
 
-    s11_fit_data =  \(freq,S11Circ)
+s11_fit_data = rationalfit(freq,S11Circ)
 fresp = freqresp(s11_fit_data,freq);
 
 figure,
@@ -101,9 +100,11 @@ S11Nfreq=[fliplr(conj(S11Circ)),S11Circ(1),S11Circ];
 S11Nfreq=[fliplr(conj(squeeze(SS1eq).')),S11Circ(1),squeeze(SS1eq).'];
 
 deltat=1/Fs;
+
 Nt=1025;
 BW=30e9;
 tau=1/BW;
+
 td=-26*tau;
 t0=-1e-9;
 tf=Nt*deltat;
