@@ -24,13 +24,13 @@ import numpy as np
 from numpy import sin, exp, cos, log10, pi,angle, cos
 import pandas as pd
 import matplotlib.pyplot as plt
-from bookfuncs.simuParams import  SimuParam
-from bookfuncs.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot1DSparametricUwrap
+from bookfuncs.py.simuParams import  SimuParam
+from bookfuncs.py.PlotData.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot1DSparametricUwrap
 from scipy import signal
-from bookfuncs.signalFunc import  gaussinaSignal
+from bookfuncs.py.signalFunc import  gaussinaSignal
 
-from bookfuncs.simuParams import *
-from bookfuncs.simuParams import  SimuParam
+from bookfuncs.py.simuParams import *
+from bookfuncs.py.simuParams import  SimuParam
 
 import time
 import warnings
@@ -77,8 +77,8 @@ import numpy as np
 from numpy import sin, exp, cos, log10, pi,angle
 import pandas as pd
 import matplotlib.pyplot as plt
-from bookfuncs.simuParams import  SimuParam
-from bookfuncs.spectralfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot2DTparametric,plot1DSparametricUwrap
+from bookfuncs.py.simuParams import  SimuParam
+from bookfuncs.py.spectralfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot2DTparametric,plot1DSparametricUwrap
 
 par=SimuParam()
 par.par

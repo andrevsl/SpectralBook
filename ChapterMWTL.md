@@ -31,11 +31,13 @@ $$
 I(t,z)=I^{+}(t,z) e^{-\gamma_z \cdot z } + I^{-}(t,z)e^{\gamma_z \cdot z } 
 $$
 
-In frequency-time domain
+In frequency-time domain and frequency-space domain
 
-$$V(f,z)=V^{+}(f,z) e^{-\gamma_z \cdot z } + V^{-}(f,z)e^{\gamma_z \cdot z } $$
+$$V(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}V(f,k)=V^{+}(f,k) e^{-\gamma_z \cdot z } + V^{-}(f,k)e^{\gamma_z \cdot z } $$
 
-$$I(f,z)=I^{+}(f,z) e^{-\gamma_z \cdot z } + I^{-}(f,z)e^{\gamma_z \cdot z } $$
+$$I(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}I(f,k)=I^{+}(f,k) e^{-\gamma_z \cdot z } + I^{-}(f,k)e^{\gamma_z \cdot z } $$
+
+
 
 ### Planar Space and Time Varying (3D)
 
@@ -56,8 +58,13 @@ $$Z_{0}=\frac{V^{+}(z)}{I^{+}(z)} =\frac{V^{+}(z)}{I^{+}(z)} $$
 
 ###  Planar Space and Time Varying (3D)
 
+$$
+V_x(x,y)=Z_{0xx}(x,y,t)I_{x}(x,y,t)+Z_{0xy}(x,y,t)I_{y}(x,y,t)
+$$
 
-
+$$
+V_y(x,y)=Z_{0yy}(x,y,t)I_{x}(x,y,t)+Z_{0yx}(x,y,t)I_{x}(x,y,t)
+$$
 $$Z_{0x}(x,y)=?\frac{V^{+,-}_x(x,y)}{I^{+,-}_x(x,y)} =+ or - \frac{V^{-,+}_x(x,y)}{I^{-,+}_x(x,y)} $$
 
 $$Z_{0y}(x,y)=?\frac{V^{+,-}_y(x,y)}{I^{+,-}_y(x,y)} =+ or - \frac{V^{-,+}_y(x,y)}{I^{-,+}_y(x,y)} $$
@@ -65,9 +72,9 @@ $$Z_{0y}(x,y)=?\frac{V^{+,-}_y(x,y)}{I^{+,-}_y(x,y)} =+ or - \frac{V^{-,+}_y(x,y
 
 $$E^2=E_{x}^2+E_{y}^2+E_{z}^2$$
 
-$$V^2(x,y,t)=V_{x}^2(x,y,t)+V_{y}^2(x,y,t)=[Z_{0x}(x,y,t)I_{x}(x,y,t)]^2+[Z_{0y}(x,y,t)I_{y}(x,y,t)^2$$
+$$V^2(x,y,t)=V_{x}^2(x,y,t)+V_{y}^2(x,y,t)=[Z_{0xx}(x,y,t)I_{x}(x,y,t)+Z_{0xy}(x,y,t)I_{y}(x,y,t)]^2+\\
+[Z_{0y}(x,y,t)I_{y}(x,y,t)+Z_{0y}(x,y,t)I_{y}(x,y,t)]^2$$
 
-$$V=\int_{0}^{l} E_{x}(x,y,t) \cdot dx \approx =\sum_{0}^{n } E_{n }(n \Delta x,y) \Delta x $$
 
 Considering the coupling between Electromagnetic Polarizations, the divergence of electric field is not zero,
 

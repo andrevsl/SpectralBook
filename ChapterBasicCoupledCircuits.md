@@ -33,14 +33,14 @@ import matplotlib.pyplot as plt
 from numpy import pi, sin, cos, exp, tan, log,log10
 from mplcursors import cursor  # separate package must be installed
 
-from bookfuncs.simuParams import  SimuParam
-from bookfuncs.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot1DSparametricUwrap,plot1DSparametricdB
+from bookfuncs.py.simuParams import  SimuParam
+from bookfuncs.py.PlotData.plotfunc import plot1DTparametric,plot1DS,plot1DSparametric,S1d,plot1DSparametricUwrap,plot1DSparametricdB
 
 ```
 
 
 
-# Cascade RLC Series
+# Coupled Circuits
 
 Let consider the 3 RLC circuits
 $$

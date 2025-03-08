@@ -24,6 +24,8 @@ parts:
       - file: ChapterBasicLC
       - file: ChapterBasicRLCSeries
       - file: ChapterBasicCascadeRLCSeries
+      - file: ChapterBasicCascadeRLCShunt
+      - file: Chapters/AppCircuits/ChapterBasicCoupledCircuits
     - file: ChapterDigitalFilters
     - file: ChapterMWDevices1
     - file: ChapterMWDevices2
