@@ -35,6 +35,8 @@ parts:
       - file: ChapterAppAntennaLoop
     - file: ChapterPhasedArrays
     - file: ChapterMetasurfaces
+      sections:
+      - file: ChapterMetasurfacesResIndCap
     - file: ChapterRIS
       sections:
       - file: ChapterRISFreeSpace
