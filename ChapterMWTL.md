@@ -37,24 +37,24 @@ $$V(f,z)=V^{+}(f,z) e^{-\gamma_z \cdot z } + V^{-}(f,z)e^{\gamma_z \cdot z } $$
 
 $$I(f,z)=I^{+}(f,z) e^{-\gamma_z \cdot z } + I^{-}(f,z)e^{\gamma_z \cdot z } $$
 
-### 2.2 Planar Space and Time Varying (3D)
+### Planar Space and Time Varying (3D)
 
 For  planar circuits, with one time dimension and two spatial dimentions
 
 $$V(t,\overline{s})=V^{+}(t,\overline{s}) e^{-\overline{\gamma} \cdot \overline{s} } + V^{-}(t,\overline{s})e^{\overline{\gamma} \cdot \overline{s} } $$
 
 
-## 3 Characteristic Impedance
+##  Characteristic Impedance
 For homogeneous and symmetric transmission line along their length, the geometry remains unchangeble, the characteristic impedance will be constant, i.e., space and time independent. However for antennas and microwave circuits which are in general heavly assymetric, the characteristic impedance will depend on spatial coordinates.
 
-### 2.1 Linear Space and Time Varying (2D)
+###  Linear Space and Time Varying (2D)
 
 Considering that the electrical properties of the transmission line are time-independent, only space variant
 
 $$Z_{0}=\frac{V^{+}(z)}{I^{+}(z)} =\frac{V^{+}(z)}{I^{+}(z)} $$
 
 
-### 2.1 Planar Space and Time Varying (3D)
+###  Planar Space and Time Varying (3D)
 
 
 
