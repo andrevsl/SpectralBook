@@ -12,7 +12,7 @@ eta=sqrt(u0/e0);       %Impedancia do meio
 f0=3e9 ;                  % Observation frequency
 Lamb0=cc/f0 ;              % Observation wavelength
 Nq=96;           %Numero de pontos na frequencia
-Z0ref=100;  %Reference Impedance Generator
+Z0ref=50;  %Reference Impedance Generator
 Fs=80e9;  %% FFT sampling frequency
 Nfft=1025; %% NFFT sampling frequency
 DeltaFs=Fs/(Nfft-1)/1e6; % Delta Fs
@@ -25,60 +25,49 @@ Lambda=cc./freq;
 k=2.*pi.*freq.*sqrt(e0.*u0);
 %% RLC Series 
 type='Series'
-Res=50;
+R1=50;
+R2=50;
 Lind=1e-9;
-Lind2=0.1e-9;
+Lind2=0.4e-9;
 Cap=[1e-12];
-Cap2=[1e-12];
-
+Cap2=[0.1e-12];
 [LIND,CAP,FREQ]=meshgrid(Lind,Cap,freq);
+
 [LIND2,CAP2,FREQ]=meshgrid(Lind2,Cap2,freq);
 
-% fres=1/sqrt(Lind*Cap);
-Zcap=1./(1j*2*pi*FREQ.*CAP);
-Zcap2=1./(1j*2*pi*FREQ.*CAP2);
+Z1=createRLC(FREQ,type,R1,LIND,CAP);
+Z2=createRLC(FREQ,type,R2,LIND2,CAP2);
 
-ZL=1j*2*pi*FREQ.*LIND;
-ZL2=1j*2*pi*FREQ.*LIND2;
-
-FRES=1./sqrt(CAP.*LIND)/(2*pi)/1e9
+FRES=1./sqrt(CAP.*LIND)/   (2*pi)/1e9
 FRES2=1./sqrt(CAP2.*LIND2)/(2*pi)/1e9
-
-Zcirc=addElecComponent(type,Zcap,Res);
-Zcirc=addElecComponent(type,Zcirc,ZL);
-Z1=Res+ZL+Zcap;
-Z2=Res+ZL2+Zcap2;
-% 
-Zcirc=(Z1.*Z2)./(Z1+Z2);
+Zcirc=addElecComponent('Shunt',Z1,Z2);
 % Zcirc=Z2;
+
+
 %% RLC Series - Parametric 
 Captarget=1e-12
 [~,idcap]=min(abs(Cap-Captarget));
 Zeq=squeeze(Zcirc(idcap,:,:));
-S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
+Gamma1=gammaFromZ(Z0ref,Zeq);
 % S11Circ=Zeq;
 
 
 %%%Impedance 
 figure,
-plotZfreq(freq/1e9,Zeq.',[-100 200],string(Res))
+plotZfreq(freq/1e9,Zeq.',[-100 200],string(Lind))
 figure,
-plotFDdBParametric(freq,S11Circ,Res)
+plotFDdBParametric(freq,Gamma1,Lind)
 
 %% RC Series -Parametric Capacitance - RC Load (High Pass filter)
 Restarget=0;
-[~,idr]=min(abs(Res-Restarget));
-Zeq=squeeze(Zcirc(:,idr,:));
+[~,idl]=min(abs(Res-Restarget));
+Zeq=squeeze(Zcirc(:,idl,:));
 S11Circ=(Zeq-Z0ref)./(Zeq+Z0ref);
-VGain=1+S11Circ;
 
 figure,
-plotZfreq(freq/1e9,Zeq.',[-100 200],string(Cap))
-
+plotZfreq(freq/1e9,Zeq.',[-100 200],string(Lind))
 figure,
-plotFDdBParametric(freq,S11Circ,Cap)
-% sgtitle(['Parametric Res Cap=',string(Captarget)])
-
+plotFDdBParametric(freq,S11Circ,Lind)
 
 %% Single RC values
 Captarget=1e-12
@@ -107,7 +96,8 @@ plot(freq/1e9,20*log10(abs(S11Circ))),hold on
 % figure,
 % plot(freq/1e9,180/pi*(angle(squeeze(SS1eq)))),hold on
 
-s11_fit_data = rational(freq,S11Circ)
+s11_fit_data = ratio
+nal(freq,S11Circ)
 fresp = freqresp(s11_fit_data,freq);
 
 figure,
