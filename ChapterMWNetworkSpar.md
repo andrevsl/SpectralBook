@@ -58,14 +58,19 @@ $$ (memexpo)
 
 ```
 
+### Ports terminated with a Reference Source
 
-
-### Ports terminated with a Reference Impedances
 Then, for the voltages, following the Kirchhoff's laws, it is the addition of the foward and backward voltages, because the backward voltage it does not infer a negative voltage polarity, instead, a voltage which is generating a backward wave from the same terminals reference.
 
 $$
 V_{0n}=V_{0n}^{+}-V_{0n}^{-}
 $$
+
+<div class='images'>
+
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1HJevSJNgrxOR0HLlT5kJRzvxaMkLOPYn" 
+    style="width: 350px;  height: 400 px;"  />
+</div>
 
 On the other side, for the currents, also following the Kirchhoff's laws, it is the substraction of the foward and backward currents, hence a backward current implies direction, also opposite sign, so the negative signal is important, besides the current will be taken related to the reference impedance. Very mind blowing all that stuff. 
 
@@ -73,7 +78,7 @@ $$
 I_{0n}=I_{0n}^{+}-I_{0n}^{-}
 $$
 
-Considering we have a reference impedance $Z_{0n}$ attached to the port
+Consideringthe generator have a voltage source $V_{gn}$ and a reference impedance $Z_{0n}$ attached to the port
 
 $$
 I_{0n}=I_{0n}^{+}-I_{0n}^{-}=\frac{1}{Z_{0n}}(V_{gn}^{+}-V_{0n}^{-})
@@ -107,7 +112,7 @@ $$
 $$
 
 for power waves definition
-
+ 
 
 $$
 a_{0n}=\frac{V_{0n}+Z_{0n}I_{0n}}{2\sqrt{R_{0n}}}  
