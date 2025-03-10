@@ -82,16 +82,7 @@ SE = \left( 1 - \frac{1}{3850} \right)\log_2\left( 1 + \frac{P_{rxtotal}}{N_{\si
 $$
 
 
-Para potência de ruido $N_{\sigma} = 1$
-
-$$
-SE = \left( 1 - \frac{1}{3850} \right)\log_2\left( 1 + P_{rxtotal} \right)
-$$
-
-
-
-Se considerarmos o temperatura da antenas e do sistema, temos a potência
-do ruído
+Se considerarmos o temperatura das antennas ( os elementos da RIS) e do sistema, temos a potência do ruído, como
 
 $$
 N_{\sigma - dB} = 10\log{\left( KT_{s}B \right) =}10{\log{\left( KT_{a}B \right) + NF}}_{dB}

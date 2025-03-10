@@ -87,7 +87,7 @@ $$
 $$
 V_{0n}^{-}=\frac{V_{0n}-Z_{0n}^{*}I_{0n}}{2} 
 $$
-The voltage can be defined if the input impedance of the system $Z_{in}=Z_0^{*}$ is conjugated matched to the reference imepdance
+The foward voltage can be defined as the voltage if the input impedance of the system $Z_{in}=Z_0^{*}$ is conjugated matched to the source impedance, in this case the reference impedance.
 
 $$
 V_{0n}^{+}=V_{0n}\frac{Z_0^{*}}{Z_0+Z_0^{*}}=V_{0n}\frac{Z_0^{*}}{2R_0}

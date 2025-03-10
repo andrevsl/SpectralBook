@@ -38,8 +38,6 @@ from bookfuncs.py.PlotData.plotfunc import plot1DTparametric,plot1DS,plot1DSpara
 
 ```
 
-
-
 # Coupled Circuits
 
 Let consider the 3 RLC circuits
