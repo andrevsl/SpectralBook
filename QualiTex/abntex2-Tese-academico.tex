@@ -463,15 +463,170 @@ Para RIS, pesquisadores investigaram recentemente o mesmo problema [11],[17]-[20
 Historicamente o método de Moments é uma ferramenta clássica para análise de phased array, para tipos planares e lineares [12]-[13]. Simulações de onda completa de conjuntos de antenas geralmente usam portas para analisar o acoplamento e as características de radiofrequência do conjunto. Para RIS, em geral não existem portas para medir a interação entre todos os elementos [17]. Propomos um modelo utilizando o Método dos Momentos com um arranjo contínuo e de camada única de impedâncias de superfície (MoMCSL), onde cada elemento do arranjo encapsula suas características de volume, devido às dimensões do subcomprimento de onda da estrutura [18]. Podemos avaliar todo o comportamento eletromagnético e de radiofrequência do RIS através de uma simulação de onda completa, incluindo campo próximo e acoplamento de polarização. A impedância de superfície é modelada usando a teoria de ondas planas e linhas de transmissão (PWTL) [21]-[22]. A seção transversal do radar passivo e ativo (RCS) é analisada.
 
 
-\chapter{Teoria RIS}
-Um ambiente de rádio inteligente é um ambiente sem fio que se transforma em um espaço reconfigurável e inteligente e que desempenha um papel ativo na transferência e processamento de informações \cite{ProgrammableEnvironment}. Ambientes inteligentes de rádio ampliam a noção das redes de software: atualmente, a operação de redes sem fio é controlado por software e otimizado de forma elástica para suportar requisitos heterogêneos de entrada , por exemplo, taxa de dados aprimoradas, alta eficiência energética, baixa latência, ultra confiabilidade, conectividade massiva de objetos, \textit{internet} das coisas - Internet of things - Iot - \cite{5GPPP} . Em outra definição de ambientes de rádio inteligentes, o ambiente sem fio em si é transformado em uma entidade reconfigurável por \textit{software} \cite{WirellessCTRIS},cuja operação é otimizada para permitir conectividade, garantia de qualidade de serviço e, onde a informação é transmitida sem necessariamente gerar novos sinais, mas reciclando os existentes sempre que possível.
+\chapter{Teoria RIS} 
 
-Na literatura, parece não haver consenso, ou se visto por outro ponto de vista, várias definições são usadas para definir as superfícies inteligentes: superfícies reconfiguráveis inteligentes (RIS), superfícies refletoras inteligentes (IRS), meta-superfícies reconfiguráveis inteligentes, superfícies inteligentes longas (LIS) \cite{SDNRIS} . Na concepção destes autores até o presente momento, a RIS seria um termo geral para superfícies inteligentes, que funcionaria tanto em modo refletor como em modo de transmissão (e/ou refração), funcionando como um \textit{reflectarray, transmitarray }ou lente. As meta-superfícies fazem alusão aos componentes, que majoritariamente são concebidos com metamateriais \cite{SREMetasurface}. Por outro lado as IRSs são como \textit{reflectarrays} (arranjos refletores) sendo atualmente utilizadas como antenas para aplicações em sistemas de satélites e outros sistemas de telecomunicações, moldando a reflexão. Decide-se empregar o termo RIS para o caso generalizado, e a terminologia IRS para o caso particular de reflexão. Outras classificações são temas de debate como em HRIS, define-se a RIS híbrida refletora e de detecção (RIS \textit{Hybrid reflecting and sensing} - HRIS). Já para \cite{CFGOBDRIS}, RIS híbridas englobam o modo de transmissão e reflexão ao mesmo tempo. No nosso entendimento, uma RIS híbrida possui duas ou mais funções, não somente o caso convencional de reflexão. 
+\section{Ambientes Inteligentes e a RIS} 
 
-\section{Metasurfaces}\label{TeoriaMetasurfaces}
+Um ambiente de rádio inteligente é um ambiente sem fio que se transforma em um espaço dinamicamente e de maneira inteligente havendo uma sinestésica relação entre todos os elementos promovendo a troca e procesamento  de informações instantaneamente \cite{ProgrammableEnvironment}. 
+
+Eles permitem transparetemente e a realização do conceito redes virtuais e  \textit{internet} das coisas, onde elementos aparentemente isolados no espaço,estão fortemente conectados pelas leis do eletromagnetismo, sendo essenciais para atingir os padrões de conectividade e qualidade para as futuras redes de sexta geração.\cite{5GPPP}
+
+Esses ambientes prometem realmente promover a alta sustentabilida, utilizando e reutilizando o máximo possível dos recursos energéticos do ambiente que outrora seriam despecebeidamente ignorados, que também são de teecomunicações e segurança.
+
+Nesse âmbito, surgem as superfícies reconfiguráveis inteligentes como um dos postulantes a atores principais da nova história das redes de comunicação virtuais e onipresentes. Essas superficies direcionam, reaproveitam e/ou espalham a energia que seria descartada nas paredes ou sob outros objetos para diversos tipos de aplicações.
+
+\subsection{Casos de Aplicação} 
+
+O surgimento da RIS como uma tecnologia disruptiva, postou várias questões da sua real proficuidade em melhorar a capacidade das redes de telecomunicação. Uma grande impulso alvancou as pesquisas em desmistificar todos os fatores relativos as sua aplicabilidade.
+
+A principal vantagem da RIS, pode-se dizer que seu emprego não se restringe a único tipo de ambiente, aplicação e rede. Podendo ser explorados no contexto das redes comunicações móveis da sexta geração, redes domésticas, sistemas não tripulados das cidades inteligentes, e da internet das coisas. Além disso,  indo além da melhoria de cobertura e capacidade de dados, podendo também auxiliar redes de transferência de energia sem fio (SWIPT), redes de segurança da camada física e tecnologias de captura de energia.
+Ademais, sua atuação abrange todos os espectros de frequência praticamente, com vantagens tem todos eles. especialmente nas bandas de ondas milimétricas e terahertz.
+
+\begin{figure}[htb]
+ \label{PulsosVetorPosicaoIlustracao}
+ \centering
+  \begin{minipage}{\textwidth}
+    \centering
+    \caption{Exemplo da Discretização com o Vetor Posição da Função Pulso} \label{fig_minipage_imagem2}
+    \includegraphics[width=14cm, height=8.5cm]{figures/RISusecases.png}
+    \legend{Fonte: Produzido pelos autores}
+  \end{minipage}
+  \hfill
+
+\end{figure}
+
+\subsection{RIS como Antenas }  
+
+Superfícies reconfiguráveis inteligentes são estruturas bem semelhantes aos arranjos de antenas, cujos elementos também são antenas. Pois na realidade toda superfície, até mesmo as dielétricas, são antenas irradiadoras de energia. O que as diferencia de uma “boa antena” são as propriedades requeridas de irradiação para uma determinada aplicação. No caso as RISs, são antenasr passivas ou ativas, terminadas em curto circuito, circuito aberto ou em uma impedância reativa cujo objetivo é direcionar, absorver, transmitir ou espalhar a energia eletromagnética de maneira controlada. De maneira análoga aos arranjos, ao modificar as impedâncias de cada elemento, intrinsecamente relacionadas à defasagem e à alteração da amplitude destes no âmbito do processamento digital e espacial dos sinais. Pode-se desenhar feixes segundo as necessidades requeridas para o usuário.
+
+\subsection{RIS como Metasuperfícieis} 
+
+O arranjos de elementos irradiadores são geralmente considerados metasuperficies (\textint{metasurfaces}). A metasuperfície pode ser considerada como uma estrutura bidimensional constituida de metamateriais, e pode realizar o controle da amplitude, fase e estado de polarização/direção da onda eletromagnética incidente. Metamaterial é um tipo de material ou estrutura que é projetado artificialmente e tem propriedades eletromagnéticas excepcionais e/ou outras propriedades físicas, não encontradas na natureza. AS metasuperfícies de \textit{Huygens} , 
+Com base no princípio de Huygens e da generalização da lei de reflexão e refração de Snell, e do princípio da equivalência de Love, cada unidade com tamanho em em torno subcomprimento irá ser excitado por ondas eletromagnéticas incidentes com densidades de corrente superfíciais e gerar um pacote de ondas esféricas na interface metasuperfície/ar, podendo ser decomposta em um espectro de ondas planas e resolvidas separamente com a Lei de Snell. A onda esférica gerada por todas as unidades da metasuperfície formam uma nova frentes de ondas eletromagnética. 
+
+\subsection{RIS, IRS ou LIS} 
+    
+Na literatura, parece não haver consenso, ou se visto por outro ponto de vista, várias definições são usadas para definir as superfícies inteligentes: superfícies reconfiguráveis inteligentes (RIS), superfícies refletoras inteligentes (IRS), meta-superfícies reconfiguráveis inteligentes, superfícies inteligentes longas (LIS) \cite{SDNRIS} . 
+
+Na concepção destes autores até o presente momento, a RIS seria um termo geral para superfícies inteligentes, que aplicável a todos os tipos de funcionalidadeds. As meta-superfícies fazem alusão aos componentes, que majoritariamente são concebidos com metamateriais \cite{SREMetasurface}. Por outro lado as IRSs são como \textit{reflectarrays} (arranjos refletores) sendo atualmente utilizadas como antenas para aplicações em sistemas de satélites e outros sistemas de telecomunicações, moldando a reflexão. 
+
+Portanto, decide-se empregar o termo RIS para o caso generalizado, e a terminologia IRS para o caso particular de reflexão. 
+
+\section{ Classificações da RIS}
+
+Existem diversas classificações para RIS quanto as suas características, como funcionalidade, tipo de elementos, espectro de frequência, arquitetura e tecnologias de reconfiguração.
+
+\subsubsection{Funcionalidade} 
+
+As classificações de funcionalidaeds são temas de grande debate. Em [] define-se a RIS híbrida refletora e de detecção (RIS \textit{Hybrid reflecting and sensing} - HRIS). Já para \cite{CFGOBDRIS}, RIS híbridas englobam o modo de transmissão e reflexão ao mesmo tempo. No nosso entendimento, uma RIS híbrida possui duas ou mais funções, não somente o caso convencional de reflexão. 
+\begin{itemize}
+   
+    \item \textbf{Reflexão :} Refletem os sinais, podendo direcionar em determinada direçã ou espalhar em diversas direções;
+
+    \item \textbf{Transmissão:} Transmitem o sinal, entretento, podem modificar a direção e formato do feixe que atravessa sua superfícies.
 
 
+    \item  \textbf{Absorção:} Servem para absorver e/ou atenuar sinais indesejados, para diminuir interferência, segurança;
 
+    \item \textbf{Detecção:} São ris que detecenão os sinais RF com o intuito de otimizar a aquisição de informação do canal. 
+
+ \item  \textbf{Computação:} São RIS que podem funcionar como computadores analógicos e/ou digitais, realizando o processamento de informação.
+
+ \item \textbf{Captura/Colheita:} Funcionam no modo de captura de energia, anlogamente as placas solares, porém para energia radiofrequência.
+
+- Híbridas : Pode possuir 2 ou mais funcionalidades
+\end{itemize}
+
+\subsubsection{Elementos}   
+
+\begin{itemize}
+
+\item \textbf{Passivos:} Possuem elemetos sem elementos ativos, elementos que ocasionão a defasagem dos sinais eletromagnéticos, sem adicionar energia ao sistema.
+
+\item \textbf{Ativos:} Possuem elementos ativos como amplificadores, para fortificar os sinais, porém não possuindo um cadeia radiofrequência completa como nos \textit{relays}.
+
+\item \textbf{Híbrida:} Possuem os dois tipos de elementos.
+
+\subsubsection{Bandas de Frequência} 
+
+\item \textbf{Sub-6:} Frequências inferiores a 6 GHz. Nestas bandas, a RIS pode melhorar a cobertura, principalmente em regiões de penumbra causado por obstáculos, além de enriquecer ou atenuar o multipercurso para MIMO.
+
+\item \textbf{Mid-Range:} Frequências entre 6-30 GHz, a atenuação começa ser um fator importante, pode auxiliar a desviar dos obstáculos e direcionar a energia para o usuário.
+
+\item \textbf{Ondas milimétricas (mmWW), 30-300 GHz:} Atenução forte, combina uma boa largura de banda com uma certa capacidade de propagação em distâncias até revelantes de algumas centenas de metros. A diretividade da energia se torna cada vez mais importante.
+
+\item Terahertz: Grande largura de banda tipo fibra ópitca, com atenução muito severa do sinal que não penetra objetos, pequena largura do feixe das ondas. Logo, superfícies largas podem relativisar esses efeitos. 
+\end{itemize}
+
+\subsubsection{Arquitetura} 
+
+\begin{itemize}
+
+Os autores de [] introduziram a interessante classificação da arquitetura em relação a caracteristica da matriz de espalhamento, cada elemento sendo como uma porta de uma rede radiofrequência.
+
+\item \textbf{Elementos não são conectados entre si:} Comumente chamada de RIS com Matriz de Espalhamento Diagonal, pois os elementos não são conectados por conexões físicas controláveis e desejáveis. O autor também enumera outras subclassificações.
+
+\item \textbf{Elementos conectados entre si por impedâncias:} Comumente chamada de Matriz de Espalhamento não diagonal, porque os elementos possuem conexões físicas controláveis e desejáveis. O autor também enumera outras subclassificações.
+
+Porém, no desenvolvimento de RIS, os elementos estão conectados eletromagnéticamente pela Física mesmo que não esteja por conexões físicas como impedãncias controlladas, sendo na verdade a RIS naturalmente diagonal, contudo esses efeitos são desprezados, quando são desprezíveis, e/ou para facilitar o tratamento matemático. O método dos momentos justamente proporciona essa modelagem física completa, tratando e generalizando o sistema como não diagonal.
+
+\end{itemize}
+
+\subsubsection{Tecnologia de Reconfiguração } 
+
+A tecnologias de reconfiguração são diversas, principalmente advindas das metasuperfícies, com tecnoloigias baseadas em semicondutores, dispositivos mecâncicos, quimicos ou termicos. Porém, focaremos nas tecnologias eletroeletrônicas.
+\begin{itemize}
+\item \textbf{Chaves (Transistors) :} Mais conhecidas como RF\textit{switches}.
+
+ \textbf{Prós:} Preferido para aplicações que priorizam ampla largura de banda, alto isolamento e implementações de controle mais simples.
+    
+\textbf{Contras:} Sem o ajuste fino da formação de feixe.
+
+   \textbf{Frequências de Operação:} Mais utilizado em frequências de até algumas dezenas de GHz, porém semicondutores que operam em ondas milimétricas, sub-THz e THz, estão em fase de pesquisa e maturação.
+   
+\item \textbf{Diodos Varactor}
+
+    \textbf{Prós:} Adequado para aplicações que exigem formação de feixe precisa, ajuste fino de fases de sinal e baixo consumo de energia.
+
+    \textbf{Contras:} Circuito de controle complexo.
+
+    \textbf{Frequências de Operação:} Mais utilizado em frequências de até algumas dezenas de GHz, porém semicondutores que operam em ondas milimétricas e THz, estão em fase de pesquisa e maturação.
+
+
+\item \textbf{Diodos PIN}
+
+    \textbf{Prós:} Mais adequado para aplicações que exigem comutação rápida, alto isolamento ou controle de amplitude, como modelagem dinâmica de feixe ou comutação de frequência.
+
+    \textbf{Contras:} Alto consumo de energia, baixa resolução do controle de fase e amplitude do feixe.
+
+    \textbf{Frequências de Operação:} Mais utilizado em frequências de até algumas dezenas de GHz, porém semicondutores que operam em ondas milimétricas e THz, estão em fase de pesquisa e maturação.
+
+
+\item \textbf{MEMS :} Não é uma tecnologia puramente mecânica, pois o controle se dá por comandos elétricos.
+
+    \textbf{Prós:} Os MEMS oferecem alta precisão, devido boa linearidade e uma boa amplitude das faixas de mudança de mudança de fase. 
+
+    \textbf{Contras:} Têm velocidades de comutação mais lentas e potenciais problemas de confiabilidade.
+
+    \textbf{Frequências de Operação:} Frequências Microondas e sub-THz.
+
+\item \textbf{Cristal líquido}
+
+    \textbf{}\textbf{Prós:} Os cristais líquidos oferecem grandes faixas de mudança de fase e operação de banda larga, além de boa linearidade. 
+
+    \textbf{Contras:} Têm velocidades de comutação mais lentas.
+
+    \textbf{Frequências de Operação:} Frequências Microondas, sub-THz e THz.
+
+\item \textbf{Grafeno: }
+
+    \textbf{Prós:} O grafeno oferece potencial para desempenho superior em termos de capacidade de ajuste, largura de banda e velocidade de comutação.
+
+    \textbf{Contras:}  A maturação da integração e da fabricação é ainda um  desafio.
+
+    \textbf{Frequências de Operação:} Na faixa de THz é baseado no conjunto reativo/resitivo da impedância superficial. Porém, também pode ser usado em frequências inferiores, em microondas, baseado na parte resistiva da impedância superficial, especialmente como excelentes absorvedores banda larga.
+
+\end{itemize}
 
 
 \section{Modelagem Eletromagnética}\label{FormulaçãoPWTLBalanis}
@@ -510,17 +665,147 @@ As condições de fronteira eletromagnéticas nos dão a seguintes relaçãos pa
   \overline{a}_z  \times [{\overline{H}_{2}-\overline{H}_{1}} ]=\overline{J}_{s}
 \end{equation}
 
+\subsection{Modelagem pelas Equações de Espaço Livre}\label{FormulaçãoFreeSpace
+Balanis}
+
+A propagação no espaço livre, no campo distante, é largamente utilizada e descrita pela equação Fris. Porém, sendo necessária a obtenção dos parâmetros de ganho das antenas, área efetivas e potência de transmissão. Os dois primeiros obtidos geralmente por simulações numéricas das antenas. Por outro lado para cenários de espalhamento e de propagação mais complexa, a física ótica e/ou traçado de raios (ray tracing) é amplamente empregado pelos pesquisadores e engenheiros.
+
+Dentro deste contexto, deriva-se a potência e eficiência espectral para um único usuário, uma IRS único transmissor (podendo ser um arranjo de antena) utlizando a equação de Fris {[}27{]}. Inferindo as potências
+recebidas a partir da área efetiva e do radar cross section da IRS que cálcularemos com o método dos momentos. Portanto, a densidade de potência incidente a partir do transmissor direcionada ao usúario e à IRS são, respectivamente, descritas por,
+
+\begin{equation}
+W_{txk} = W_{0txk}G_{txk} = \frac{P_{t}G_{t}(\theta_{txk},\phi_{txk})}{(4\pi R_{1}^{2})}
+\end{equation}
+\begin{equation}
+    W_{txirs} = W_{0txirs}G_{txirs} = \frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})}{(4\pi R_{2}^{2})}
+\end{equation}
+
+
+
+
+Define-se como $\lambda$ o comprimento de onda,
+$G_{txk} = G_{t}(\theta_{txk},\phi_{txk})$ o ganho da antena transmissora na direção do usuário,
+$G_{txirs} = G_{t}\left( \theta_{txirs},\phi_{txirs} \right)$ o ganho da antena transmissora na direção da IRS, $G_{r}(\theta_{rxtx},\phi_{rxtx})$ o ganho da antena do usuário na direção do transmissor, $A_{rxtx}$ a área efetiva do usuário na direção do transmissor, $P_{t}$ a potência de transmissão, $R_{1}$ a distância entre o transmissor e o usuário, e $R_{2}$ a distância entre o transmissor e a IRS. Logo, a potência recebida diretamente pelo usuário diretamente do AP é,
+
+\begin{equation}
+    P_{tx - user} = W_{txk}A_{rxtx} = \frac{P_{t}G_{t}\left( \theta_{txk},\phi_{txk} \right)G_{r}\left( \theta_{rxtx},\phi_{rxtx} \right)\lambda^{2}}{\left( 4\pi R_{1} \right)^{2}}
+\end{equation}
+
+
+A área efetiva da IRS e do usuário receptor para o feixe advindo da IRS são dadas, respectivamente, como
+\begin{equation}
+A_{irs} = \sigma_{irs}(\theta_{irs},\phi_{irs})
+\end{equation}
+
+
+\begin{equation}
+A_{rxirs} = \left( \frac{\lambda^{2}}{4\pi} \right)G_{r}\left( \theta_{rxirs},\phi_{rxirs} \right)\ 
+\begin{equation}
+
+
+Sendo $\sigma_{irs}(\theta_{irs},\phi_{irs})$, o \emph{radar crosssection} da IRS na direção do usuário,
+$G_{r}\left( \theta_{rxirs},\phi_{rxirs} \right)$  O ganho da antena na direção do feixe advindo da IRS. Obtem-se a potência recebida pela IRS para a distância $R_{1}$ entre o transmissor e a IRS, como,
+
+\begin{equation}
+    P_{irs} = W_{txirs}A_{irs} = \frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})}{(4\pi R_{2}^{2})}\sigma_{irs}\left( \theta_{irs},\phi_{irs} \right)
+\end{equation}
+
+Analogamente, define-se a densidade de potência da onda espalhada pela IRS na direção do usuário por uma distância $R_{3}$,
+\begin{equation}
+    W_{s} = \frac{P_{irs}}{(4\pi R_{2}^{2})} = \frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})}{\left( 4\pi R_{2}R_{3} \right)^{2}}\sigma_{irs}\left( \theta_{irs},\phi_{irs} \right)
+\end{equation}
+
+Deste modo, a potência recebida pelo usuário através da IRS é dada,
+\begin{equation}
+    P_{tx-irs-user} = A_{rxirs}W_{s}
+\end{equation}
+\begin{equation}
+    P_{tx - irs - user} = \sigma_{irs}\left( \theta_{irs},\phi_{irs} \right)\frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})G_{r}\left( \theta_{rxirs},\phi_{rxirs} \right)}{4\pi}\left( \frac{\lambda}{4\pi R_{2}R_{3}} \right)^{2}
+\end{equation}
+
+Portanto a potência total do usuário,
+
+\begin{equation}
+    {P_{rxtotal} = P_{tx -user} + P}_{tx-irs-user}
+\end{equation}
+
+\begin{equation}
+    P_{rxtotal} = \frac{P_{t}G_{t\ }\left( \theta_{txk},\phi_{txk} \right)G_{r}\left( \theta_{rxtx},\phi_{rxtx} \right)\lambda^{2}}{\left( 4\pi R_{1} \right)^{2}} + \\
+\sigma_{irs}\left( \theta_{irs},\phi_{irs} \right)\frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})G_{r}\left( \theta_{rxirs},\phi_{rxirs} \right)}{4\pi}\left( \frac{\lambda}{4\pi R_{2}R_{3}} \right)^{2}
+\end{equation}
+
+A eficiência espetral é dada por,
+
+\begin{equation}
+SE = \left( 1 - \frac{1}{3850} \right)\log_2\left( 1 + \frac{P_{rxtotal}}{N_{\sigma}} \right)    
+\end{equation}
+
+Se considerarmos o temperatura das antennas ( os elementos da RIS) e do sistema, temos a potência do ruído, como
+
+\begin{equation}
+  N_{\sigma - dB} = 10\log{\left( KT_{s}B \right) =}10{\log{\left( KT_{a}B \right) + NF}}_{dB}  
+\end{equation}
+\begin{equation}
+    T_{s} = T_{a\ } + T_{rx}
+\end{equation}
+
+Assumindo $T_{s}$ como a temperatura do sistema, $T_{a\ }$ a temperature da antenna, $T_{rx}$ temperatura do receptor radiofrequência do usuário, $K$ a constante de Boltzmann e B a largura de banda do sinal.
+
 
 \subsection{Modelagem pelo Método de Arranjo de Antenas}\label{FormulaçãoArrayBalanis}
 
-Os método de arranjos é comumente usado na literatura para analisar
+Os método de arranjos é um clássico que nunca sai de moda, comumente usado na literatura para analisar arranjos de antenas perfeitos, sem considerar todos os efeitos eletromagnéticos reais, com o intuito de construir diagramas ideais e perfeitos de referência que guiam a modelagem dos arranjos para uma determinada aplicação, com uma determinada técnica de atribuição dos pesos complexos. Por exemplo, a amplitudes e fase dos sinais são modificados pelos amplificadores, defasadores, pelos coeficientes de reflexão complexos dos elementos da RIS. Portanto, a RIS também pode ser vista como um arranjo de antenas, que ao refletir aplica um peso complexo a amplitude do campo elétromagnético da onda incidente.
+
+Considerando um arranjo planar distribuido no plano $xy$, com $N_{ZsW}$ elementos em x, com $N_{ZsL}$ elementos em y, 
+
+\textbf{
+Fig. Fazer Figura}
 
 
-\subsection{Modelagem pelas Equações de Espaço Livre}\label{FormulaçãoFreeSpace
-Balanis}
-?
-\subsection{Modelagem pelo Método de Ondas Planas}\label{FormulaçãoPWTLBalanis}
+O modelo planar do método de arranjo de antenas clássico {cite}`balanisAntenna` é dado por
 
+\begin{equation}
+    \overline{E}_s=\sum_{m=1}^{M} \sum_{n=1}^{N} I_{1m}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_x}
+                                I_{1n}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_x}
+\end{equation}
+
+Sendo que $\beta_x$ e $\beta_y$, são a defasagens continuamente aplicadas, respectivamente,  aos elementos ao longo dos eixos $x$ e $y$.
+Porém se considerarmos coeficiente de reflexão com amplitude e fase variável ao longo de todo os, a defasagem entre elementos vizinhos, podendo não ser necessariamente constante. O coeficients de reflexão da RIS paras as duas polarizações
+
+\begin{equation}
+\Gamma^{x}_{NM}=A^{x}_{NM} e^{j \Omega^x_{NM}}e^{j \Omega^y_{NM}}
+\end{equation}
+
+\begin{equation}
+\Gamma^{y}_{NM}=A^{y}_{NM} e^{j \Omega^x_{NM}}e^{j \Omega^y_{NM}}
+\end{equation}
+
+O coefiente englobando o efeito das duas componentes,
+
+\begin{equation}
+\Gamma_{NM}=\Gamma^{x}_{NM}\Gamma^{y}_{NM}=A_{NM} e^{j \Omega^x_{NM}}e^{j \Omega^y_{NM}}
+\end{equation}
+
+
+Logo, considerando a RIS de referência, o campo incidente sendo unitário e em phase sobre toda a superfície 
+\begin{equation}
+\overline{E}_s=\sum_{m=1}^{M} \sum_{n=1}^{N} A_{NM}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_{NM}^x}
+                                e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_{NM}^y}
+\end{equation}
+
+\subsection{Modelagem pelo Método de Ondas Planas e Linhas de Transmissão}\label{FormulaçãoPWTLBalanis}
+Método de ondas planas, também um clássico e extraordinário, uma vez que todo campo eletromagnético pode ser decomposto em um espectro de ondas planas, se o divergente do camplo eletromagnético for zero, tratando o problema também no espaço spectral dos ângulos, direções das ondas incidentes, ele analisa as reflexões e transmissões de ondas planas entre diferentes meios, levando conta suas características dos meios a partir das impedâncias das ondas eletromagnéticas nos respectivos meios. 
+
+O método das Linhas de transmissão também compartilha a mesma essência do método de ondas plans, mas neste método se dá com a manipulação das impedâncias e parâmetros de circuitos elétricos, tendo também muita importância no desenvolvimento dos ciruitos eletromagnéticos das antenas, como o a optimização do casamento de impedâncias, pode-se tratar todo o sistema de irradiação como um circuito elétrico.
+
+Logo, tem-se a visão tanto espaço espectral ângular como do espaço spectral frequencial, assim como a modelagem por circuitos elétricos.
+
+\subsubsection{Descrição do Método}  
+
+Neste método, considera-se uma onda incidente que se propaga na linha de transmissão do ar, e alcança uma discontinuidade, representada por uma impedância superficial $Z_s$, que representa a RIS. Essa impedância irá espalha um campo eletromagético, assim como transmitir outro campo eletromagnético na linha de transmissão do ar.
+
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1i2FgcvuscNZaELtdCInN_5nCSkCVawbb" 
+    style="width: 300px;  height: 300 px;display: block;margin-left: auto;margin-right: auto;"  />
 Dadas as condiçõoes de contorno e a definição dos campoes \cite{A}, a impedância vista da RIS representada pela impedância superficial e o meio 2 que pode ser considerada uma linha de transmissão, é dada por,
 
 \begin{equation}{\label{ImpedanciaZinParaleloZsEta2}}
@@ -537,11 +822,84 @@ Se os dois meios forem o espaço livre,
 \begin{equation}
     \Gamma=\frac{-\eta^{TM}_0}{2Z_s+\eta^{TM}_0}
 \end{equation}
+
 A impedância superficial em relação ao coeficiente de reflexão
 
+\begin{equation}
+    Z_s=\frac{\eta^{TM}_0(1+\Gamma)}{2\Gamma}
+\end{equation}
 
-% ---
-% Capitulo de revisão de literatura
+\subsection{ Modelagem Circuito elétrico}#
+
+O circuito básico dá RIS pode ser modificado em relação ao descrito anteriomente, identificando melhor as estruturas do sistema, entrando mais no conceito dos circuitos elétricos com suas resistências, capacitâncias e indutâncias. Que se constitue geralmente de um \textit{patch} sob um substrado dielétrico com um plano de terra na sua superfície inferior. Nesta nova configuração, a onda incidente encontra primeirammente impedância do \textit{patch}  $Z_p$ e logo após percorre a linha de trasmissão do dielétrico com impedância de onda $\eta_d$ que está curto circuitada pelo plano de terra de impedância $Z_g$.
+
+Melhorar figura e colocar Zg (exportar, não faz )
+<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=17_eq7NOBCh6Q9ycTYJQGyD6bm6H1CCQd" 
+    style="width: 300px;  height: 300 px;display: block;margin-left: auto;margin-right: auto;"  />
+Do \textit{patch} tem-se $Z_p$,
+
+\begin{equation}
+Z_p=R_p+j\omega L_p+\frac{1}{j\omega C_p}
+\end{equation}
+No dominio de Laplace
+
+\begin{equation}
+Z_p(s)=\frac{sR_p+s^2 L_p+1/C_p}{s }
+\end{equation}
+
+Sendo $R_p$ a sua resistência superfical, $C_p$ a sua capacitância, $L_p$ a sua indutância. Já para o dielétrico, a impedância vista a partir do \textit{patch} é dada por
+
+
+\begin{equation}
+Z_d=\eta_d\frac{Z_g+j\eta_d \tan{kl}}{\eta_d+jZ_g\tan{kl}}
+\end{equation}
+
+Como $ Z_g$ é muito pequena, tem-se
+
+\begin{equation}
+Z_d=j\eta_d\tan{kl}=jX_d
+\end{equation}
+No dominio de Laplace
+considerando a variação da indutância bem pequena com a frequência
+
+\begin{equation}
+Z_d(s)=s L_d
+\end{equation}
+ 
+A impedância vista pela onda incidente, será
+
+\begin{equation}
+   Z_{in}= \frac{Z_p Z_d}{Z_p+Z_d}
+\end{equation}
+
+
+Se todo circuito for encapsulado como descrito inicialmente, em uma impedância $Z_s$, teremos
+
+\begin{equation}
+    Z_s=\frac{Z_{in}\eta_0^{TM}}{\eta_0^{TM}-Z_{in}}
+\end{equation}
+
+Porém analisando melhor,
+
+\begin{equation}
+   Z_{in}= \frac
+   {(\frac{sR_p+s^2 L_p+1/C_p}{s }) (sL_d)
+   }
+   {
+  (\frac{sR_p+s^2 L_p+1/C_p}{s })+sL_d
+   }
+\end{equation}
+
+\begin{equation}
+   Z_{in}= \frac
+   {
+      (sR_p L_d+s^2 L_pL_d+L_d/C_p)s
+   }
+   {
+      sR_p+s^2 L_p+1/C_p+s^2L_d
+   }
+\end{equation}
+
 \chapter{Formulação do MoMCSL}\label{FormulaçãoMoMCSL}
 
 
