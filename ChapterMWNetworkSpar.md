@@ -76,7 +76,7 @@ $$
 Considering we have a reference impedance $Z_{0n}$ attached to the port
 
 $$
-I_{0n}=I_{0n}^{+}-I_{0n}^{-}=\frac{1}{Z_{0n}}(V_{0n}^{+}-V_{0n}^{-})
+I_{0n}=I_{0n}^{+}-I_{0n}^{-}=\frac{1}{Z_{0n}}(V_{gn}^{+}-V_{0n}^{-})
 $$
 
 Then, replacing the equations () into () we gona find
@@ -87,18 +87,25 @@ $$
 $$
 V_{0n}^{-}=\frac{V_{0n}-Z_{0n}^{*}I_{0n}}{2} 
 $$
+
 The foward voltage can be defined as the voltage if the input impedance of the system $Z_{in}=Z_0^{*}$ is conjugated matched to the source impedance, in this case the reference impedance.
 
 $$
-V_{0n}^{+}=V_{0n}\frac{Z_0^{*}}{Z_0+Z_0^{*}}=V_{0n}\frac{Z_0^{*}}{2R_0}
+V_{0n}^{+}=V_{gn}\frac{Z_0^{*}}{Z_0+Z_0^{*}}=V_{gn}\frac{Z_0^{*}}{2R_0}
 $$
 $$
-I_{0n}^{+}=V_{0n}\frac{1}{2R_0}
+I_{0n}^{+}=V_{gn}\frac{1}{2R_0}
 $$
 
 $$
-P_{0n}^{+}=1/2\R e{\{V_{0n}^{+}{I_{0n}^{+}}^{*}\}}=V_{0n}^2\frac{1}{8R_0}=\frac{1}{2}|a_n|^{2}/4
+P_{0n}^{+}=1/2\R {\{V_{0n}^{+}{I_{gn}^{+}}^{*}\}}=V_{gn}^2\frac{1}{8R_0}=\frac{1}{2}|a_n|^{2}
 $$
+
+
+$$
+|a_n|=\sqrt{V_{gn}^2\frac{1}{4R_0}}=\frac{V_{gn}}{2\sqrt{R_0}}
+$$
+
 for power waves definition
 
 

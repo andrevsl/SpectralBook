@@ -14,6 +14,7 @@ parts:
       - file: ChapterSpectralWindow
       - file: ChapterSpectralNB
       - file: ChapterSpectralWB
+    - file: ChapterInfoTheory
     - file: ChapterEMMethod
     - file: ChapterMW
       sections:
