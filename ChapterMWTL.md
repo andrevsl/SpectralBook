@@ -21,21 +21,35 @@ An electrical circuit with different series or parallel impedances should be tre
 
 
 ###  Linear Space and Time Varying (2D)
+#### Time Domain
 The voltage waves and currents for a canonical transmission line with a time dimension and one spatial dimension can be defined as
 $$
-V(t,z)=V^{+}(t,z) e^{-\gamma_z \cdot z } + V^{-}(t,z)e^{\gamma_z \cdot z }
+V(t,z)=V^{+}(t) e^{-\gamma_z \cdot z } + V^{-}(t)e^{\gamma_z \cdot z }
 $$
 
 
 $$
-I(t,z)=I^{+}(t,z) e^{-\gamma_z \cdot z } + I^{-}(t,z)e^{\gamma_z \cdot z } 
+I(t,z)=I^{+}(t) e^{-\gamma_z \cdot z } + I^{-}(t)e^{\gamma_z \cdot z } 
+$$
+However, this model assumes that the voltage variation along the transmission line will depend only on the length of propagation, not the characteristic impedance. If the characteristic impedance is not constant, resistance or reactance of the line variable.
+
+$$
+V(t,z)=V^{+}(t,z) e^{-\gamma_z \cdot z } + V^{-}(t,z) e^{\gamma_z \cdot z }
 $$
 
+
+$$
+I(t,z)=I^{+}(t,z)  e^{-\gamma_z \cdot z } + I^{-}(t,z) e^{\gamma_z \cdot z } 
+
+$$
+The math would be impratical. So we can transform the system to be composed of multiples transmission Lines.
+
+#### Frequency-time/Frequency-Space Domain
 In frequency-time domain and frequency-space domain
 
-$$V(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}V(f,k)=V^{+}(f,k) e^{-\gamma_z \cdot z } + V^{-}(f,k)e^{\gamma_z \cdot z } $$
+$$V(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}V(f,k)=V^{+}(f,k)  + V^{-}(f,k) $$
 
-$$I(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}I(f,k)=I^{+}(f,k) e^{-\gamma_z \cdot z } + I^{-}(f,k)e^{\gamma_z \cdot z } $$
+$$I(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}I(f,k)=I^{+}(f,k)  + I^{-}(f,k)$$
 
 
 
@@ -43,7 +57,7 @@ $$I(t,z)\xrightarrow{\mathscr{F_t},\mathscr{F_k}}I(f,k)=I^{+}(f,k) e^{-\gamma_z 
 
 For  planar circuits, with one time dimension and two spatial dimentions
 
-$$V(t,\overline{s})=V^{+}(t,\overline{s}) e^{-\overline{\gamma} \cdot \overline{s} } + V^{-}(t,\overline{s})e^{\overline{\gamma} \cdot \overline{s} } $$
+$$V(t,\overline{s})=V^{+}(t,x,y) e^{-\gamma z}  + V^{-}(t,x,y)e^{-\gamma z } $$
 
 
 ##  Characteristic Impedance
@@ -71,9 +85,84 @@ $$Z_{0y}(x,y)=?\frac{V^{+,-}_y(x,y)}{I^{+,-}_y(x,y)} =+ or - \frac{V^{-,+}_y(x,y
 
 
 $$E^2=E_{x}^2+E_{y}^2+E_{z}^2$$
+$$
+\begin{equation}
+V^2(x,y,t)=V_{x}^2(x,y,t)+V_{y}^2(x,y,t)
+\end{equation}
+$$
 
-$$V^2(x,y,t)=V_{x}^2(x,y,t)+V_{y}^2(x,y,t)=[Z_{0xx}(x,y,t)I_{x}(x,y,t)+Z_{0xy}(x,y,t)I_{y}(x,y,t)]^2+\\
-[Z_{0y}(x,y,t)I_{y}(x,y,t)+Z_{0y}(x,y,t)I_{y}(x,y,t)]^2$$
+$$
+\begin{align}
+V^2(x,y,t)=[Z_{0xx}(x,y,t)I_{x}(x,y,t)+Z_{0xy}(x,y,t)I_{y}(x,y,t)]^2+\\
+[Z_{0y}(x,y,t)I_{y}(x,y,t)+Z_{0y}(x,y,t)I_{y}(x,y,t)]^2
+\end{align}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Considering the coupling between Electromagnetic Polarizations, the divergence of electric field is not zero,

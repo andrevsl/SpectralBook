@@ -85,6 +85,7 @@ def plot1DSparametric(ax,f,xl,*args):
         ax[ii+1].set_xlabel(" Freq (GHz) ")
         ax[ii+1].set_ylabel("Phase (Deg) ")
         ax[ii+1].set_xlim(xl)
+
 def plot1DSparametricdB(ax,f,xl,*args):
       # fig,ax=plt.subplots(2,2)
       # fig.set_size_inches((10,10))
@@ -100,6 +101,38 @@ def plot1DSparametricdB(ax,f,xl,*args):
         ax[ii+1].set_xlabel(" Freq (GHz) ")
         ax[ii+1].set_ylabel("Phase (Deg) ")
         ax[ii+1].set_xlim(xl)
+
+def plot1DSparametricMag(ax,f,xl,*args):
+      # fig,ax=plt.subplots(2,2)
+      # fig.set_size_inches((10,10))
+      for ii,arg,col,lstyle in args:
+        # print(f.shape)
+        # print(arg.shape)
+        ax[ii].plot(f/1e9,(abs(arg)),color=col,linestyle=lstyle)
+        ax[ii].set_xlabel("Freq (GHz) ")
+        ax[ii].set_ylabel(" Amplitude ")
+        ax[ii].set_xlim(xl)
+
+        ax[ii+1].plot(f/1e9,180/pi*np.angle(arg),color=col,linestyle=lstyle)
+        ax[ii+1].set_xlabel(" Freq (GHz) ")
+        ax[ii+1].set_ylabel("Phase (Deg) ")
+        ax[ii+1].set_xlim(xl)
+def plot1DSparametricReIm(ax,f,xl,*args):
+      # fig,ax=plt.subplots(2,2)
+      # fig.set_size_inches((10,10))
+      for ii,arg,col,lstyle in args:
+        # print(f.shape)
+        # print(arg.shape)
+        ax[ii].plot(f/1e9,(np.real(arg)),color=col,linestyle=lstyle)
+        ax[ii].set_xlabel("Freq (GHz) ")
+        ax[ii].set_ylabel(" Real ")
+        ax[ii].set_xlim(xl)
+
+        ax[ii+1].plot(f/1e9,(np.imag(arg)),color=col,linestyle=lstyle)
+        ax[ii+1].set_xlabel(" Freq (GHz) ")
+        ax[ii+1].set_ylabel("Imag")
+        ax[ii+1].set_xlim(xl)
+
 def plot1DSparametricUwrap(ax,f,xl,*args):
       # fig,ax=plt.subplots(2,2)
       # fig.set_size_inches((10,10))

@@ -316,7 +316,7 @@ $$
 $$
 
 
-####63 Power Gain
+#### Power Gain
 
 - Power gain
 - Transducer power Gain
