@@ -21,6 +21,8 @@ parts:
       - file: ChapterMWTL
       - file: ChapterMWWG
       - file: ChapterMWNetworkSpar
+      - file: ChapterMWNetworkZpar
+      - file: ChapterMWNetworkABCD
     - file: ChapterBasicCircuits
       sections:
       - file: ChapterBasicRC

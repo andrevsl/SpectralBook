@@ -457,9 +457,13 @@ Os agradecimentos principais são a Deus por me dar forças e iluminar muitas pe
 % ----------------------------------------------------------
 
 Na literatura, parece não haver consenso, várias definições são usadas para definir superfícies inteligentes (SI): superfícies inteligentes reconfiguráveis ​​(RIS), superfícies reflexivas inteligentes (IRS), grandes superfícies inteligentes (LIS) [1]-[2]. No entanto, o que parece ser unânime é a multiplicidade de aplicações, desde comunicações por satélite com UAV e utilizadores, até à transmissão simultânea de energia sem fios [3]. Além disso, as superfícies inteligentes reconfiguráveis ​​são facilitadoras essenciais da cobertura massiva de rádio para cenários 5G e 6G. As superfícies de baixo custo podem ser implantadas em praticamente qualquer lugar, casas, edifícios, ruas e assim por diante, economizando energia desperdiçada espalhada por quaisquer objetos e paredes não animados. Ativo ou Passivo, ambos podem melhorar a redução do caos dos canais sem fio [4],[5]. Além da fome da sociedade por largura de banda devido ao uso massivo da Internet das Coisas e dos sistemas Cell Free no futuro, essa orquestra será liberada para vários GHz de espectro [6]-[8].
+
 Neste contexto, o trabalho de [9] também apresentou o conceito de superfície inteligente reconfigurável e computacional (RICS), que promete tornar a comunicação e a computação ubíquas [3],[10]. Na opinião desses autores até o momento, RIS seria um termo geral para superfícies inteligentes que são reconfiguráveis ​​e executam tarefas únicas ou multitarefas, que funcionariam em modo reflexivo, de detecção, de computação e de transmissão, e, assim por diante [3],[ 4]. Superfícies inteligentes reconfiguráveis ​​são estruturas muito semelhantes a arranjos de antenas, cujos elementos também são antenas. Neste caso, RISs são antenas passivas ou ativas, geralmente terminadas em curto-circuito, circuito aberto, impedâncias reativas ou ativas cujo objetivo é direcionar ou processar energia eletromagnética de maneira controlada [9]-[11].
+
 A compensação do acoplamento mútuo em pequenos arranjos é um problema bem conhecido [12]-[13], mas a maioria dos algoritmos de formação de feixe não considera as interações de polarização baseadas em modelos fisicamente fidedignos, especialmente para RIS []. Os requisitos para implementações práticas de hardware em conformidade com os pré-codificadores de canal são um caminho obscuro. No mundo das antenas, isso é comumente feito pelo método dos momentos para arranjos lineares ou arranjos planares de dipolos [12], [14]. Funções de base de domínio inteiro com condição segmentada foram propostas para matrizes refletoras no domínio espectral [15]. Em outro trabalho [16], foi proposta uma combinação da transformada rápida de Fourier de contorno (C-FFT) e técnicas interpoladoras baseadas em MBF, além de uma otimização convexa para posições irregulares de antenas e síntese de arranjos.
+
 Para RIS, pesquisadores investigaram recentemente o mesmo problema [11],[17]-[20], o acoplamento mútuo causa interferência na relação sinal-ruído, mas surpreendentemente ao mesmo tempo, pode ser um foco de uma aumento da taxa de soma [19]. Eles calcularam uma expressão de forma fechada para impedância ajustável ideal na ausência de acoplamento mútuo e um algoritmo interativo para ajustar impedâncias RIS na presença de acoplamento mútuo. Eles também consideraram fios finos como dispersores RIS para construir um modelo eletromagnético compatível [20].
+
 Historicamente o método de Moments é uma ferramenta clássica para análise de phased array, para tipos planares e lineares [12]-[13]. Simulações de onda completa de conjuntos de antenas geralmente usam portas para analisar o acoplamento e as características de radiofrequência do conjunto. Para RIS, em geral não existem portas para medir a interação entre todos os elementos [17]. Propomos um modelo utilizando o Método dos Momentos com um arranjo contínuo e de camada única de impedâncias de superfície (MoMCSL), onde cada elemento do arranjo encapsula suas características de volume, devido às dimensões do subcomprimento de onda da estrutura [18]. Podemos avaliar todo o comportamento eletromagnético e de radiofrequência do RIS através de uma simulação de onda completa, incluindo campo próximo e acoplamento de polarização. A impedância de superfície é modelada usando a teoria de ondas planas e linhas de transmissão (PWTL) [21]-[22]. A seção transversal do radar passivo e ativo (RCS) é analisada.
 
 
@@ -483,7 +487,7 @@ A principal vantagem da RIS, pode-se dizer que seu emprego não se restringe a �
 Ademais, sua atuação abrange todos os espectros de frequência praticamente, com vantagens tem todos eles. especialmente nas bandas de ondas milimétricas e terahertz.
 
 \begin{figure}[htb]
- \label{PulsosVetorPosicaoIlustracao}
+ \label{RISUseCases}
  \centering
   \begin{minipage}{\textwidth}
     \centering
@@ -534,7 +538,7 @@ As classificações de funcionalidaeds são temas de grande debate. Em [] define
 
  \item \textbf{Captura/Colheita:} Funcionam no modo de captura de energia, anlogamente as placas solares, porém para energia radiofrequência.
 
-- Híbridas : Pode possuir 2 ou mais funcionalidades
+ \item \textbf{Híbridas:} : Pode possuir 2 ou mais funcionalidades
 \end{itemize}
 
 \subsubsection{Elementos}   
@@ -555,7 +559,7 @@ As classificações de funcionalidaeds são temas de grande debate. Em [] define
 
 \item \textbf{Ondas milimétricas (mmWW), 30-300 GHz:} Atenução forte, combina uma boa largura de banda com uma certa capacidade de propagação em distâncias até revelantes de algumas centenas de metros. A diretividade da energia se torna cada vez mais importante.
 
-\item Terahertz: Grande largura de banda tipo fibra ópitca, com atenução muito severa do sinal que não penetra objetos, pequena largura do feixe das ondas. Logo, superfícies largas podem relativisar esses efeitos. 
+\item \textbf{Terahertz: }Grande largura de banda tipo fibra ópitca, com atenução muito severa do sinal que não penetra objetos, pequena largura do feixe das ondas. Logo, superfícies largas podem relativisar esses efeitos. 
 \end{itemize}
 
 \subsubsection{Arquitetura} 
@@ -629,7 +633,7 @@ A tecnologias de reconfiguração são diversas, principalmente advindas das met
 \end{itemize}
 
 
-\section{Modelagem Eletromagnética}\label{FormulaçãoPWTLBalanis}
+\section{Modelagem Eletromagnética}\label{ModelagemElectro}
 
 A modelagem de superfíceis refletores inteligentes por teoria de circuitos elétricos e linhas de trnasmissão é similar a técnica comumente utilizada na literaturas para projetar as metasuperfícies. Por serem estruturas com espessura de sub-comprimento de onda, ou particulas polarizadas . Estas são tratadas matematicamente como uma fronteira entre dois meios, podendo ser vistas como impedâncias superficiais que provocam discontinuidades nos campos eletromagnéticos. Essas superfícies são definidas por alguns autores como Metasuperfícies de Huygens, um caso geral da natureza eletromagnética dos metamateriais, que com dimensions de sub-comprimnento de onda seguem o príncípio da equivalência  \cite{BalanisAEM}. Uma vez que com base no método das condições de fronteira eletromagnéticas , a natureza pode ser elétrica e magnética. Essas superfícies são tratadas como a superposição de dipolos eléricos e dipolos magnéticos que variam espacialmente e impõem discontinuidades eletromagnéticas superficiais entre dois meios \cite{GSTC}. Possibilitando a manipulação arbitrária do meio para diversas aplicações desde transformandores de feixes gassianos em feixes de bessel, capa de invisibilidade, controle arbitrário da direção e forma do feixe , antenas. Análise por circuitos elétricos e redes multiportas, também intrisecamente relacionada devido a dualidade com os campos eletromagnéticos.
 Nesse âmbito como as RIS também são homonimamente denominadas metasuperfícies. O desenvolvimento por teoria de ondas planas é um técnica bastante utilizada \cite{BalanisAEM},\cite{EMPWTL}, onde o meio é considerado infinito, porém usado como aproximação para espessuras bem inferiores ao comprimento de onda.
@@ -637,7 +641,9 @@ Nesse âmbito como as RIS também são homonimamente denominadas metasuperfície
 
 \subsection{Definição dos Campos Eletromagnéticos}
 \\
-Para a RIS, de forma geral, que opere tanto em modo refletor quanto transmissor, como ilustrado na Fig. 1, representamos dois meios separados pela discontinuidade da IRS. O meio 1 em $z>0$, engloba os campos eletromagnéticos de incidência $\overline{E}_{i}(\theta_i,\phi_i)$ e espalhamento $\overline{E}_{i}(\theta_s,\phi_s)$, já o meio 2, em $z<0$, o campo eletromagnético transmitido neste . Logo define-se os campos elétricos como,\\
+Para a RIS, de forma geral, que opere tanto em modo refletor quanto transmissor, como ilustrado na Fig. 1, representamos dois meios separados pela discontinuidade da IRS. O meio 1 em $z>0$, engloba os campos eletromagnéticos de incidência $\overline{E}_{i}(\theta_i,\phi_i)$ e espalhamento $\overline{E}_{i}(\theta_s,\phi_s)$, já o meio 2, em $z<0$, o campo eletromagnético transmitido neste.
+
+Logo define-se os campos elétricos como,\\
 \begin{equation}
       \overline{E}_{1}=\overline{E}_{i}
       +\overline{E}_{s}, \ \ z > 0\\
@@ -665,6 +671,7 @@ As condições de fronteira eletromagnéticas nos dão a seguintes relaçãos pa
   \overline{a}_z  \times [{\overline{H}_{2}-\overline{H}_{1}} ]=\overline{J}_{s}
 \end{equation}
 
+
 \subsection{Modelagem pelas Equações de Espaço Livre}\label{FormulaçãoFreeSpace
 Balanis}
 
@@ -680,9 +687,6 @@ W_{txk} = W_{0txk}G_{txk} = \frac{P_{t}G_{t}(\theta_{txk},\phi_{txk})}{(4\pi R_{
     W_{txirs} = W_{0txirs}G_{txirs} = \frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})}{(4\pi R_{2}^{2})}
 \end{equation}
 
-
-
-
 Define-se como $\lambda$ o comprimento de onda,
 $G_{txk} = G_{t}(\theta_{txk},\phi_{txk})$ o ganho da antena transmissora na direção do usuário,
 $G_{txirs} = G_{t}\left( \theta_{txirs},\phi_{txirs} \right)$ o ganho da antena transmissora na direção da IRS, $G_{r}(\theta_{rxtx},\phi_{rxtx})$ o ganho da antena do usuário na direção do transmissor, $A_{rxtx}$ a área efetiva do usuário na direção do transmissor, $P_{t}$ a potência de transmissão, $R_{1}$ a distância entre o transmissor e o usuário, e $R_{2}$ a distância entre o transmissor e a IRS. Logo, a potência recebida diretamente pelo usuário diretamente do AP é,
@@ -697,10 +701,9 @@ A área efetiva da IRS e do usuário receptor para o feixe advindo da IRS são d
 A_{irs} = \sigma_{irs}(\theta_{irs},\phi_{irs})
 \end{equation}
 
-
 \begin{equation}
-A_{rxirs} = \left( \frac{\lambda^{2}}{4\pi} \right)G_{r}\left( \theta_{rxirs},\phi_{rxirs} \right)\ 
-\begin{equation}
+A_{rxirs} = ( \frac{\lambda^{2}}{4\pi} )G_{r}( \theta_{rxirs},\phi_{rxirs} ) 
+\end{equation}
 
 
 Sendo $\sigma_{irs}(\theta_{irs},\phi_{irs})$, o \emph{radar crosssection} da IRS na direção do usuário,
@@ -729,10 +732,12 @@ Portanto a potência total do usuário,
     {P_{rxtotal} = P_{tx -user} + P}_{tx-irs-user}
 \end{equation}
 
-\begin{equation}
+\begin{align}
     P_{rxtotal} = \frac{P_{t}G_{t\ }\left( \theta_{txk},\phi_{txk} \right)G_{r}\left( \theta_{rxtx},\phi_{rxtx} \right)\lambda^{2}}{\left( 4\pi R_{1} \right)^{2}} + \\
 \sigma_{irs}\left( \theta_{irs},\phi_{irs} \right)\frac{P_{t}G_{t}(\theta_{txirs},\phi_{txirs})G_{r}\left( \theta_{rxirs},\phi_{rxirs} \right)}{4\pi}\left( \frac{\lambda}{4\pi R_{2}R_{3}} \right)^{2}
-\end{equation}
+
+\end{align}
+
 
 A eficiência espetral é dada por,
 
@@ -754,23 +759,47 @@ Assumindo $T_{s}$ como a temperatura do sistema, $T_{a\ }$ a temperature da ante
 
 \subsection{Modelagem pelo Método de Arranjo de Antenas}\label{FormulaçãoArrayBalanis}
 
-Os método de arranjos é um clássico que nunca sai de moda, comumente usado na literatura para analisar arranjos de antenas perfeitos, sem considerar todos os efeitos eletromagnéticos reais, com o intuito de construir diagramas ideais e perfeitos de referência que guiam a modelagem dos arranjos para uma determinada aplicação, com uma determinada técnica de atribuição dos pesos complexos. Por exemplo, a amplitudes e fase dos sinais são modificados pelos amplificadores, defasadores, pelos coeficientes de reflexão complexos dos elementos da RIS. Portanto, a RIS também pode ser vista como um arranjo de antenas, que ao refletir aplica um peso complexo a amplitude do campo elétromagnético da onda incidente.
+Os método de arranjos é um clássico que nunca sai de moda, comumente usado na literatura para analisar arranjos de antenas perfeitos, sem considerar todos os efeitos eletromagnéticos reais, porém com o intuito de construir diagramas ideais e perfeitos de referência que guiam a modelagem dos arranjos para uma determinada aplicação, com uma determinada técnica de atribuição dos pesos complexos. Por exemplo, a amplitudes e fase dos sinais são modificados pelos amplificadores, defasadores, pelos coeficientes de reflexão complexos dos elementos da RIS. Portanto, a RIS também pode ser vista como um arranjo de antenas, que ao refletir aplica um peso complexo a amplitude do campo elétromagnético da onda incidente.
 
 Considerando um arranjo planar distribuido no plano $xy$, com $N_{ZsW}$ elementos em x, com $N_{ZsL}$ elementos em y, 
 
-\textbf{
-Fig. Fazer Figura}
+\begin{figure}[htb]
+ \label{PulsosVetorPosicaoIlustracao}
+ \centering
+  \begin{minipage}{\textwidth}
+    \centering
+    \caption{Exemplo da Discretização com o Vetor Posição da Função Pulso} \label{fig_minipage_imagem2}
+    \includegraphics[width=14cm, height=8.5cm]{figures/RISeixosplanar.png}
+    \legend{Fonte: Produzido pelos autores}
+  \end{minipage}
+  \hfill
 
-
-O modelo planar do método de arranjo de antenas clássico {cite}`balanisAntenna` é dado por
-
+\end{figure}
+O campo incidente sendo definido por
 \begin{equation}
-    \overline{E}_s=\sum_{m=1}^{M} \sum_{n=1}^{N} I_{1m}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_x}
-                                I_{1n}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_x}
+\overline{E}_i=\sum_{m=1}^{M} \sum_{n=1}^{N} (\overline{x} E_{i}^{x}(m,n) e^{j\overline{k} \cdot  \overline{p}}+
+\overline{y}E_{i}^{y}(m,n) e^{j\overline{k} \cdot  \overline{p}}\overline{y})
+\end{equation}
+sendo o vetor posição descrito como
+\begin{equation}
+ \overline{p}=P_x^{n,m}\overline{x}+P_y^{n,m}\overline{y}
+\end{equation}
+E o vetor de onda,
+\begin{equation}
+\overline{k}=k(\overline{x} \sin{\theta} \cos{\phi} + \overline{y}  \sin{\theta} \sin{\phi}+\overline{z}  \cos{\theta} )    
+\end{equation}
+No plano de referência $z=0$, temos
+\begin{equation}
+ E_{i}^{x}(m,n)=(E_{\theta}^{m,n} \cos{\theta_i} \cos{\phi_i} - E_{\phi}^{m,n} \sin{\phi_i} )
+ e^{jk (P_x^{m,n}\sin{\theta_i} \cos{\phi_i} + P_y^{m,n} \sin{\theta_i} \sin{\phi_i} )}    
+\end{equation}
+\begin{equation}
+E_{i}^{y}(m,n)=(E_{\theta_i}^{m,n} \cos{\theta_i} \sin{\phi_i} + E_{\phi_i}^{m,n} \cos{\phi_i} )
+e^{jk(P_x^{m,n}\sin{\theta_i} \cos{\phi_i} + P_y^{m,n}\sin{\theta_i} \sin{\phi_i}} 
 \end{equation}
 
-Sendo que $\beta_x$ e $\beta_y$, são a defasagens continuamente aplicadas, respectivamente,  aos elementos ao longo dos eixos $x$ e $y$.
-Porém se considerarmos coeficiente de reflexão com amplitude e fase variável ao longo de todo os, a defasagem entre elementos vizinhos, podendo não ser necessariamente constante. O coeficients de reflexão da RIS paras as duas polarizações
+No modelo clássico as defasagens são continuamente aplicadas e variam e linearmente com o espaçamento.
+Porém se considerarmos o coeficiente de reflexão com amplitude e fase variável ao longo de todo os elements, a defasagem entre elementos vizinhos, podendo não ser necessariamente variáveis linearmente. O coeficientes de reflexão da RIS paras as duas polarizações são dados por,
 
 \begin{equation}
 \Gamma^{x}_{NM}=A^{x}_{NM} e^{j \Omega^x_{NM}}e^{j \Omega^y_{NM}}
@@ -780,18 +809,36 @@ Porém se considerarmos coeficiente de reflexão com amplitude e fase variável 
 \Gamma^{y}_{NM}=A^{y}_{NM} e^{j \Omega^x_{NM}}e^{j \Omega^y_{NM}}
 \end{equation}
 
-O coefiente englobando o efeito das duas componentes,
+O coeficiente, englobando o efeito das duas componentes,
 
 \begin{equation}
 \Gamma_{NM}=\Gamma^{x}_{NM}\Gamma^{y}_{NM}=A_{NM} e^{j \Omega^x_{NM}}e^{j \Omega^y_{NM}}
 \end{equation}
 
+Logo, considerando a RIS de referência, 
+\begin{align}
+\overline{E}_s=\sum_{m=1}^{M} \sum_{n=1}^{N} A_{NM}e^{jk P_x^{m,n}\sin \theta \cos \phi+j\Omega_{NM}^x}
+                                e^{jk P_y^{m,n}\sin \theta \cos \phi+j\Omega_{NM}^y}\\
+                                
+   +\sum_{m=1}^{M} \sum_{n=1}^{N} A_{NM}e^{jk P_x^{m,n}\sin \theta \cos \phi+j\Omega_{NM}^x}
+                                e^{jk P_y^{m,n}\sin \theta \cos \phi+j\Omega_{NM}^y}\\                             
+\end{align}
 
-Logo, considerando a RIS de referência, o campo incidente sendo unitário e em phase sobre toda a superfície 
-\begin{equation}
-\overline{E}_s=\sum_{m=1}^{M} \sum_{n=1}^{N} A_{NM}e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_{NM}^x}
-                                e^{j(m-1)kd_x \sin \theta \cos \phi+\Omega_{NM}^y}
-\end{equation}
+
+\begin{align}
+    P_x^{m,n}\sin{\theta_i} \cos{\phi_i} + 
+P_x^{m,n}\sin{\theta_s} \cos{\phi_s} + 
+\Omega_{NM}^{x}=0
+\end{align}
+
+
+\begin{align}
+P_y^{m,n}\sin{\theta_i} \sin{\phi_i}
++ P_y^{m,n}\sin{\theta_s} \sin{\phi_s}+
+\Omega_{NM}^y=0
+\end{align}
+
+
 
 \subsection{Modelagem pelo Método de Ondas Planas e Linhas de Transmissão}\label{FormulaçãoPWTLBalanis}
 Método de ondas planas, também um clássico e extraordinário, uma vez que todo campo eletromagnético pode ser decomposto em um espectro de ondas planas, se o divergente do camplo eletromagnético for zero, tratando o problema também no espaço spectral dos ângulos, direções das ondas incidentes, ele analisa as reflexões e transmissões de ondas planas entre diferentes meios, levando conta suas características dos meios a partir das impedâncias das ondas eletromagnéticas nos respectivos meios. 
@@ -804,8 +851,19 @@ Logo, tem-se a visão tanto espaço espectral ângular como do espaço spectral 
 
 Neste método, considera-se uma onda incidente que se propaga na linha de transmissão do ar, e alcança uma discontinuidade, representada por uma impedância superficial $Z_s$, que representa a RIS. Essa impedância irá espalha um campo eletromagético, assim como transmitir outro campo eletromagnético na linha de transmissão do ar.
 
-<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=1i2FgcvuscNZaELtdCInN_5nCSkCVawbb" 
-    style="width: 300px;  height: 300 px;display: block;margin-left: auto;margin-right: auto;"  />
+\begin{figure}[htb]
+ \label{PulsosVetorPosicaoIlustracao}
+ \centering
+  \begin{minipage}{\textwidth}
+    \centering
+    \caption{Exemplo da Discretização com o Vetor Posição da Função Pulso} \label{fig_minipage_imagem2}
+    \includegraphics[width=14cm, height=8.5cm]{figures/AirTL.png}
+    \legend{Fonte: Produzido pelos autores}
+  \end{minipage}
+  \hfill
+
+\end{figure}
+
 Dadas as condiçõoes de contorno e a definição dos campoes \cite{A}, a impedância vista da RIS representada pela impedância superficial e o meio 2 que pode ser considerada uma linha de transmissão, é dada por,
 
 \begin{equation}{\label{ImpedanciaZinParaleloZsEta2}}
@@ -829,13 +887,24 @@ A impedância superficial em relação ao coeficiente de reflexão
     Z_s=\frac{\eta^{TM}_0(1+\Gamma)}{2\Gamma}
 \end{equation}
 
-\subsection{ Modelagem Circuito elétrico}#
+\subsection{ Modelagem Circuito elétrico\label{FormulaçãoCircuitos}}
 
 O circuito básico dá RIS pode ser modificado em relação ao descrito anteriomente, identificando melhor as estruturas do sistema, entrando mais no conceito dos circuitos elétricos com suas resistências, capacitâncias e indutâncias. Que se constitue geralmente de um \textit{patch} sob um substrado dielétrico com um plano de terra na sua superfície inferior. Nesta nova configuração, a onda incidente encontra primeirammente impedância do \textit{patch}  $Z_p$ e logo após percorre a linha de trasmissão do dielétrico com impedância de onda $\eta_d$ que está curto circuitada pelo plano de terra de impedância $Z_g$.
 
 Melhorar figura e colocar Zg (exportar, não faz )
-<img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fdrive.google.com/uc?id=17_eq7NOBCh6Q9ycTYJQGyD6bm6H1CCQd" 
-    style="width: 300px;  height: 300 px;display: block;margin-left: auto;margin-right: auto;"  />
+
+\begin{figure}[htb]
+ \label{PulsosVetorPosicaoIlustracao}
+ \centering
+  \begin{minipage}{\textwidth}
+    \centering
+    \caption{Exemplo da Discretização com o Vetor Posição da Função Pulso} \label{fig_minipage_imagem2}
+    \includegraphics[width=14cm, height=8.5cm]{figures/AirTL2.png}
+    \legend{Fonte: Produzido pelos autores}
+  \end{minipage}
+  \hfill
+
+\end{figure}
 Do \textit{patch} tem-se $Z_p$,
 
 \begin{equation}
@@ -998,9 +1067,7 @@ Como o campo a tensão do campo espalhado é expressa
   [S_{JJ}]_{N_t \times Nt}= [Z_{JI}]_{N_t \times N_t} [Y_{IJ}]_{N_t \times N_t}
 \end{equation}
 
-
-
- \subsection{Disposição da RIS}
+\subsection{Disposição da RIS}
 RIS tem $N_{ZsL} \times N_{ZsW}$ elementos na superfície $S$, porém cada antenna da IRS terá $N_{xZs}$ discretizações em $x$ e $N_{yZs}$ discretizações em $y$.  Logo temos
 \begin{equation}
     N_{x}=N_{xZs}N_{ZsL}
@@ -1021,9 +1088,7 @@ Porém o MoM devido as eq. diferenciais do potencial escalar, as densidade de co
  
 \subsection{Far-Field Approximation}
 
-
-
-A aproximação de campo distante é realizada de acordo com o Balanis, o campo elétrico em termos de coordenadas esféricas é escrito como,
+A aproximação de campo distante é realizada de acordo com a definição do Balanis, o campo elétrico em termos de coordenadas esféricas é escrito como,
 
  \begin{equation}
 \begin{aligned}
@@ -1037,7 +1102,7 @@ E_{\phi}=-\frac{jk\eta e^{-jkR}}{4\pi R}
   \iint \limits_S [-J_x  \sin{\phi} +J_y \cos{\phi} ] dS^{'}
    \end{aligned}
 \end{equation}
-O espalhamento será avaliado em termos de seção reta radar ou \emph{radar cross section} (RCS), 
+O espalhamento será avaliado em termos de seção reta radar ou \emph{radar cross section} (RCS). Um fator muito utilizado pois as antenas,  pois
 
  \begin{equation}
 \begin{aligned}
@@ -1046,25 +1111,17 @@ O espalhamento será avaliado em termos de seção reta radar ou \emph{radar cro
    \end{aligned}
 \end{equation}
 
-
-
-
-
-
-
-
-
-
 % ---
 % primeiro capitulo de Resultados
 % ---
 
-
 \chapter{Resultados Numéricos}
+
 Neste capitulo vamos analisar primeiramente a validade do nosso método numérico, parâmetros de malha e convergência. Primeiro, validamos nosso modelo com CST e AFM, depois realizamos o direcionamento do feixe para uma variação de fase na direção x.
 
 
 \section{Validação da Malha}
+
 A validação da malha é realizada comparando com o AFM [10], que é muito semelhante aos resultados da óptica física, e do CST. Os resultados numéricos do nosso modelo estão muito bem com as saídas CST e AFM conforme mostrado na Fig. 4, para planos de corte xoz e yoz relacionados à origem o. Consideramos uma placa quadrada de 5λ×5λ, em 3,3GHz, composta apenas por um condutor elétrico perfeito (PEC), portanto Z_(N,M)=0 sobre toda a incidência normal da superfície, ou seja, E_i (θ_i=0,ϕ_i =0).
 
 
@@ -1086,7 +1143,7 @@ A validação da malha é realizada comparando com o AFM [10], que é muito seme
   \hfill
 \end{figure}
 
-Para analisar o espalhamento de controle do feixe, típico de aplicações reais de IRS, conforme eq. (4), a incidência normal também é presumida. Aplicamos uma sintonia de fase apenas na direção x em 5 e 10 impedâncias diferentes, escolhendo a direção alvo como $(\theta_s,_\phi_s=0)$ e mantendo a mesma área da seção anterior, $N_ZsW=1$ e $N_yZs=50$. A discretização da malha é mostrada na Fig. 5. 
+Para analisar o espalhamento de controle do feixe, típico de aplicações reais de IRS, conforme eq. (4), a incidência normal também é presumida. Aplicamos uma sintonia de fase apenas na direção x em 5 e 10 impedâncias diferentes, escolhendo a direção alvo como $(\theta_s,\phi_s=0)$ e mantendo a mesma área da seção anterior, $N_ZsW=1$ e $N_yZs=50$. A discretização da malha é mostrada na Fig. 5. 
 
 
 \begin{figure}
@@ -1108,6 +1165,7 @@ Para analisar o espalhamento de controle do feixe, típico de aplicações reais
 \end{figure}
 
 \section{Direcionamento do Feixe}
+
 Assim, à medida que alteramos o ângulo desejado $θ_s$, a capacidade de controle do feixe é bem comprovada com MoM e modelo de impedância de superfície da teoria da linha de transmissão, como mostrado na Fig. 4. Além disso, podemos notar o efeito correto da faixa invisível e ondas superficiais. Uma vez aumentado o ângulo, observa-se uma modificação maior. Mesmo próximo ao intervalo de meio comprimento de onda, ou seja, $N_ZsL=10$, o nível do lóbulo lateral é afetado.
 
 
@@ -1132,6 +1190,7 @@ Assim, à medida que alteramos o ângulo desejado $θ_s$, a capacidade de contro
 \end{figure}
 
 \section{Direcionamento Ativo}
+
 O comportamento ativo foi testado na Fig. 5 para um ganho de potência de 3dB, ou seja, A=1,5. A forma geral do feixe não muda em comparação com a caixa reflexiva perfeita. Se aplicados outros tipos de coeficientes de matriz, como binomial e Tschebyscheff [11], isso pode levar a um formato de feixe personalizado.
 \begin{figure}[htb]
  \label{RCS10Active}
@@ -1195,6 +1254,7 @@ Os elementos da RIS podem ser descritos pelo vetor posição na superfície é d
 \begin{equation}
     \overline{p}=x\overline{x}+y\overline{y}
 \end{equation}
+Já o vetor de onda é dado por,
 \begin{equation}
 \overline{k}_{i}=k_x\overline{a}_x+k_y\overline{a}_y+k_z\overline{a}_z
 \end{equation}
@@ -1204,7 +1264,7 @@ Os elementos da RIS podem ser descritos pelo vetor posição na superfície é d
 \begin{equation}
 \overline{k}_{i}=k_0(\sin{\theta} \sin{\phi}\overline{a}_x+\sin{\theta}\cos{\phi}\overline{a}_y+\cos{\theta}\overline{a}_z)
 \end{equation}
-Para incidência de uma onda plana TM , Campos Incidentes,
+Para incidência de uma onda plana TM ,  Tem-se os campos Incidentes como,
 \begin{subequations}{\label{TMIncFields}}
 \begin{equation}
  \overline{E}_{i} =( E_{\theta} \cos{\theta_i}\overline{a}_x -E_{\theta} \sin{\theta_{i}} \overline{a}_z )
@@ -1319,6 +1379,7 @@ A impedância superficial em relação ao coeficiente de reflexão
 % ----------------------------------------------------------
 \chapter{MoMCSL}
 % ----------------------------------------------------------
+
 \subsection{ Representação Numérica}
 O MoM  bidimensional por [Costa]resolve o prolema completamente considerando-o como um sistema linear discreto, por ser um método numérico.  A solução do sistema é a corrente de excitação, dada pela constantes complexas não conhecidas $J_{x,y}^{n,m} \ $ .Logo, a densidade de corrente pode ser expandida em termos de uma função base, que no caso, é a função pulso retangular com dimensão , de acordo com os procedimentos do MoM bidimensional. A escolha por essa base, no meu entendimento, se dá por ser mais simples a implementação numérica, ter uma alta acurácia, além de ser conforme com as seções retangulares que encapsulam as características de cada elemento da IRS. Então se discretizarmos a superfície $S$  com comprimento $L$  e largura $W$, de acordo com a ilustração da Fig. \ref{DiscretizaçãoXY}, com $N_x-1$ colunas e $N_y$ linhas de tensão para a excitação $J_x$, e $N_x$ colunas e $N_y-1$ linhas de tensão para a excitação $J_y$, igualmente espaçadas $\Delta l_x$  em $x$ e $\Delta l_y$ em $y$.  Logo, tem-se,
 \begin{subequations}
@@ -1373,6 +1434,7 @@ As disposição das correntes e da função pulso retangular impõem a condiçã
     \end{cases}  
  \end{equation}
 Sendo que e  $x^{+}_{n,m}=\frac{x_{n,m+1}-x_{n,m}}{2}$Enquanto para a integração em $y$
+
 \begin{equation}{\label{FunçaoTesteJx}}
      w_{m}(\overline{p})= P_{J_y}^{n,m}(\overline{p})\delta(\overline{p}-\overline{p}^{{m,n}}_{J^{-}_x})\overline{a}_y =
        \begin{cases}
@@ -1380,6 +1442,7 @@ Sendo que e  $x^{+}_{n,m}=\frac{x_{n,m+1}-x_{n,m}}{2}$Enquanto para a integraç�
       0 \ \ fora \ do \ limite \\
     \end{cases}  
  \end{equation}
+ 
 sendo que as coordenadas discretas são definidas, 
  \begin{subequations}
     \begin{equation}
@@ -1541,7 +1604,9 @@ Entende-se fisicamente que a função $\delta$ representaria a presença e posi�
 \end{aligned}
 \end{equation}
 Onde os termos com exponente $xx$ referem ao efeito da convolução entre elementos de densidade de carga ou corrente $x$ em $x$,  os termos com exponente $xy$, o efeito da convolução dos elementos de densidade de carga em ou corrente $y$ em $x$ . Seguindo procedimento analogo, a tensão $\Delta V_y$ pode ser encontrada. 
+
 \subsection{Representação Matricial}
+
 Os índices $n,m$ referentes, respectivamente, as linhas e colunas da discretização, tanto para a densidade de corrente em $x$ quanto em $y$, serão transformados em um índice único $I$ ou $J$.  No caso o $J$ se refere ao elemento analisado, e $I$ referente a contribuição dos outros elementos.
 
 \begin{equation}
@@ -1563,6 +1628,7 @@ j\omega \mu  \overline{\Delta l}_J \cdot \overline{\Delta l}_I  \Phi_{JI}\\
     \frac{1}{j \omega \epsilon}  (\Phi_{JI}^{++}-\Phi_{JI}^{+-}-\Phi_{JI}^{-+}+\Phi_{JI}^{--}) \\
 \end{equation}
 Já as equações do potencial escalar são similares, tanto para a $J_x$ quanto para $J_y$, dependentes apenas do vetor posição positivo ou negativo das cargas. Logo, generaliza-se a convolução do vetor magnético e do potêncial escalar para os elementos $JI$
+
 \begin{subequations}
 \begin{equation}
 \Phi_{JI} =\frac{1}{j\omega \epsilon {\Delta l}_I}\iint\limits_{{\Delta S}^{'}}  \frac{e^{-j k R_{JI}}}{4 \pi R_{JI}} dS^{'} \Biggl |_{P_{J_{J}}}^{P_{J_{I}}}
@@ -1581,6 +1647,7 @@ Já as equações do potencial escalar são similares, tanto para a $J_x$ quanto
   \end{equation}
 
 \end{subequations}
+
 Os pontos ($+$$ ou $$-$) significam o vetor posição das cargas negativas e positivas do elemento de densidade de corrente $I$ ou $J$, e $R_{JI}$ a distâncias entre elas. As integrais  são aproximadas numericamente para $kR<<1$
 
 \begin{equation}
@@ -1651,7 +1718,7 @@ e a densidade de corrente,
 \begin{equation}
   [J_I]_{N_t \times 1}=\{ [Z_{s}^J\Delta l_J]-[Z_{JI}]\}^{-1}_{N_t \times N_t} \times[\Delta V_J]_{N_t \times 1} 
 \end{equation} 
-Se representarmos com matrizes de acomplamento  para vizualizar,
+Se representarmos com matrizes de acomplamento  para vizualizar melhor,
 \begin{equation}
 \begin{aligned}
   \begin{bmatrix} [J^{x}_I]_{N_{xx}\times 1} \\ [J^{y}_I]_{N_{yy}\times 1}\end{bmatrix}  =\Biggl\{\begin{bmatrix}[Z_s^{xx}\Delta l_J]_{N_{xx}\times N_{xx}}& [O]_{N_{xx}\times N_{yy}}\\

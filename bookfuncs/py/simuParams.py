@@ -15,6 +15,7 @@ class SimuParam():
                         "eta0": np.sqrt(1.256640e-6/8.854223e-12),   # Impedancia de Onda Free space
                         "sig": [0],   # Condutividade do meio 1, primeira casa meio 1
                         "cc": 1/np.sqrt(1.256640e-6*8.854223e-12),   # Light Velocity
+                        "Beta":[]
                         
                       } 
             
@@ -126,6 +127,7 @@ class SimuParam():
         self.emconst['er'][0]=er
         self.emconst['ur'][0]=ur
         self.emconst['sig'][0]=sig
+  
         
 
         

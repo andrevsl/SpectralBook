@@ -376,8 +376,3 @@ $$
 [\Gamma_n]=\frac{V^{-}_n}{ V^{+}_n}=\frac{\sum_{m=1}^{N} S_{nm}V^{+}_{n}}{ V^{+}_n}
 $$
 
-
-# Network Analysis - Z/Y-Parameters 
-
-# Network Analysis - ABCD-Parameters
-

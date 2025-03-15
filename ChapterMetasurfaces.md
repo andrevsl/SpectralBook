@@ -37,6 +37,18 @@ warnings.filterwarnings(action='ignore')
 ```
 ## Resistive Sheet
 
+A resistive sheet with area $ a \times b$ and infinitesimal thickeness it used as Load in the middle of the Frees Space Transmission Line.
+
+$$
+\begin{equation}
+\begin{bmatrix}
+    e^{j\beta l} &  \\
+    4 & e^{j\beta l} 
+\end{bmatrix} 
+
+\end{equation}
+$$
+
 ## Inductive Sheet
 
 ## Capacitive Sheet
